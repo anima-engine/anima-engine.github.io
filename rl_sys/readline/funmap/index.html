@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `funmap` mod in crate `rl_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, funmap">
+
+    <title>rl_sys::readline::funmap - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a></p><script>window.sidebarCurrent = {name: 'funmap', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a>::<wbr><a class='mod' href=''>funmap</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-819' class='srclink' href='../../../src/rl_sys/readline/funmap.rs.html#1-309' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p><a href="https://goo.gl/CrXrWQ">2.4.4 Associating Function Names and Bindings</a></p>
+
+<p>These functions allow you to find out what keys invoke named functions and the functions invoked
+by a particular key sequence. You may also associate a new function name with an arbitrary
+function.</p>
+</div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.add_funmap_entry.html'
+                               title='rl_sys::readline::funmap::add_funmap_entry'>add_funmap_entry</a></td>
+                        <td class='docblock short'>
+                             <p>Add <code>name</code> to the list of bindable Readline command names, and make function <code>f</code> the function to
+be called when <code>name</code> is invoked.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.function_dumper.html'
+                               title='rl_sys::readline::funmap::function_dumper'>function_dumper</a></td>
+                        <td class='docblock short'>
+                             <p>Print the readline function names and the key sequences currently bound to them to
+<code>rl_outstream</code>. If <code>readable</code> is true, the list is formatted in such a way that it can be made
+part of an <code>inputrc</code> file and re-read.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.function_of_keyseq.html'
+                               title='rl_sys::readline::funmap::function_of_keyseq'>function_of_keyseq</a></td>
+                        <td class='docblock short'>
+                             <p>Return the function invoked by <code>keyseq</code> in keymap <code>map</code>. If <code>map</code> is None, the current keymap is
+used. If <code>add_type</code> is true, the type of the object is returned (one of IsFunc, IsKmap, or
+IsMacr).</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.invoking_keyseqs.html'
+                               title='rl_sys::readline::funmap::invoking_keyseqs'>invoking_keyseqs</a></td>
+                        <td class='docblock short'>
+                             <p>Return an array of strings representing the key sequences used to invoke function in the current
+keymap.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.invoking_keyseqs_in_map.html'
+                               title='rl_sys::readline::funmap::invoking_keyseqs_in_map'>invoking_keyseqs_in_map</a></td>
+                        <td class='docblock short'>
+                             <p>Return an array of strings representing the key sequences used to invoke function in the current
+keymap.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.list_funmap_names.html'
+                               title='rl_sys::readline::funmap::list_funmap_names'>list_funmap_names</a></td>
+                        <td class='docblock short'>
+                             <p>Print the names of all bindable Readline functions to <code>rl_outstream</code>.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.named_function.html'
+                               title='rl_sys::readline::funmap::named_function'>named_function</a></td>
+                        <td class='docblock short'>
+                             <p>Return the function with name <code>name</code>.</p>
+
+                        </td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "rl_sys";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `readline` mod in crate `rl_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, readline">
+
+    <title>rl_sys::readline - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>rl_sys</a></p><script>window.sidebarCurrent = {name: 'readline', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>rl_sys</a>::<wbr><a class='mod' href=''>readline</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-573' class='srclink' href='../../src/rl_sys/readline/mod.rs.html#1-405' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>GNU Readline API</p>
+
+<p>This chapter describes the interface between the GNU Readline Library and other programs. If you
+are a programmer, and you wish to include the features found in GNU Readline such as completion,
+line editing, and interactive history manipulation in your own programs, this section is for
+you.</p>
+
+<p><a href="https://goo.gl/lGL9K0">2.1 Basic Behavior</a></p>
+
+<p>Many programs provide a command line interface, such as mail, ftp, and sh. For such programs,
+the default behaviour of Readline is sufficient. This section describes how to use Readline in
+the simplest way possible, perhaps to replace calls in your code to gets() or fgets().</p>
+
+<p>The function <code>readline()</code> prints a prompt <code>prompt</code> and then reads and returns a single line of
+text from the user. If prompt is NULL or the empty string, no prompt is displayed. The line
+readline returns is allocated with malloc(); the caller should free() the line when it has
+finished with it. The declaration for readline in ANSI C is:</p>
+
+<pre><code class="language-c">    char *readline (const char *prompt);
+</code></pre>
+
+<p>So, one might say</p>
+
+<pre><code class="language-c">    char *line = readline (&quot;Enter a line: &quot;);
+</code></pre>
+
+<p>in order to read a line of text from the user. The line returned has the final newline removed,
+so only the text remains.</p>
+
+<p>If readline encounters an EOF while reading the line, and the line is empty at that point, then
+<code>(char *)NULL</code> is returned. Otherwise, the line is ended just as if a newline had been
+typed.</p>
+
+<p>If you want the user to be able to get at the line later, (with <code>C-p</code> for example), you must
+call <code>add_history()</code> to save the line away in a history list of such lines.</p>
+
+<pre><code class="language-c">    add_history (line);
+</code></pre>
+
+<p>For full details on the GNU History Library, see the associated manual.</p>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='binding/index.html'
+                               title='rl_sys::readline::binding'>binding</a></td>
+                        <td class='docblock short'>
+                             <p><a href="https://goo.gl/fmY0qd">2.4.3 Binding Keys</a></p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='charin/index.html'
+                               title='rl_sys::readline::charin'>charin</a></td>
+                        <td class='docblock short'>
+                             <p><a href="https://goo.gl/yNtf60">2.4.8 Character Input</a></p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='funmap/index.html'
+                               title='rl_sys::readline::funmap'>funmap</a></td>
+                        <td class='docblock short'>
+                             <p><a href="https://goo.gl/CrXrWQ">2.4.4 Associating Function Names and Bindings</a></p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='keymap/index.html'
+                               title='rl_sys::readline::keymap'>keymap</a></td>
+                        <td class='docblock short'>
+                             <p><a href="https://cnswww.cns.cwru.edu/php/chet/readline/readline.html#SEC31">2.4.2 Selecting A Keymap</a></p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='misc/index.html'
+                               title='rl_sys::readline::misc'>misc</a></td>
+                        <td class='docblock short'>
+                             <p><a href="https://goo.gl/2BieXb">2.4.11 Miscellaneous Functions</a></p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='modtext/index.html'
+                               title='rl_sys::readline::modtext'>modtext</a></td>
+                        <td class='docblock short'>
+                             <p><a href="https://goo.gl/DLJ9Gn">2.4.7 Modifying Text</a></p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='naming/index.html'
+                               title='rl_sys::readline::naming'>naming</a></td>
+                        <td class='docblock short'>
+                             <p><a href="https://goo.gl/MN1Yf9">2.4.1 Naming a Function</a></p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='redisplay/index.html'
+                               title='rl_sys::readline::redisplay'>redisplay</a></td>
+                        <td class='docblock short'>
+                             <p><a href="https://goo.gl/i3PS2Q">2.4.6 Redisplay</a></p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='termmgmt/index.html'
+                               title='rl_sys::readline::termmgmt'>termmgmt</a></td>
+                        <td class='docblock short'>
+                             <p><a href="https://goo.gl/NKP48u">2.4.9 Terminal Management</a></p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='undo/index.html'
+                               title='rl_sys::readline::undo'>undo</a></td>
+                        <td class='docblock short'>
+                             <p><a href="https://goo.gl/ZemRqX">2.4.5 Allowing Undoing</a></p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='util/index.html'
+                               title='rl_sys::readline::util'>util</a></td>
+                        <td class='docblock short'>
+                             <p><a href="https://goo.gl/wg27lL">2.4.10 Utility Functions</a></p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='vars/index.html'
+                               title='rl_sys::readline::vars'>vars</a></td>
+                        <td class='docblock short'>
+                             <p><a href="https://goo.gl/E1D6om">2.3 Readline Variables</a></p>
+
+                        </td>
+                    </tr>
+                </table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.IOFile.html'
+                               title='rl_sys::readline::IOFile'>IOFile</a></td>
+                        <td class='docblock short'>
+                             <p>I/O File Type</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.IOMarker.html'
+                               title='rl_sys::readline::IOMarker'>IOMarker</a></td>
+                        <td class='docblock short'>
+                             <p>I/O Marker</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.KeymapEntry.html'
+                               title='rl_sys::readline::KeymapEntry'>KeymapEntry</a></td>
+                        <td class='docblock short'>
+                             <p>Keymap Entry</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.ReadlineState.html'
+                               title='rl_sys::readline::ReadlineState'>ReadlineState</a></td>
+                        <td class='docblock short'>
+                             <p>Readline State</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.UndoList.html'
+                               title='rl_sys::readline::UndoList'>UndoList</a></td>
+                        <td class='docblock short'>
+                             <p>Undo List</p>
+
+                        </td>
+                    </tr>
+                </table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.callback_handler_install.html'
+                               title='rl_sys::readline::callback_handler_install'>callback_handler_install</a></td>
+                        <td class='docblock short'>
+                             <p><a href="https://goo.gl/gg9u4P">2.4.12 Alternate Interface</a></p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.callback_handler_remove.html'
+                               title='rl_sys::readline::callback_handler_remove'>callback_handler_remove</a></td>
+                        <td class='docblock short'>
+                             <p>Restore the terminal to its initial state and remove the line handler. This may be called from
+within a callback as well as independently. If the <code>lhandler</code> installed by
+<code>rl_callback_handler_install</code> does not exit the program, either this function or the function
+referred to by the value of <code>rl_deprep_term_function</code> should be called before the program exits
+to reset the terminal settings.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.callback_read_char.html'
+                               title='rl_sys::readline::callback_read_char'>callback_read_char</a></td>
+                        <td class='docblock short'>
+                             <p>Whenever an application determines that keyboard input is available, it should call
+<code>rl_callback_read_char()</code>, which will read the next character from the current input source. If
+that character completes the line, <code>rl_callback_read_char</code> will invoke the <code>lhandler</code> function
+installed by <code>rl_callback_handler_install</code> to process the line. Before calling the <code>lhandler</code>
+function, the terminal settings are reset to the values they had before calling
+<code>rl_callback_handler_install</code>. If the <code>lhandler</code> function returns, and the line handler remains
+installed, the terminal settings are modified for Readline&#39;s use again. EOF is indicated by
+calling <code>lhandler</code> with a NULL line.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.readline.html'
+                               title='rl_sys::readline::readline'>readline</a></td>
+                        <td class='docblock short'>
+                             <p>Wraps the libreadline readline function.  The argument is the prompt to use.</p>
+
+                        </td>
+                    </tr>
+                </table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='type' href='type.CommandFunction.html'
+                               title='rl_sys::readline::CommandFunction'>CommandFunction</a></td>
+                        <td class='docblock short'>
+                             <p>Readline Command Function Type</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='type' href='type.GetcFunction.html'
+                               title='rl_sys::readline::GetcFunction'>GetcFunction</a></td>
+                        <td class='docblock short'>
+                             <p>Readline getc Function Type</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='type' href='type.HandlerFunction.html'
+                               title='rl_sys::readline::HandlerFunction'>HandlerFunction</a></td>
+                        <td class='docblock short'>
+                             <p>Readline Callback Handler</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='type' href='type.HookFunction.html'
+                               title='rl_sys::readline::HookFunction'>HookFunction</a></td>
+                        <td class='docblock short'>
+                             <p>Readline Hook Function Type</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='type' href='type.Keymap.html'
+                               title='rl_sys::readline::Keymap'>Keymap</a></td>
+                        <td class='docblock short'>
+                             <p>Keymap</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='type' href='type.KeymapEntryArray.html'
+                               title='rl_sys::readline::KeymapEntryArray'>KeymapEntryArray</a></td>
+                        <td class='docblock short'>
+                             <p>Keymap Entry Array</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='type' href='type.PrepFunction.html'
+                               title='rl_sys::readline::PrepFunction'>PrepFunction</a></td>
+                        <td class='docblock short'>
+                             <p>Readline prep Function Type</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='type' href='type.VoidFunction.html'
+                               title='rl_sys::readline::VoidFunction'>VoidFunction</a></td>
+                        <td class='docblock short'>
+                             <p>Readline void Function Type</p>
+
+                        </td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "rl_sys";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

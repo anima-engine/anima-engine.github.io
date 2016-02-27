@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `charin` mod in crate `rl_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, charin">
+
+    <title>rl_sys::readline::charin - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a></p><script>window.sidebarCurrent = {name: 'charin', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a>::<wbr><a class='mod' href=''>charin</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-775' class='srclink' href='../../../src/rl_sys/readline/charin.rs.html#1-118' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p><a href="https://goo.gl/yNtf60">2.4.8 Character Input</a></p>
+</div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.clear_pending_input.html'
+                               title='rl_sys::readline::charin::clear_pending_input'>clear_pending_input</a></td>
+                        <td class='docblock short'>
+                             <p>Unset <code>rl_pending_input</code>, effectively negating the effect of any previous call to
+<code>rl_execute_next()</code>. This works only if the pending input has not already been read with
+<code>rl_read_key()</code>.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.execute_next.html'
+                               title='rl_sys::readline::charin::execute_next'>execute_next</a></td>
+                        <td class='docblock short'>
+                             <p>Make <code>c</code> be the next command to be executed when <code>rl_read_key()</code><code>is called. This sets</code>rl_pending_input`.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.getc.html'
+                               title='rl_sys::readline::charin::getc'>getc</a></td>
+                        <td class='docblock short'>
+                             <p>Return the next character available from <code>stream</code>, which is assumed to be the keyboard.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.read_key.html'
+                               title='rl_sys::readline::charin::read_key'>read_key</a></td>
+                        <td class='docblock short'>
+                             <p>Return the next character available from Readline&#39;s current input stream. This handles input
+inserted into the input stream via <code>rl_pending_input</code> (see section <a href="https://goo.gl/E1D6om">2.3 Readline Variables</a>) and
+<code>rl_stuff_char()</code>, macros, and characters read from the keyboard. While waiting for input, this
+function will call any function assigned to the <code>rl_event_hook</code> variable.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.set_keyboard_input_timeout.html'
+                               title='rl_sys::readline::charin::set_keyboard_input_timeout'>set_keyboard_input_timeout</a></td>
+                        <td class='docblock short'>
+                             <p>While waiting for keyboard input in <code>rl_read_key()</code>, Readline will wait for <code>us</code> microseconds
+for input before calling any function assigned to <code>rl_event_hook</code>. <code>us</code> must be greater than or
+equal to zero (a zero-length timeout is equivalent to a poll). The default waiting period is
+one-tenth of a second. Returns the old timeout value.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.stuff_char.html'
+                               title='rl_sys::readline::charin::stuff_char'>stuff_char</a></td>
+                        <td class='docblock short'>
+                             <p>Insert <code>c</code> into the Readline input stream. It will be &quot;read&quot; before Readline attempts to read
+characters from the terminal with <code>rl_read_key()</code>. Up to 512 characters may be pushed back.
+<code>rl_stuff_char</code> returns 1 if the character was successfully inserted; 0 otherwise.</p>
+
+                        </td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "rl_sys";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

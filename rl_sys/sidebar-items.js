@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["version","Generate a version string."]],"mod":[["history","GNU Readline History API"],["readline","GNU Readline API"]],"struct":[["HistoryError","Represents an error that has occurred within the History API."],["ReadlineError","Represents an error that has occurred within the Readline API."]]});

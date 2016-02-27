@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `keymap` mod in crate `rl_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, keymap">
+
+    <title>rl_sys::readline::keymap - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a></p><script>window.sidebarCurrent = {name: 'keymap', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a>::<wbr><a class='mod' href=''>keymap</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-893' class='srclink' href='../../../src/rl_sys/readline/keymap.rs.html#1-233' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p><a href="https://cnswww.cns.cwru.edu/php/chet/readline/readline.html#SEC31">2.4.2 Selecting A Keymap</a></p>
+
+<p>Key bindings take place on a <code>keymap</code>. The keymap is the association between the keys that the
+user types and the functions that get run. You can make your own keymaps, copy existing keymaps,
+and tell Readline which keymap to use.</p>
+</div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.copy.html'
+                               title='rl_sys::readline::keymap::copy'>copy</a></td>
+                        <td class='docblock short'>
+                             <p>Return a new keymap which is a copy of map.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.create_empty.html'
+                               title='rl_sys::readline::keymap::create_empty'>create_empty</a></td>
+                        <td class='docblock short'>
+                             <p>Returns a new, empty keymap. The space for the keymap is allocated with <code>malloc()</code>; the caller
+should free it by calling <code>rl_free_keymap()</code> when done.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.discard.html'
+                               title='rl_sys::readline::keymap::discard'>discard</a></td>
+                        <td class='docblock short'>
+                             <p>Free the storage associated with the data in keymap. The caller should free keymap.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.free.html'
+                               title='rl_sys::readline::keymap::free'>free</a></td>
+                        <td class='docblock short'>
+                             <p>Free all storage associated with keymap. This calls <code>rl_discard_keymap</code> to free subordindate
+keymaps and macros.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.get.html'
+                               title='rl_sys::readline::keymap::get'>get</a></td>
+                        <td class='docblock short'>
+                             <p>Returns the currently active keymap.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.get_by_name.html'
+                               title='rl_sys::readline::keymap::get_by_name'>get_by_name</a></td>
+                        <td class='docblock short'>
+                             <p>Return the keymap matching <code>name</code>. <code>name</code> is one which would be supplied in a set keymap inputrc
+line (see section <a href="https://goo.gl/VtaCdx">1.3 Readline Init File</a>).</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.get_name.html'
+                               title='rl_sys::readline::keymap::get_name'>get_name</a></td>
+                        <td class='docblock short'>
+                             <p>Return the name matching <code>map</code>. <code>name</code> is one which would be supplied in a set keymap inputrc
+line (see section <a href="https://goo.gl/VtaCdx">1.3 Readline Init File</a>).</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.make.html'
+                               title='rl_sys::readline::keymap::make'>make</a></td>
+                        <td class='docblock short'>
+                             <p>Return a new keymap with the printing characters bound to <code>rl_insert</code>, the lowercase Meta
+characters bound to run their equivalents, and the Meta digits bound to produce numeric
+arguments.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.set.html'
+                               title='rl_sys::readline::keymap::set'>set</a></td>
+                        <td class='docblock short'>
+                             <p>Makes keymap the currently active keymap.</p>
+
+                        </td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "rl_sys";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

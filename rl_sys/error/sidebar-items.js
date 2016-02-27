@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["HistoryError","Represents an error that has occurred within the History API."],["ReadlineError","Represents an error that has occurred within the Readline API."]]});

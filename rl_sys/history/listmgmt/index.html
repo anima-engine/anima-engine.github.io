@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `listmgmt` mod in crate `rl_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, listmgmt">
+
+    <title>rl_sys::history::listmgmt - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>history</a></p><script>window.sidebarCurrent = {name: 'listmgmt', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>history</a>::<wbr><a class='mod' href=''>listmgmt</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-257' class='srclink' href='../../../src/rl_sys/history/listmgmt.rs.html#1-249' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p><a href="https://goo.gl/P6UC5s">2.3.2 History List Management</a></p>
+
+<p>These functions manage individual entries on the history list, or set parameters managing the
+list itself.</p>
+</div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.add.html'
+                               title='rl_sys::history::listmgmt::add'>add</a></td>
+                        <td class='docblock short'>
+                             <p>Place string at the end of the history list. The associated data field (if any) is set to NULL.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.add_time.html'
+                               title='rl_sys::history::listmgmt::add_time'>add_time</a></td>
+                        <td class='docblock short'>
+                             <p>Change the time stamp associated with the most recent history entry to the given time.  Note
+that if the <code>history_comment_char</code> variable has not been set this will have no effect.  This is
+stored as seconds since the epoch, so you may lose some precision.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.clear.html'
+                               title='rl_sys::history::listmgmt::clear'>clear</a></td>
+                        <td class='docblock short'>
+                             <p>Clear the history list by deleting all the entries.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.free_entry.html'
+                               title='rl_sys::history::listmgmt::free_entry'>free_entry</a></td>
+                        <td class='docblock short'>
+                             <p>Free the history entry and any history library private data associated with it. If there is
+application-specific data, an Err is returned with a pointer to the data so the caller can
+dispose of it</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.is_stifled.html'
+                               title='rl_sys::history::listmgmt::is_stifled'>is_stifled</a></td>
+                        <td class='docblock short'>
+                             <p>Returns true if the history is stifled, false if it is not.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.remove.html'
+                               title='rl_sys::history::listmgmt::remove'>remove</a></td>
+                        <td class='docblock short'>
+                             <p>Remove history entry at the given offset from the history. The removed element is returned so
+you can free the line, data, and containing structure.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.replace_entry.html'
+                               title='rl_sys::history::listmgmt::replace_entry'>replace_entry</a></td>
+                        <td class='docblock short'>
+                             <p>Replace the history entry at offset with the given line and data. This returns the old entry so
+the caller can dispose of any application-specific data. In the case of an invalid offset, an
+Err is returned.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.stifle.html'
+                               title='rl_sys::history::listmgmt::stifle'>stifle</a></td>
+                        <td class='docblock short'>
+                             <p>Stifle the history list, remembering only the last <em>max</em> entries.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.unstifle.html'
+                               title='rl_sys::history::listmgmt::unstifle'>unstifle</a></td>
+                        <td class='docblock short'>
+                             <p>Stop stifling the history. This returns the previously-set maximum number of history entries
+(as set by <code>stifle_history()</code>).</p>
+
+                        </td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "rl_sys";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

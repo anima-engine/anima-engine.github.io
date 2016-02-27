@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["add_func","Add `name` to the list of named functions. Make `f` be the function that gets called. If `key` is not -1, then bind it to function using `rl_bind_key()`."]]});

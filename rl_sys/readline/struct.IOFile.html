@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `IOFile` struct in crate `rl_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, IOFile">
+
+    <title>rl_sys::readline::IOFile - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>rl_sys</a>::<wbr><a href='index.html'>readline</a></p><script>window.sidebarCurrent = {name: 'IOFile', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>rl_sys</a>::<wbr><a href='index.html'>readline</a>::<wbr><a class='struct' href=''>IOFile</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-1668' class='srclink' href='../../src/rl_sys/readline/mod.rs.html#120-179' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct IOFile {
+    pub flags: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub read_ptr: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='type' href='../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></a>,
+    pub read_end: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='type' href='../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></a>,
+    pub read_base: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='type' href='../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></a>,
+    pub write_base: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='type' href='../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></a>,
+    pub write_ptr: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='type' href='../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></a>,
+    pub write_end: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='type' href='../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></a>,
+    pub buf_base: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='type' href='../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></a>,
+    pub buf_end: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='type' href='../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></a>,
+    pub save_base: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='type' href='../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></a>,
+    pub backup_base: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='type' href='../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></a>,
+    pub save_end: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='type' href='../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></a>,
+    pub markers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../../rl_sys/readline/struct.IOMarker.html' title='rl_sys::readline::IOMarker'>IOMarker</a></a>,
+    pub chain: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../../rl_sys/readline/struct.IOFile.html' title='rl_sys::readline::IOFile'>IOFile</a></a>,
+    pub fileno: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub flags2: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub old_offset: <a class='type' href='../../libc/unix/bsd/apple/b64/type.c_long.html' title='libc::unix::bsd::apple::b64::c_long'>c_long</a>,
+    pub cur_column: <a class='type' href='../../libc/type.c_ushort.html' title='libc::c_ushort'>c_ushort</a>,
+    pub vtable_offset: <a class='type' href='../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a>,
+    pub shortbuf: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[<a class='type' href='../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a>; 1usize]</a>,
+    pub lock: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></a>,
+    pub offset: <a class='type' href='../../libc/unix/bsd/apple/b64/type.c_long.html' title='libc::unix::bsd::apple::b64::c_long'>c_long</a>,
+    pub pad1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></a>,
+    pub pad2: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></a>,
+    pub pad3: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></a>,
+    pub pad4: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></a>,
+    pub pad5: <a class='type' href='../../libc/type.size_t.html' title='libc::size_t'>size_t</a>,
+    pub mode: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
+    pub unused2: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[<a class='type' href='../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a>; 20usize]</a>,
+}</pre><div class='docblock'><p>I/O File Type</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.flags'><code>flags</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.read_ptr'><code>read_ptr</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.read_end'><code>read_end</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.read_base'><code>read_base</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.write_base'><code>write_base</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.write_ptr'><code>write_ptr</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.write_end'><code>write_end</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.buf_base'><code>buf_base</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.buf_end'><code>buf_end</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.save_base'><code>save_base</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.backup_base'><code>backup_base</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.save_end'><code>save_end</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.markers'><code>markers</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.chain'><code>chain</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.fileno'><code>fileno</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.flags2'><code>flags2</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.old_offset'><code>old_offset</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.cur_column'><code>cur_column</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.vtable_offset'><code>vtable_offset</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.shortbuf'><code>shortbuf</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.lock'><code>lock</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.offset'><code>offset</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.pad1'><code>pad1</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.pad2'><code>pad2</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.pad3'><code>pad3</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.pad4'><code>pad4</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.pad5'><code>pad5</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.mode'><code>mode</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.unused2'><code>unused2</code></td><td><div class='docblock'><p>Flags</p>
+</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../rl_sys/readline/struct.IOFile.html' title='rl_sys::readline::IOFile'>IOFile</a></code></h3><div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; Self</code></h4>
+<h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../rl_sys/readline/struct.IOFile.html' title='rl_sys::readline::IOFile'>IOFile</a></code></h3><div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#method.default' class='fnname'>default</a>() -&gt; Self</code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../rl_sys/readline/struct.IOFile.html' title='rl_sys::readline::IOFile'>IOFile</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../rl_sys/readline/struct.IOFile.html' title='rl_sys::readline::IOFile'>IOFile</a></code></h3><div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "rl_sys";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

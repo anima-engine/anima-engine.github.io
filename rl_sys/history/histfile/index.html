@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `histfile` mod in crate `rl_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, histfile">
+
+    <title>rl_sys::history::histfile - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>history</a></p><script>window.sidebarCurrent = {name: 'histfile', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>history</a>::<wbr><a class='mod' href=''>histfile</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-151' class='srclink' href='../../../src/rl_sys/history/histfile.rs.html#1-177' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p><a href="https://goo.gl/ovVU4a">2.3.6 Managing the History File</a></p>
+
+<p>The History library can read the history from and write it to a file. This section documents the
+functions for managing a history file.</p>
+</div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.append.html'
+                               title='rl_sys::history::histfile::append'>append</a></td>
+                        <td class='docblock short'>
+                             <p>Append the last <code>n</code> elements of the history list to <code>filename</code>. If <code>filename</code> is None, then
+append to <code>~/.history</code>. Returns 0 on success, or <code>HistoryError</code> with <code>errno</code> information on a
+write error.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.read.html'
+                               title='rl_sys::history::histfile::read'>read</a></td>
+                        <td class='docblock short'>
+                             <p>Add the contents of filename at path to the history list, a line at a time. If the path is
+<code>None</code>, then read from <code>~/.history</code>. Returns 0 if successful, or <code>HistoryError</code> with errno
+information if not.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.read_range.html'
+                               title='rl_sys::history::histfile::read_range'>read_range</a></td>
+                        <td class='docblock short'>
+                             <p>Read a range of lines from filename, adding them to the history list. Start reading at line
+<code>from</code> and end at <code>to</code>. If <code>from</code> is zero, start at the beginning. If <code>to</code> is less than <code>from</code>,
+then read until the end of the file. If filename is None, then read from <code>~/.history</code>. Returns 0
+if successful, or <code>HistoryError</code> with errno information if not.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.truncate.html'
+                               title='rl_sys::history::histfile::truncate'>truncate</a></td>
+                        <td class='docblock short'>
+                             <p>Truncate the history file <code>filename</code>, leaving only the last <code>n</code> lines. If <code>filename</code> is None,
+then <code>~/.history&#39; is truncated. Returns 0 on success, or</code>HistoryError<code>with</code>errno` information
+on a write error.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.write.html'
+                               title='rl_sys::history::histfile::write'>write</a></td>
+                        <td class='docblock short'>
+                             <p>Write the current history to <code>filename</code>, overwriting <code>filename</code> if necessary. If <code>filename</code> is
+None, then write the history list to <code>~/.history</code>. Returns 0 on success, or <code>HistoryError</code> with
+<code>errno</code> information on a read or write error.</p>
+
+                        </td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "rl_sys";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `binding` mod in crate `rl_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, binding">
+
+    <title>rl_sys::readline::binding - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a></p><script>window.sidebarCurrent = {name: 'binding', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a>::<wbr><a class='mod' href=''>binding</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-579' class='srclink' href='../../../src/rl_sys/readline/binding.rs.html#1-714' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p><a href="https://goo.gl/fmY0qd">2.4.3 Binding Keys</a></p>
+
+<p>Key sequences are associated with functions through the keymap. Readline has several internal
+keymaps: <code>emacs_standard_keymap</code>, <code>emacs_meta_keymap</code>, <code>emacs_ctlx_keymap</code>,
+<code>vi_movement_keymap</code>, and <code>vi_insertion_keymap</code>. <code>emacs_standard_keymap</code> is the default, and the
+examples in this manual assume that.</p>
+
+<p>Since <code>readline()</code> installs a set of default key bindings the first time it is called, there is
+always the danger that a custom binding installed before the first call to <code>readline()</code> will be
+overridden. An alternate mechanism is to install custom key bindings in an initialization
+function assigned to the <code>rl_startup_hook</code> variable (see section <a href="https://goo.gl/E1D6om">2.3 Readline Variables</a>).</p>
+</div><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='enum' href='enum.BindType.html'
+                               title='rl_sys::readline::binding::BindType'>BindType</a></td>
+                        <td class='docblock short'>
+                             <p>Use for calls to <code>generic_bind</code>.</p>
+
+                        </td>
+                    </tr>
+                </table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.bind_key.html'
+                               title='rl_sys::readline::binding::bind_key'>bind_key</a></td>
+                        <td class='docblock short'>
+                             <p>Binds <code>key</code> to <code>f</code> in the currently active keymap. Returns non-zero in the case of an invalid
+key.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.bind_key_if_unbound.html'
+                               title='rl_sys::readline::binding::bind_key_if_unbound'>bind_key_if_unbound</a></td>
+                        <td class='docblock short'>
+                             <p>Binds <code>key</code> to function <code>f</code> if it is not already bound in the currently active keymap. Returns
+non-zero in the case of an invalid <code>key</code> or if <code>key</code> is already bound.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.bind_key_if_unbound_in_map.html'
+                               title='rl_sys::readline::binding::bind_key_if_unbound_in_map'>bind_key_if_unbound_in_map</a></td>
+                        <td class='docblock short'>
+                             <p>Binds <code>key</code> to function <code>f</code> if it is not already bound in <code>map</code>. Returns non-zero in the case of
+an invalid <code>key</code> or if <code>key</code> is already bound.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.bind_key_in_map.html'
+                               title='rl_sys::readline::binding::bind_key_in_map'>bind_key_in_map</a></td>
+                        <td class='docblock short'>
+                             <p>Bind <code>key</code> to function <code>f</code> in <code>map</code>. Returns non-zero in the case of an invalid key.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.bind_keyseq.html'
+                               title='rl_sys::readline::binding::bind_keyseq'>bind_keyseq</a></td>
+                        <td class='docblock short'>
+                             <p>Bind the key sequence represented by the string <code>keyseq</code> to the function <code>f</code>, beginning in the
+current keymap. This makes new keymaps as necessary. The return value is non-zero if <code>keyseq</code> is
+invalid.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.bind_keyseq_if_unbound.html'
+                               title='rl_sys::readline::binding::bind_keyseq_if_unbound'>bind_keyseq_if_unbound</a></td>
+                        <td class='docblock short'>
+                             <p>Binds <code>keyseq</code> to function <code>f</code> if it is not already bound in the currently active keymap.
+Returns non-zero in the case of an invalid <code>keyseq</code> or if <code>keyseq</code> is already bound.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.bind_keyseq_if_unbound_in_map.html'
+                               title='rl_sys::readline::binding::bind_keyseq_if_unbound_in_map'>bind_keyseq_if_unbound_in_map</a></td>
+                        <td class='docblock short'>
+                             <p>Binds <code>keyseq</code> to function <code>f</code> if it is not already bound in map. Returns non-zero in the case
+of an invalid <code>keyseq</code> or if <code>keyseq</code> is already bound.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.bind_keyseq_in_map.html'
+                               title='rl_sys::readline::binding::bind_keyseq_in_map'>bind_keyseq_in_map</a></td>
+                        <td class='docblock short'>
+                             <p>Bind the key sequence represented by the string <code>keyseq</code> to the function <code>f</code>. This makes new
+keymaps as necessary. Initial bindings are performed in <code>map</code>. The return value is non-zero if
+keyseq is invalid.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.generic_bind.html'
+                               title='rl_sys::readline::binding::generic_bind'>generic_bind</a></td>
+                        <td class='docblock short'>
+                             <p>Bind the key sequence represented by the string <code>keyseq</code> to the function <code>f</code>. type says what
+kind of data is pointed to by data; this can be a function (IsFunc), a macro (IsMacr), or a
+keymap (IsKmap). This makes new keymaps as necessary. The initial keymap in which to do bindings
+is <code>map</code>.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.parse_and_bind.html'
+                               title='rl_sys::readline::binding::parse_and_bind'>parse_and_bind</a></td>
+                        <td class='docblock short'>
+                             <p>Parse <code>line</code> as if it had been read from the <code>inputrc</code> file and perform any key bindings and
+variable assignments found (see section <a href="https://goo.gl/VtaCdx">1.3 Readline Init File</a>).</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.read_init_file.html'
+                               title='rl_sys::readline::binding::read_init_file'>read_init_file</a></td>
+                        <td class='docblock short'>
+                             <p>Read keybindings and variable assignments from <code>path</code> (see section <a href="https://goo.gl/VtaCdx">1.3 Readline Init File</a>).</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.set_key.html'
+                               title='rl_sys::readline::binding::set_key'>set_key</a></td>
+                        <td class='docblock short'>
+                             <p>Equivalent to <code>rl_bind_keyseq_in_map</code>.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.unbind_command_in_map.html'
+                               title='rl_sys::readline::binding::unbind_command_in_map'>unbind_command_in_map</a></td>
+                        <td class='docblock short'>
+                             <p>Unbind all keys that are bound to <code>cmd</code> in map.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.unbind_function_in_map.html'
+                               title='rl_sys::readline::binding::unbind_function_in_map'>unbind_function_in_map</a></td>
+                        <td class='docblock short'>
+                             <p>Unbind all keys that execute function in map.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.unbind_key.html'
+                               title='rl_sys::readline::binding::unbind_key'>unbind_key</a></td>
+                        <td class='docblock short'>
+                             <p>Bind <code>key</code> to the null function in the currently active keymap. Returns non-zero in case of
+error.
+Binds <code>key</code> to function <code>f</code> if it is not already bound in <code>map</code>. Returns non-zero in the case of
+an invalid <code>key</code> or if <code>key</code> is already bound.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.unbind_key_in_map.html'
+                               title='rl_sys::readline::binding::unbind_key_in_map'>unbind_key_in_map</a></td>
+                        <td class='docblock short'>
+                             <p>Bind <code>key</code> to the null function in <code>map</code>. Returns non-zero in case of error.</p>
+
+                        </td>
+                    </tr>
+                </table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='type' href='type.BindResult.html'
+                               title='rl_sys::readline::binding::BindResult'>BindResult</a></td>
+                        <td class='docblock short'>
+                             <p>Result type returned by all binding functions.</p>
+
+                        </td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "rl_sys";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>
