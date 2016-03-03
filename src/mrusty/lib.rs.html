@@ -102,8 +102,10 @@
 <span id="59">59</span>
 <span id="60">60</span>
 <span id="61">61</span>
+<span id="62">62</span>
+<span id="63">63</span>
 </pre><pre class='rust '>
-<span class='comment'>// mrusty. mruby bindings for Rust</span>
+<span class='comment'>// mrusty. mruby safe bindings for Rust</span>
 <span class='comment'>// Copyright (C) 2016  Dragoș Tiselice</span>
 <span class='comment'>//</span>
 <span class='comment'>// This program is free software: you can redistribute it and/or modify</span>
@@ -124,7 +126,7 @@
 <span class='doccomment'>//! ## Requirements</span>
 <span class='doccomment'>//! * [mruby](https://github.com/mruby/mruby)</span>
 <span class='doccomment'>//!</span>
-<span class='doccomment'>//! mrusty requires mruby compiled with fPIC. To compile and install mruby 1.2.0:</span>
+<span class='doccomment'>//! mrusty requires mruby compiled with `fPIC`. To compile and install mruby 1.2.0:</span>
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! * make sure you have [Bison](https://www.gnu.org/software/bison/)</span>
 <span class='doccomment'>//! &amp; [Ruby](https://www.ruby-lang.org/) installed</span>
@@ -144,6 +146,7 @@
 
 <span class='kw'>mod</span> <span class='ident'>mruby</span>;
 <span class='kw'>mod</span> <span class='ident'>mruby_ffi</span>;
+<span class='kw'>mod</span> <span class='ident'>spec</span>;
 
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>feature</span> <span class='op'>=</span> <span class='string'>&quot;repl&quot;</span>)]</span>
 <span class='kw'>mod</span> <span class='ident'>repl</span>;
@@ -161,6 +164,7 @@
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>mruby</span>::<span class='ident'>MRubyImpl</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>mruby</span>::<span class='ident'>MRubyType</span>;
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>mruby</span>::<span class='ident'>Value</span>;
+<span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>spec</span>::<span class='ident'>Spec</span>;
 
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>feature</span> <span class='op'>=</span> <span class='string'>&quot;repl&quot;</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>repl</span>::<span class='ident'>Repl</span>;

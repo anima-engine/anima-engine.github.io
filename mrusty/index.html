@@ -46,7 +46,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-0' class='srclink' href='../src/mrusty/lib.rs.html#17-61' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-0' class='srclink' href='../src/mrusty/lib.rs.html#17-63' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'>
 <h1 id='mrusty-mruby-safe-bindings-for-rust' class='section-header'><a href='#mrusty-mruby-safe-bindings-for-rust'>mrusty. mruby safe bindings for Rust</a></h1>
 <h2 id='requirements' class='section-header'><a href='#requirements'>Requirements</a></h2>
@@ -54,7 +54,7 @@
 <li><a href="https://github.com/mruby/mruby">mruby</a></li>
 </ul>
 
-<p>mrusty requires mruby compiled with fPIC. To compile and install mruby 1.2.0:</p>
+<p>mrusty requires mruby compiled with <code>fPIC</code>. To compile and install mruby 1.2.0:</p>
 
 <ul>
 <li>make sure you have <a href="https://www.gnu.org/software/bison/">Bison</a>
@@ -74,6 +74,15 @@ end
 </ul>
 </div><h2 id='macros' class='section-header'><a href="#macros">Macros</a></h2>
 <table>
+                    <tr class=' module-item'>
+                        <td><a class='macro' href='macro.describe!.html'
+                               title='mrusty::describe!'>describe!</a></td>
+                        <td class='docblock short'>
+                             <p>A <code>macro</code> useful to run mruby specs.</p>
+
+                        </td>
+                    </tr>
+                
                     <tr class=' module-item'>
                         <td><a class='macro' href='macro.mrfn!.html'
                                title='mrusty::mrfn!'>mrfn!</a></td>
@@ -96,10 +105,10 @@ methods. Creating an <code>MRuby</code> returns a <code>MRubyType</code> (<code>
                     </tr>
                 
                     <tr class=' module-item'>
-                        <td><a class='struct' href='struct.Repl.html'
-                               title='mrusty::Repl'>Repl</a></td>
+                        <td><a class='struct' href='struct.Spec.html'
+                               title='mrusty::Spec'>Spec</a></td>
                         <td class='docblock short'>
-                             <p>A <code>struct</code> that exposes an <code>MRuby</code> to a REPL. Requires <code>repl</code> build feature.</p>
+                             <p>A <code>struct</code> useful for mruby spec definition and running.</p>
 
                         </td>
                     </tr>

@@ -342,9 +342,8 @@
 <span id="299">299</span>
 <span id="300">300</span>
 <span id="301">301</span>
-<span id="302">302</span>
 </pre><pre class='rust '>
-<span class='comment'>// mrusty. mruby bindings for Rust</span>
+<span class='comment'>// mrusty. mruby safe bindings for Rust</span>
 <span class='comment'>// Copyright (C) 2016  Dragoș Tiselice</span>
 <span class='comment'>//</span>
 <span class='comment'>// This program is free software: you can redistribute it and/or modify</span>
@@ -362,7 +361,6 @@
 
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>any</span>::<span class='ident'>Any</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ffi</span>::<span class='ident'>CStr</span>;
-<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ffi</span>::<span class='ident'>CString</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>os</span>::<span class='ident'>raw</span>::<span class='ident'>c_char</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>rc</span>::<span class='ident'>Rc</span>;
@@ -419,7 +417,7 @@
 
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>pub</span> <span class='kw'>unsafe</span> <span class='kw'>fn</span> <span class='ident'>string</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>value</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>MRValue</span> {
-        <span class='ident'>mrb_str_new_cstr</span>(<span class='ident'>mrb</span>, <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>value</span>).<span class='ident'>unwrap</span>().<span class='ident'>as_ptr</span>())
+        <span class='ident'>mrb_str_new</span>(<span class='ident'>mrb</span>, <span class='ident'>value</span>.<span class='ident'>as_ptr</span>(), <span class='ident'>value</span>.<span class='ident'>len</span>())
     }
 
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
@@ -565,8 +563,8 @@
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrbc_filename</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>context</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRContext</span>,
                          <span class='ident'>filename</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>;
 
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_load_string_cxt</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>code</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>,
-                               <span class='ident'>context</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRContext</span>) <span class='op'>-&gt;</span> <span class='ident'>MRValue</span>;
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_load_nstring_cxt</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>code</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>u8</span>, <span class='ident'>len</span>: <span class='ident'>i32</span>,
+                                <span class='ident'>context</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRContext</span>) <span class='op'>-&gt;</span> <span class='ident'>MRValue</span>;
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_load_irep_cxt</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>code</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>u8</span>,
                              <span class='ident'>context</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRContext</span>) <span class='op'>-&gt;</span> <span class='ident'>MRValue</span>;
 
@@ -586,7 +584,7 @@
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_get_args</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>format</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>, ...);
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_ext_get_mid</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>) <span class='op'>-&gt;</span> <span class='ident'>u32</span>;
 
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_intern_cstr</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>string</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>) <span class='op'>-&gt;</span> <span class='ident'>u32</span>;
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_intern</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>string</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>u8</span>, <span class='ident'>len</span>: <span class='ident'>usize</span>) <span class='op'>-&gt;</span> <span class='ident'>u32</span>;
 
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_funcall_argv</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>object</span>: <span class='ident'>MRValue</span>, <span class='ident'>sym</span>: <span class='ident'>u32</span>, <span class='ident'>argc</span>: <span class='ident'>i32</span>,
                             <span class='ident'>argv</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRValue</span>) <span class='op'>-&gt;</span> <span class='ident'>MRValue</span>;
@@ -607,7 +605,7 @@
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_ext_cdouble_to_float</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>value</span>: <span class='ident'>f64</span>) <span class='op'>-&gt;</span> <span class='ident'>MRValue</span>;
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_str_new_cstr</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>value</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>) <span class='op'>-&gt;</span> <span class='ident'>MRValue</span>;
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_str_new</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>value</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>u8</span>, <span class='ident'>len</span>: <span class='ident'>usize</span>) <span class='op'>-&gt;</span> <span class='ident'>MRValue</span>;
 
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_str_to_cstr</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>value</span>: <span class='ident'>MRValue</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>;
