@@ -46,7 +46,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-0' class='srclink' href='../src/mrusty/lib.rs.html#17-63' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-0' class='srclink' href='../src/mrusty/lib.rs.html#17-69' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'>
 <h1 id='mrusty-mruby-safe-bindings-for-rust' class='section-header'><a href='#mrusty-mruby-safe-bindings-for-rust'>mrusty. mruby safe bindings for Rust</a></h1>
 <h2 id='requirements' class='section-header'><a href='#requirements'>Requirements</a></h2>
@@ -61,17 +61,15 @@
 &amp; <a href="https://www.ruby-lang.org/">Ruby</a> installed</li>
 <li>download the <a href="https://github.com/mruby/mruby/archive/1.2.0.zip">source</a></li>
 <li>unzip and <code>cd</code> to <code>mruby-1.2.0/</code></li>
-<li>add the following lines to <code>build_config.rb</code> as in the <code># C compiler settings</code> example:</li>
-</ul>
-
-<pre><code class="language-ruby">conf.cc do |cc|
-    cc.flags &lt;&lt; &#39;-fPIC&#39;
-end
-</code></pre>
-
-<ul>
+<li>add the following lines to <code>build_config.rb</code> as in the <code># C compiler settings</code>
+example (make sure you add it after the comment):
+<code>ruby conf.cc do |cc| cc.flags &lt;&lt; &#39;-fPIC&#39; end</code></li>
 <li>run <code>./minirake</code></li>
+<li>copy header files from <code>include</code> to <code>/usr/loca/include</code></li>
+<li>copy <code>build/host/lib/libmruby.a</code> to <code>/usr/local/lib</code></li>
 </ul>
+
+<p><em>Note:</em> On OSX you can install it from homebrew with <code>brew install mruby</code>.</p>
 </div><h2 id='macros' class='section-header'><a href="#macros">Macros</a></h2>
 <table>
                     <tr class=' module-item'>
@@ -94,12 +92,31 @@ end
                 </table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
                     <tr class=' module-item'>
+                        <td><a class='struct' href='struct.GnuReadLine.html'
+                               title='mrusty::GnuReadLine'>GnuReadLine</a></td>
+                        <td class='docblock short'>
+                             <p>A <code>struct</code> that implements <code>ReadLine</code> with very basic gnureadline functionality.
+Requires <code>gnu-readline</code> build feature.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
                         <td><a class='struct' href='struct.MRuby.html'
                                title='mrusty::MRuby'>MRuby</a></td>
                         <td class='docblock short'>
                              <p>A safe <code>struct</code> for the mruby API. The <code>struct</code> only contains creation and desctruction
 methods. Creating an <code>MRuby</code> returns a <code>MRubyType</code> (<code>Rc&lt;RefCell&lt;MRuby&gt;&gt;</code>) which implements
 <code>MRubyImpl</code> where the rest of the implemented API is found.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.Repl.html'
+                               title='mrusty::Repl'>Repl</a></td>
+                        <td class='docblock short'>
+                             <p>A <code>struct</code> that exposes an <code>MRuby</code> to a REPL.</p>
 
                         </td>
                     </tr>
@@ -147,6 +164,15 @@ methods. Creating an <code>MRuby</code> returns a <code>MRubyType</code> (<code>
                                title='mrusty::MRubyImpl'>MRubyImpl</a></td>
                         <td class='docblock short'>
                              <p>A <code>trait</code> used on <code>MRubyType</code> which implements mruby functionality.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='trait' href='trait.ReadLine.html'
+                               title='mrusty::ReadLine'>ReadLine</a></td>
+                        <td class='docblock short'>
+                             <p>A <code>trait</code> which performs very basic readline utility.</p>
 
                         </td>
                     </tr>

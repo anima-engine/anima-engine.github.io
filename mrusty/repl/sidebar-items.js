@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Repl","A `struct` that exposes an `MRuby` to a REPL. Requires `repl` build feature."]]});
+initSidebarItems({"struct":[["Repl","A `struct` that exposes an `MRuby` to a REPL."]]});
