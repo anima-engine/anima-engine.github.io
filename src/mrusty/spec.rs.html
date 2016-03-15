@@ -355,6 +355,10 @@
 <span id="312">312</span>
 <span id="313">313</span>
 <span id="314">314</span>
+<span id="315">315</span>
+<span id="316">316</span>
+<span id="317">317</span>
+<span id="318">318</span>
 </pre><pre class='rust '>
 <span class='comment'>// mrusty. mruby safe bindings for Rust</span>
 <span class='comment'>// Copyright (C) 2016  Dragoș Tiselice</span>
@@ -624,6 +628,10 @@
         context &#39;when 1&#39; do
           subject { 1 }
           let(:two) { 2 }
+
+          it &#39;does irrelevant things&#39; do
+            a = 2
+          end
 
           it { is_expected.to eq 1 }
           it { is_expected.not_to eq two }

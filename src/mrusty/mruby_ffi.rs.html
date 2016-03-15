@@ -635,7 +635,7 @@
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_ext_ary_len</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>array</span>: <span class='ident'>MRValue</span>) <span class='op'>-&gt;</span> <span class='ident'>i32</span>;
 
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_ext_raise</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>msg</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>);
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_ext_raise</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>, <span class='ident'>eclass</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>, <span class='ident'>msg</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>);
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>mrb_ext_get_exc</span>(<span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MRState</span>) <span class='op'>-&gt;</span> <span class='ident'>MRValue</span>;
 }

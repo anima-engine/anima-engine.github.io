@@ -1645,6 +1645,71 @@
 <span id="1602">1602</span>
 <span id="1603">1603</span>
 <span id="1604">1604</span>
+<span id="1605">1605</span>
+<span id="1606">1606</span>
+<span id="1607">1607</span>
+<span id="1608">1608</span>
+<span id="1609">1609</span>
+<span id="1610">1610</span>
+<span id="1611">1611</span>
+<span id="1612">1612</span>
+<span id="1613">1613</span>
+<span id="1614">1614</span>
+<span id="1615">1615</span>
+<span id="1616">1616</span>
+<span id="1617">1617</span>
+<span id="1618">1618</span>
+<span id="1619">1619</span>
+<span id="1620">1620</span>
+<span id="1621">1621</span>
+<span id="1622">1622</span>
+<span id="1623">1623</span>
+<span id="1624">1624</span>
+<span id="1625">1625</span>
+<span id="1626">1626</span>
+<span id="1627">1627</span>
+<span id="1628">1628</span>
+<span id="1629">1629</span>
+<span id="1630">1630</span>
+<span id="1631">1631</span>
+<span id="1632">1632</span>
+<span id="1633">1633</span>
+<span id="1634">1634</span>
+<span id="1635">1635</span>
+<span id="1636">1636</span>
+<span id="1637">1637</span>
+<span id="1638">1638</span>
+<span id="1639">1639</span>
+<span id="1640">1640</span>
+<span id="1641">1641</span>
+<span id="1642">1642</span>
+<span id="1643">1643</span>
+<span id="1644">1644</span>
+<span id="1645">1645</span>
+<span id="1646">1646</span>
+<span id="1647">1647</span>
+<span id="1648">1648</span>
+<span id="1649">1649</span>
+<span id="1650">1650</span>
+<span id="1651">1651</span>
+<span id="1652">1652</span>
+<span id="1653">1653</span>
+<span id="1654">1654</span>
+<span id="1655">1655</span>
+<span id="1656">1656</span>
+<span id="1657">1657</span>
+<span id="1658">1658</span>
+<span id="1659">1659</span>
+<span id="1660">1660</span>
+<span id="1661">1661</span>
+<span id="1662">1662</span>
+<span id="1663">1663</span>
+<span id="1664">1664</span>
+<span id="1665">1665</span>
+<span id="1666">1666</span>
+<span id="1667">1667</span>
+<span id="1668">1668</span>
+<span id="1669">1669</span>
 </pre><pre class='rust '>
 <span class='comment'>// mrusty. mruby safe bindings for Rust</span>
 <span class='comment'>// Copyright (C) 2016  Dragoș Tiselice</span>
@@ -1741,6 +1806,9 @@
     };
     ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>mruby</span>:<span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>name</span>:<span class='ident'>ident</span>, <span class='ident'>Vec</span> )     <span class='op'>=&gt;</span> {
         <span class='kw'>let</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>name</span> <span class='op'>=</span> <span class='ident'>Value</span>::<span class='ident'>new</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>mruby</span>.<span class='ident'>clone</span>(), <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>name</span>).<span class='ident'>to_vec</span>().<span class='ident'>unwrap</span>();
+    };
+    ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>mruby</span>:<span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>name</span>:<span class='ident'>ident</span>, <span class='ident'>Value</span> )   <span class='op'>=&gt;</span> {
+        <span class='kw'>let</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>name</span> <span class='op'>=</span> <span class='ident'>Value</span>::<span class='ident'>new</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>mruby</span>.<span class='ident'>clone</span>(), <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>name</span>);
     };
     ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>mruby</span>:<span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>name</span>:<span class='ident'>ident</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span>:<span class='ident'>ty</span> )   <span class='op'>=&gt;</span> {
         <span class='kw'>let</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>name</span> <span class='op'>=</span> <span class='ident'>Value</span>::<span class='ident'>new</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>mruby</span>.<span class='ident'>clone</span>(), <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>name</span>).<span class='ident'>to_obj</span>::<span class='op'>&lt;</span><span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span><span class='op'>&gt;</span>().<span class='ident'>unwrap</span>();
@@ -1997,7 +2065,9 @@
                                     }
 
                                     <span class='kw'>match</span> <span class='ident'>result</span> {
-                                        <span class='prelude-val'>Err</span>(<span class='ident'>err</span>) <span class='op'>=&gt;</span> <span class='ident'>mruby</span>.<span class='ident'>raise</span>(<span class='kw-2'>&amp;</span><span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;{}&quot;</span>, <span class='ident'>err</span>)),
+                                        <span class='prelude-val'>Err</span>(<span class='ident'>err</span>) <span class='op'>=&gt;</span> {
+                                            <span class='ident'>mruby</span>.<span class='ident'>raise</span>(<span class='string'>&quot;RuntimeError&quot;</span>, <span class='kw-2'>&amp;</span><span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;{}&quot;</span>, <span class='ident'>err</span>));
+                                        }
                                         _ <span class='op'>=&gt;</span> ()
                                     }
 
@@ -2017,7 +2087,8 @@
                                 } <span class='kw'>else</span> <span class='kw'>if</span> <span class='ident'>path</span>.<span class='ident'>is_file</span>() {
                                     <span class='ident'>execute</span>(<span class='ident'>path</span>, <span class='ident'>name</span>.<span class='ident'>to_string</span>(), <span class='ident'>filename</span>)
                                 } <span class='kw'>else</span> {
-                                    <span class='ident'>mruby</span>.<span class='ident'>raise</span>(<span class='kw-2'>&amp;</span><span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;cannot load {}.rb or {}.mrb&quot;</span>,
+                                    <span class='ident'>mruby</span>.<span class='ident'>raise</span>(<span class='string'>&quot;RuntimeError&quot;</span>,
+                                                <span class='kw-2'>&amp;</span><span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;cannot load {}.rb or {}.mrb&quot;</span>,
                                                          <span class='ident'>name</span>, <span class='ident'>name</span>));
 
                                     <span class='ident'>mruby</span>.<span class='ident'>nil</span>()
@@ -2180,6 +2251,47 @@
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>run</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>script</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Value</span>, <span class='ident'>MRubyError</span><span class='op'>&gt;</span>;
 
+    <span class='doccomment'>/// Runs mruby `script` on a state and context and returns a `Value`. If an mruby Exception is</span>
+    <span class='doccomment'>/// raised, mruby will be left to handle it.</span>
+    <span class='doccomment'>/// # Examples</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// ```</span>
+    <span class='doccomment'>/// # use mrusty::MRuby;</span>
+    <span class='doccomment'>/// # use mrusty::MRubyImpl;</span>
+    <span class='doccomment'>/// let mruby = MRuby::new();</span>
+    <span class='doccomment'>/// let result = mruby.run_unchecked(&quot;true&quot;);</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// assert_eq!(result.to_bool().unwrap(), true);</span>
+    <span class='doccomment'>/// ```</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// ```</span>
+    <span class='doccomment'>/// # #[macro_use] extern crate mrusty;</span>
+    <span class='doccomment'>/// use mrusty::*;</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// # fn main() {</span>
+    <span class='doccomment'>/// let mruby = MRuby::new();</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// struct Cont;</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// mruby.def_class::&lt;Cont&gt;(&quot;Container&quot;);</span>
+    <span class='doccomment'>/// mruby.def_class_method::&lt;Cont, _&gt;(&quot;raise&quot;, mrfn!(|mruby, _slf: Value| {</span>
+    <span class='doccomment'>///     mruby.run_unchecked(&quot;fail &#39;surprize&#39;&quot;)</span>
+    <span class='doccomment'>/// }));</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// let result = mruby.run(&quot;</span>
+    <span class='doccomment'>///   begin</span>
+    <span class='doccomment'>///     Container.raise</span>
+    <span class='doccomment'>///   rescue =&gt; e</span>
+    <span class='doccomment'>///     e.message</span>
+    <span class='doccomment'>///   end</span>
+    <span class='doccomment'>/// &quot;).unwrap();</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// assert_eq!(result.to_str().unwrap(), &quot;surprize&quot;);</span>
+    <span class='doccomment'>/// # }</span>
+    <span class='doccomment'>/// ```</span>
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
+    <span class='kw'>fn</span> <span class='ident'>run_unchecked</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>script</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>Value</span>;
+
     <span class='doccomment'>/// Runs mruby compiled (.mrb) `script` on a state and context and returns a `Value` in an `Ok`</span>
     <span class='doccomment'>/// or an `Err` containing an mruby `Exception`&#39;s message.</span>
     <span class='doccomment'>///</span>
@@ -2204,7 +2316,7 @@
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>execute</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>script</span>: <span class='kw-2'>&amp;</span><span class='ident'>Path</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Value</span>, <span class='ident'>MRubyError</span><span class='op'>&gt;</span>;
 
-    <span class='doccomment'>/// Raises an mruby `RuntimeError` with `message` message.</span>
+    <span class='doccomment'>/// Raises an mruby `RuntimeError` with `message` message and `eclass` mruby Exception Class.</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// # Examples</span>
     <span class='doccomment'>///</span>
@@ -2219,7 +2331,7 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// mruby.def_class::&lt;Cont&gt;(&quot;Container&quot;);</span>
     <span class='doccomment'>/// mruby.def_class_method::&lt;Cont, _&gt;(&quot;hi&quot;, mrfn!(|mruby, _slf: Value| {</span>
-    <span class='doccomment'>///     mruby.raise(&quot;hi&quot;);</span>
+    <span class='doccomment'>///     mruby.raise(&quot;RuntimeError&quot;, &quot;hi&quot;);</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>///     mruby.nil()</span>
     <span class='doccomment'>/// }));</span>
@@ -2235,7 +2347,7 @@
     <span class='doccomment'>/// # }</span>
     <span class='doccomment'>/// ```</span>
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
-    <span class='kw'>fn</span> <span class='ident'>raise</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>message</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>);
+    <span class='kw'>fn</span> <span class='ident'>raise</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>eclass</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>message</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>Value</span>;
 
     <span class='doccomment'>/// Defines a dynamic file that can be `require`d containing the Rust type `T` and runs its</span>
     <span class='doccomment'>/// `MRubyFile`-inherited `require` method.</span>
@@ -2563,6 +2675,21 @@
     }
 
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
+    <span class='kw'>fn</span> <span class='ident'>run_unchecked</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>script</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>Value</span> {
+        <span class='kw'>unsafe</span> {
+            <span class='kw'>let</span> (<span class='ident'>mrb</span>, <span class='ident'>ctx</span>) <span class='op'>=</span> {
+                <span class='kw'>let</span> <span class='ident'>borrow</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>borrow</span>();
+
+                (<span class='ident'>borrow</span>.<span class='ident'>mrb</span>, <span class='ident'>borrow</span>.<span class='ident'>ctx</span>)
+            };
+
+            <span class='kw'>let</span> <span class='ident'>value</span> <span class='op'>=</span> <span class='ident'>mrb_load_nstring_cxt</span>(<span class='ident'>mrb</span>, <span class='ident'>script</span>.<span class='ident'>as_ptr</span>(), <span class='ident'>script</span>.<span class='ident'>len</span>() <span class='kw'>as</span> <span class='ident'>i32</span>, <span class='ident'>ctx</span>);
+
+            <span class='ident'>Value</span>::<span class='ident'>new</span>(<span class='self'>self</span>.<span class='ident'>clone</span>(), <span class='ident'>value</span>)
+        }
+    }
+
+    <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>runb</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>script</span>: <span class='kw-2'>&amp;</span>[<span class='ident'>u8</span>]) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Value</span>, <span class='ident'>MRubyError</span><span class='op'>&gt;</span> {
         <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> (<span class='ident'>mrb</span>, <span class='ident'>ctx</span>) <span class='op'>=</span> {
@@ -2614,9 +2741,12 @@
     }
 
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
-    <span class='kw'>fn</span> <span class='ident'>raise</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>message</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) {
+    <span class='kw'>fn</span> <span class='ident'>raise</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>eclass</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>message</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>Value</span> {
         <span class='kw'>unsafe</span> {
-            <span class='ident'>mrb_ext_raise</span>(<span class='self'>self</span>.<span class='ident'>borrow</span>().<span class='ident'>mrb</span>, <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>message</span>).<span class='ident'>unwrap</span>().<span class='ident'>as_ptr</span>());
+            <span class='ident'>mrb_ext_raise</span>(<span class='self'>self</span>.<span class='ident'>borrow</span>().<span class='ident'>mrb</span>, <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>eclass</span>).<span class='ident'>unwrap</span>().<span class='ident'>as_ptr</span>(),
+                          <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='ident'>message</span>).<span class='ident'>unwrap</span>().<span class='ident'>as_ptr</span>());
+
+            <span class='self'>self</span>.<span class='ident'>nil</span>()
         }
     }
 
