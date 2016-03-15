@@ -359,6 +359,30 @@
 <span id="316">316</span>
 <span id="317">317</span>
 <span id="318">318</span>
+<span id="319">319</span>
+<span id="320">320</span>
+<span id="321">321</span>
+<span id="322">322</span>
+<span id="323">323</span>
+<span id="324">324</span>
+<span id="325">325</span>
+<span id="326">326</span>
+<span id="327">327</span>
+<span id="328">328</span>
+<span id="329">329</span>
+<span id="330">330</span>
+<span id="331">331</span>
+<span id="332">332</span>
+<span id="333">333</span>
+<span id="334">334</span>
+<span id="335">335</span>
+<span id="336">336</span>
+<span id="337">337</span>
+<span id="338">338</span>
+<span id="339">339</span>
+<span id="340">340</span>
+<span id="341">341</span>
+<span id="342">342</span>
 </pre><pre class='rust '>
 <span class='comment'>// mrusty. mruby safe bindings for Rust</span>
 <span class='comment'>// Copyright (C) 2016  Dragoș Tiselice</span>
@@ -378,9 +402,8 @@
 
 <span class='kw'>use</span> <span class='ident'>super</span>::<span class='ident'>mruby</span>::<span class='op'>*</span>;
 
-<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>any</span>::<span class='ident'>Any</span>;
-
-<span class='doccomment'>/// A `macro` useful to run mruby specs.</span>
+<span class='doccomment'>/// A `macro` useful to run mruby specs. You can pass a tuple of `MRubyFile`s dependencies</span>
+<span class='doccomment'>/// as a second argument.</span>
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// # Examples</span>
 <span class='doccomment'>///</span>
@@ -397,7 +420,7 @@
 <span class='doccomment'>///     }</span>
 <span class='doccomment'>/// }</span>
 <span class='doccomment'>///</span>
-<span class='doccomment'>/// describe!(Cont, &quot;</span>
+<span class='doccomment'>/// describe!(Cont, (Cont, Cont), &quot;</span>
 <span class='doccomment'>///   context &#39;when 1&#39; do</span>
 <span class='doccomment'>///     subject { 1 }</span>
 <span class='doccomment'>///</span>
@@ -417,10 +440,32 @@
 <span class='doccomment'>/// ```</span>
 <span class='attribute'>#[<span class='ident'>macro_export</span>]</span>
 <span class='macro'>macro_rules</span><span class='macro'>!</span> <span class='ident'>describe</span> {
-    ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span>:<span class='ident'>ty</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>spec</span>:<span class='ident'>expr</span> ) <span class='op'>=&gt;</span> {
+    ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span>:<span class='ident'>ident</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>spec</span>:<span class='ident'>expr</span> ) <span class='op'>=&gt;</span> {
         <span class='attribute'>#[<span class='ident'>test</span>]</span>
         <span class='kw'>fn</span> <span class='ident'>spec</span>() {
-            <span class='kw'>let</span> <span class='ident'>spec</span> <span class='op'>=</span> <span class='ident'>Spec</span>::<span class='ident'>new</span>::<span class='op'>&lt;</span><span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span><span class='op'>&gt;</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>spec</span>);
+            <span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>MRuby</span>::<span class='ident'>new</span>();
+
+            <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span>::<span class='ident'>require</span>(<span class='ident'>mruby</span>.<span class='ident'>clone</span>());
+
+            <span class='kw'>let</span> <span class='ident'>name</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>class_name</span>::<span class='op'>&lt;</span><span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span><span class='op'>&gt;</span>().<span class='ident'>unwrap</span>();
+
+            <span class='kw'>let</span> <span class='ident'>spec</span> <span class='op'>=</span> <span class='ident'>Spec</span>::<span class='ident'>new</span>(<span class='ident'>mruby</span>, <span class='kw-2'>&amp;</span><span class='ident'>name</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>spec</span>);
+
+            <span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>spec</span>.<span class='ident'>run</span>());
+        }
+    };
+
+    ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span>:<span class='ident'>ident</span>, ( $( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>ts</span>:<span class='ident'>ident</span> ),<span class='op'>+</span> ), <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>spec</span>:<span class='ident'>expr</span> ) <span class='op'>=&gt;</span> {
+        <span class='attribute'>#[<span class='ident'>test</span>]</span>
+        <span class='kw'>fn</span> <span class='ident'>spec</span>() {
+            <span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>MRuby</span>::<span class='ident'>new</span>();
+
+            <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span>::<span class='ident'>require</span>(<span class='ident'>mruby</span>.<span class='ident'>clone</span>());
+            $( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>ts</span>::<span class='ident'>require</span>(<span class='ident'>mruby</span>.<span class='ident'>clone</span>()); )<span class='op'>*</span>
+
+            <span class='kw'>let</span> <span class='ident'>name</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>class_name</span>::<span class='op'>&lt;</span><span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span><span class='op'>&gt;</span>().<span class='ident'>unwrap</span>();
+
+            <span class='kw'>let</span> <span class='ident'>spec</span> <span class='op'>=</span> <span class='ident'>Spec</span>::<span class='ident'>new</span>(<span class='ident'>mruby</span>, <span class='kw-2'>&amp;</span><span class='ident'>name</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>spec</span>);
 
             <span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>spec</span>.<span class='ident'>run</span>());
         }
@@ -454,7 +499,10 @@
 <span class='doccomment'>///     }</span>
 <span class='doccomment'>/// }</span>
 <span class='doccomment'>///</span>
-<span class='doccomment'>/// let spec = Spec::new::&lt;Cont&gt;(&quot;</span>
+<span class='doccomment'>/// let mruby = MRuby::new();</span>
+<span class='doccomment'>/// Cont::require(mruby.clone());</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// let spec = Spec::new(mruby, &quot;Container&quot;, &quot;</span>
 <span class='doccomment'>///     context &#39;when 1&#39; do</span>
 <span class='doccomment'>///       subject { 1 }</span>
 <span class='doccomment'>///</span>
@@ -494,7 +542,10 @@
     <span class='doccomment'>///     }</span>
     <span class='doccomment'>/// }</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// Spec::new::&lt;Cont&gt;(&quot;</span>
+    <span class='doccomment'>/// let mruby = MRuby::new();</span>
+    <span class='doccomment'>/// Cont::require(mruby.clone());</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// let spec = Spec::new(mruby, &quot;Container&quot;, &quot;</span>
     <span class='doccomment'>///     context &#39;when 1&#39; do</span>
     <span class='doccomment'>///       subject { 1 }</span>
     <span class='doccomment'>///</span>
@@ -511,11 +562,7 @@
     <span class='doccomment'>///     end</span>
     <span class='doccomment'>/// &quot;);</span>
     <span class='doccomment'>/// ```</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span><span class='op'>&lt;</span><span class='ident'>T</span>: <span class='ident'>MRubyFile</span> <span class='op'>+</span> <span class='ident'>Any</span><span class='op'>&gt;</span>(<span class='ident'>script</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>Spec</span> {
-        <span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>MRuby</span>::<span class='ident'>new</span>();
-
-        <span class='ident'>T</span>::<span class='ident'>require</span>(<span class='ident'>mruby</span>.<span class='ident'>clone</span>());
-
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>(<span class='ident'>mruby</span>: <span class='ident'>MRubyType</span>, <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>script</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>Spec</span> {
         <span class='ident'>mruby</span>.<span class='ident'>filename</span>(<span class='string'>&quot;matchers/be.rb&quot;</span>);
         <span class='ident'>mruby</span>.<span class='ident'>run</span>(<span class='macro'>include_str</span><span class='macro'>!</span>(<span class='string'>&quot;spec/matchers/be.rb&quot;</span>)).<span class='ident'>unwrap</span>();
 
@@ -558,11 +605,9 @@
         <span class='ident'>mruby</span>.<span class='ident'>filename</span>(<span class='string'>&quot;spec.rb&quot;</span>);
         <span class='ident'>mruby</span>.<span class='ident'>run</span>(<span class='macro'>include_str</span><span class='macro'>!</span>(<span class='string'>&quot;spec/spec.rb&quot;</span>)).<span class='ident'>unwrap</span>();
 
-        <span class='kw'>let</span> <span class='ident'>name</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>class_name</span>::<span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;</span>().<span class='ident'>unwrap</span>();
-
         <span class='ident'>Spec</span> {
             <span class='ident'>script</span>: <span class='ident'>script</span>.<span class='ident'>to_string</span>(),
-            <span class='ident'>target</span>: <span class='ident'>name</span>,
+            <span class='ident'>target</span>: <span class='ident'>name</span>.<span class='ident'>to_string</span>(),
             <span class='ident'>mruby</span>: <span class='ident'>mruby</span>
         }
     }
@@ -581,7 +626,10 @@
     <span class='doccomment'>///     }</span>
     <span class='doccomment'>/// }</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// let spec = Spec::new::&lt;Cont&gt;(&quot;</span>
+    <span class='doccomment'>/// let mruby = MRuby::new();</span>
+    <span class='doccomment'>/// Cont::require(mruby.clone());</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// let spec = Spec::new(mruby, &quot;Container&quot;, &quot;</span>
     <span class='doccomment'>///     context &#39;when 1&#39; do</span>
     <span class='doccomment'>///       subject { 1 }</span>
     <span class='doccomment'>///</span>

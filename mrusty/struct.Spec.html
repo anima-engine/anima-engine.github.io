@@ -46,7 +46,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-802' class='srclink' href='../src/mrusty/spec.rs.html#114-118' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-801' class='srclink' href='../src/mrusty/spec.rs.html#138-142' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct Spec {
     // some fields omitted
 }</pre><div class='docblock'><p>A <code>struct</code> useful for mruby spec definition and running.</p>
@@ -75,7 +75,10 @@
     }
 }
 
-<span class='kw'>let</span> <span class='ident'>spec</span> <span class='op'>=</span> <span class='ident'>Spec</span>::<span class='ident'>new</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;
+<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>MRuby</span>::<span class='ident'>new</span>();
+<span class='ident'>Cont</span>::<span class='ident'>require</span>(<span class='ident'>mruby</span>.<span class='ident'>clone</span>());
+
+<span class='kw'>let</span> <span class='ident'>spec</span> <span class='op'>=</span> <span class='ident'>Spec</span>::<span class='ident'>new</span>(<span class='ident'>mruby</span>, <span class='string'>&quot;Container&quot;</span>, <span class='string'>&quot;
     context &#39;when 1&#39; do
       subject { 1 }
 
@@ -93,7 +96,7 @@
 &quot;</span>);
 
 <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>spec</span>.<span class='ident'>run</span>(), <span class='boolval'>true</span>);</pre>
-</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../mrusty/struct.Spec.html' title='mrusty::Spec'>Spec</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;T: <a class='trait' href='../mrusty/trait.MRubyFile.html' title='mrusty::MRubyFile'>MRubyFile</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/any/trait.Any.html' title='core::any::Any'>Any</a>&gt;(script: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='struct' href='../mrusty/struct.Spec.html' title='mrusty::Spec'>Spec</a></code></h4>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../mrusty/struct.Spec.html' title='mrusty::Spec'>Spec</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(mruby: <a class='type' href='../mrusty/type.MRubyType.html' title='mrusty::MRubyType'>MRubyType</a>, name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, script: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='struct' href='../mrusty/struct.Spec.html' title='mrusty::Spec'>Spec</a></code></h4>
 <div class='docblock'><p>Creates an mruby spec runner.</p>
 
 <h1 id='examples-1' class='section-header'><a href='#examples-1'>Examples</a></h1><pre class='rust rust-example-rendered'>
@@ -105,7 +108,10 @@
     }
 }
 
-<span class='ident'>Spec</span>::<span class='ident'>new</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;
+<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>MRuby</span>::<span class='ident'>new</span>();
+<span class='ident'>Cont</span>::<span class='ident'>require</span>(<span class='ident'>mruby</span>.<span class='ident'>clone</span>());
+
+<span class='kw'>let</span> <span class='ident'>spec</span> <span class='op'>=</span> <span class='ident'>Spec</span>::<span class='ident'>new</span>(<span class='ident'>mruby</span>, <span class='string'>&quot;Container&quot;</span>, <span class='string'>&quot;
     context &#39;when 1&#39; do
       subject { 1 }
 
@@ -133,7 +139,10 @@
     }
 }
 
-<span class='kw'>let</span> <span class='ident'>spec</span> <span class='op'>=</span> <span class='ident'>Spec</span>::<span class='ident'>new</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;
+<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>MRuby</span>::<span class='ident'>new</span>();
+<span class='ident'>Cont</span>::<span class='ident'>require</span>(<span class='ident'>mruby</span>.<span class='ident'>clone</span>());
+
+<span class='kw'>let</span> <span class='ident'>spec</span> <span class='op'>=</span> <span class='ident'>Spec</span>::<span class='ident'>new</span>(<span class='ident'>mruby</span>, <span class='string'>&quot;Container&quot;</span>, <span class='string'>&quot;
     context &#39;when 1&#39; do
       subject { 1 }
 
