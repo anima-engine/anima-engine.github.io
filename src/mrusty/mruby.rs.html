@@ -1815,6 +1815,29 @@
 <span id="1772">1772</span>
 <span id="1773">1773</span>
 <span id="1774">1774</span>
+<span id="1775">1775</span>
+<span id="1776">1776</span>
+<span id="1777">1777</span>
+<span id="1778">1778</span>
+<span id="1779">1779</span>
+<span id="1780">1780</span>
+<span id="1781">1781</span>
+<span id="1782">1782</span>
+<span id="1783">1783</span>
+<span id="1784">1784</span>
+<span id="1785">1785</span>
+<span id="1786">1786</span>
+<span id="1787">1787</span>
+<span id="1788">1788</span>
+<span id="1789">1789</span>
+<span id="1790">1790</span>
+<span id="1791">1791</span>
+<span id="1792">1792</span>
+<span id="1793">1793</span>
+<span id="1794">1794</span>
+<span id="1795">1795</span>
+<span id="1796">1796</span>
+<span id="1797">1797</span>
 </pre><pre class='rust '>
 <span class='comment'>// mrusty. mruby safe bindings for Rust</span>
 <span class='comment'>// Copyright (C) 2016  Dragoș Tiselice</span>
@@ -2078,15 +2101,15 @@
 <span class='doccomment'>/// };</span>
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// mruby.def_class::&lt;Cont&gt;(&quot;Container&quot;);</span>
-<span class='doccomment'>/// mruby.def_method::&lt;Cont, _&gt;(&quot;initialize&quot;, mrfn!(|mruby, slf: Value, v: i32; args| {</span>
-<span class='doccomment'>///    let cont = Cont { value: v + args[0].to_i32().unwrap() + args[1].to_i32().unwrap() };</span>
+<span class='doccomment'>/// mruby.def_method::&lt;Cont, _&gt;(&quot;initialize&quot;, mrfn!(|mruby, slf: Value; args| {</span>
+<span class='doccomment'>///    let cont = Cont { value: args[0].to_i32().unwrap() + args[1].to_i32().unwrap() };</span>
 <span class='doccomment'>///</span>
 <span class='doccomment'>///    slf.init(cont)</span>
 <span class='doccomment'>/// }));</span>
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// let result = mruby.run(&quot;Container.new 1, 2, 3&quot;).unwrap();</span>
 <span class='doccomment'>///</span>
-<span class='doccomment'>/// assert_eq!(result.to_obj::&lt;Cont&gt;().unwrap().value, 6);</span>
+<span class='doccomment'>/// assert_eq!(result.to_obj::&lt;Cont&gt;().unwrap().value, 3);</span>
 <span class='doccomment'>/// # }</span>
 <span class='doccomment'>/// ```</span>
 <span class='attribute'>#[<span class='ident'>macro_export</span>]</span>
@@ -2098,11 +2121,35 @@
             <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>block</span>
         }
     };
+    ( <span class='op'>|</span><span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>mruby</span>:<span class='ident'>ident</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>:<span class='ident'>ident</span> : <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>st</span>:<span class='ident'>tt</span>; <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>args</span>:<span class='ident'>ident</span><span class='op'>|</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>block</span>:<span class='ident'>expr</span> ) <span class='op'>=&gt;</span> {
+        <span class='op'>|</span><span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>mruby</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span><span class='op'>|</span> {
+            <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ffi</span>::<span class='ident'>CString</span>;
+            <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>::<span class='ident'>uninitialized</span>;
+
+            <span class='macro'>slf</span><span class='macro'>!</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>st</span>);
+
+            <span class='kw'>unsafe</span> {
+                <span class='kw'>let</span> <span class='ident'>mrb</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>mruby</span>.<span class='ident'>borrow</span>().<span class='ident'>mrb</span>;
+
+                <span class='kw'>let</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>args</span> <span class='op'>=</span> <span class='ident'>uninitialized</span>::<span class='op'>&lt;</span><span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MRValue</span><span class='op'>&gt;</span>();
+                <span class='kw'>let</span> <span class='ident'>count</span> <span class='op'>=</span> <span class='ident'>uninitialized</span>::<span class='op'>&lt;</span><span class='ident'>i32</span><span class='op'>&gt;</span>();
+
+                <span class='ident'>mrb_get_args</span>(<span class='ident'>mrb</span>, <span class='ident'>CString</span>::<span class='ident'>new</span>(<span class='string'>&quot;*&quot;</span>).<span class='ident'>unwrap</span>().<span class='ident'>as_ptr</span>(),
+                             <span class='kw-2'>&amp;</span><span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>args</span> <span class='kw'>as</span> <span class='op'>*</span><span class='kw'>const</span> <span class='op'>*</span><span class='kw-2'>mut</span> <span class='ident'>MRValue</span>, <span class='kw-2'>&amp;</span><span class='ident'>count</span> <span class='kw'>as</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>i32</span>);
+
+                <span class='kw'>let</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>args</span> <span class='op'>=</span> <span class='ident'>Vec</span>::<span class='ident'>from_raw_parts</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>args</span>, <span class='ident'>count</span> <span class='kw'>as</span> <span class='ident'>usize</span>, <span class='ident'>count</span> <span class='kw'>as</span> <span class='ident'>usize</span>);
+                <span class='kw'>let</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>args</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>args</span>.<span class='ident'>iter</span>().<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>arg</span><span class='op'>|</span> {
+                    <span class='ident'>Value</span>::<span class='ident'>new</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>mruby</span>.<span class='ident'>clone</span>(), <span class='op'>*</span><span class='ident'>arg</span>)
+                }).<span class='ident'>collect</span>::<span class='op'>&lt;</span><span class='ident'>Vec</span><span class='op'>&lt;</span>_<span class='op'>&gt;&gt;</span>();
+
+                <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>block</span>
+            }
+        }
+    };
     ( <span class='op'>|</span><span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>mruby</span>:<span class='ident'>ident</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>:<span class='ident'>ident</span> : <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>st</span>:<span class='ident'>tt</span>, $( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>name</span>:<span class='ident'>ident</span> : <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span>:<span class='ident'>tt</span> ),<span class='op'>*</span><span class='op'>|</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>block</span>:<span class='ident'>expr</span> ) <span class='op'>=&gt;</span> {
         <span class='op'>|</span><span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>mruby</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span><span class='op'>|</span> {
             <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>unused_imports</span>)]</span>
             <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ffi</span>::<span class='ident'>CStr</span>;
-            <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>unused_imports</span>)]</span>
             <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ffi</span>::<span class='ident'>CString</span>;
             <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>unused_imports</span>)]</span>
             <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>::<span class='ident'>uninitialized</span>;
@@ -2128,7 +2175,6 @@
         <span class='op'>|</span><span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>mruby</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span><span class='op'>|</span> {
             <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>unused_imports</span>)]</span>
             <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ffi</span>::<span class='ident'>CStr</span>;
-            <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>unused_imports</span>)]</span>
             <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>ffi</span>::<span class='ident'>CString</span>;
             <span class='attribute'>#[<span class='ident'>allow</span>(<span class='ident'>unused_imports</span>)]</span>
             <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>mem</span>::<span class='ident'>uninitialized</span>;
