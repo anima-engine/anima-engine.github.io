@@ -50,7 +50,8 @@
 <pre class='rust fn'>pub fn variable_value(name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>, <a class='struct' href='../../../rl_sys/struct.ReadlineError.html' title='rl_sys::ReadlineError'>ReadlineError</a>&gt;</pre><div class='docblock'><p>Return a string representing the value of the Readline variable <code>name</code>. For boolean variables,
 this string is either <code>on&#39; or</code>off&#39;.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>readline</span>::{<span class='ident'>misc</span>, <span class='ident'>util</span>};
 
 <span class='ident'>util</span>::<span class='ident'>init</span>();
@@ -108,7 +109,7 @@ this string is either <code>on&#39; or</code>off&#39;.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

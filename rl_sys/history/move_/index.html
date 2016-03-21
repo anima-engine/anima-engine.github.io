@@ -58,7 +58,6 @@
                         <td class='docblock short'>
                              <p>Move the current history offset forward to the next history entry, and return a pointer to that
 entry. If there is no next entry, return a <code>HistoryError</code>.</p>
-
                         </td>
                     </tr>
                 
@@ -68,7 +67,6 @@ entry. If there is no next entry, return a <code>HistoryError</code>.</p>
                         <td class='docblock short'>
                              <p>Back up the current history offset to the previous history entry, and return a pointer to that
 entry. If there is no previous entry, return a <code>HistoryError</code>.</p>
-
                         </td>
                     </tr>
                 
@@ -78,7 +76,6 @@ entry. If there is no previous entry, return a <code>HistoryError</code>.</p>
                         <td class='docblock short'>
                              <p>Set the current history offset, an absolute index into the list. Returns true on success, false
 if the offset is less than zero or greater than the number of history entries.</p>
-
                         </td>
                     </tr>
                 </table></section>
@@ -124,7 +121,7 @@ if the offset is less than zero or greater than the number of history entries.</
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

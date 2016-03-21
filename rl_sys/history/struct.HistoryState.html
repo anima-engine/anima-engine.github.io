@@ -48,7 +48,7 @@
             </a>
         </span><a id='src-551' class='srclink' href='../../src/rl_sys/history/mod.rs.html#84-95' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct HistoryState {
-    pub entries: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='struct' href='../../rl_sys/history/struct.HistoryEntry.html' title='rl_sys::history::HistoryEntry'>HistoryEntry</a></a></a>,
+    pub entries: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../rl_sys/history/struct.HistoryEntry.html' title='rl_sys::history::HistoryEntry'>HistoryEntry</a>,
     pub offset: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
     pub length: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
     pub size: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>,
@@ -66,7 +66,7 @@
 </div></td></tr><tr class='stab '>
                                   <td id='structfield.flags'><code>flags</code></td><td><div class='docblock'><p>Any history flags that have been set.</p>
 </div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../rl_sys/history/struct.HistoryState.html' title='rl_sys::history::HistoryState'>HistoryState</a></code></h3><div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; Self</code></h4>
-<h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+<h4 id='method.clone_from' class='method'><span class="since">1.0.0</span><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
 </div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../rl_sys/history/struct.HistoryState.html' title='rl_sys::history::HistoryState'>HistoryState</a></code></h3><div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#method.default' class='fnname'>default</a>() -&gt; Self</code></h4>
 </div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../rl_sys/history/struct.HistoryState.html' title='rl_sys::history::HistoryState'>HistoryState</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
 </div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../rl_sys/history/struct.HistoryState.html' title='rl_sys::history::HistoryState'>HistoryState</a></code></h3><div class='impl-items'></div></section>
@@ -112,7 +112,7 @@
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

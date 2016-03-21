@@ -49,7 +49,8 @@
         </span><a id='src-246' class='srclink' href='../../../src/rl_sys/history/listinfo.rs.html#67-70' title='goto source code'>[src]</a></span></h1>
 <pre class='rust fn'>pub fn offset() -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></pre><div class='docblock'><p>Returns the offset of the current history element.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>history</span>::{<span class='ident'>listinfo</span>, <span class='ident'>listmgmt</span>};
 
 <span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>listmgmt</span>::<span class='ident'>add</span>(<span class='string'>&quot;test&quot;</span>).<span class='ident'>is_ok</span>());
@@ -97,7 +98,7 @@
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

@@ -50,7 +50,8 @@
 <pre class='rust fn'>pub fn init()</pre><div class='docblock'><p>Begin a session in which the history functions might be used. This initializes the interactive
 variables.  Note that this will only call <code>using_history</code> once after first use.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>history</span>::<span class='ident'>mgmt</span>;
 
 <span class='ident'>mgmt</span>::<span class='ident'>init</span>();</pre>
@@ -97,7 +98,7 @@ variables.  Note that this will only call <code>using_history</code> once after 
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

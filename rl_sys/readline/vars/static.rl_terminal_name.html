@@ -47,7 +47,7 @@
                 [<span class='inner'>&#x2212;</span>]
             </a>
         </span><a id='src-1610' class='srclink' href='../../../src/rl_sys/readline/vars.rs.html#122' title='goto source code'>[src]</a></span></h1>
-<pre class='rust static'>pub static rl_terminal_name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='type' href='../../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></a></pre><div class='docblock'><p>The terminal type, used for initialization. If not set by the application, Readline sets
+<pre class='rust static'>pub static rl_terminal_name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></pre><div class='docblock'><p>The terminal type, used for initialization. If not set by the application, Readline sets
 this to the value of the TERM environment variable the first time it is called.</p>
 </div></section>
     <section id='search' class="content hidden"></section>
@@ -92,7 +92,7 @@ this to the value of the TERM environment variable the first time it is called.<
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

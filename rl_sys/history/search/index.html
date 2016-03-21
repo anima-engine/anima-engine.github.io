@@ -60,7 +60,6 @@ entry.</p>
                                title='rl_sys::history::search::Direction'>Direction</a></td>
                         <td class='docblock short'>
                              <p>The direction to search through the history entries.</p>
-
                         </td>
                     </tr>
                 </table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
@@ -74,7 +73,6 @@ entry.</p>
 If string is found, then the current history index is set to that history entry, and the value
 returned is the offset in the line of the entry where string was found. Otherwise, nothing is
 changed, and a -1 is returned.</p>
-
                         </td>
                     </tr>
                 
@@ -85,7 +83,6 @@ changed, and a -1 is returned.</p>
                              <p>Search for string in the history list, starting at pos, an absolute index into the list. If
 direction <code>Backward</code>, the search proceeds backward from pos, otherwise forward. Returns the
 absolute index of the history element where string was found, or -1 otherwise.</p>
-
                         </td>
                     </tr>
                 
@@ -98,7 +95,6 @@ matching lines must begin with string. If direction is <code>Backward</code>, th
 previous entries, otherwise through subsequent entries. If string is found, then the current
 history index is set to that entry, and the return value is 0. Otherwise, nothing is changed,
 and a -1 is returned.</p>
-
                         </td>
                     </tr>
                 </table></section>
@@ -144,7 +140,7 @@ and a -1 is returned.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

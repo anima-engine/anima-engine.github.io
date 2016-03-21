@@ -50,7 +50,8 @@
 <pre class='rust fn'>pub fn get_no_expand_chars() -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.char.html'>char</a>&gt;, <a class='struct' href='../../../rl_sys/struct.HistoryError.html' title='rl_sys::HistoryError'>HistoryError</a>&gt;</pre><div class='docblock'><p>The list of characters which inhibit history expansion if found immediately following
 <code>history_expansion_char</code>. The default is space, tab, newline, carriage return, and `=&#39;.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>history</span>::<span class='ident'>vars</span>;
 
 <span class='kw'>let</span> <span class='ident'>delims</span>: <span class='ident'>String</span> <span class='op'>=</span> <span class='kw'>match</span> <span class='ident'>vars</span>::<span class='ident'>get_no_expand_chars</span>() {
@@ -105,7 +106,7 @@
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

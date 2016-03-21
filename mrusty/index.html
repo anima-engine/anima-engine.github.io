@@ -46,7 +46,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-0' class='srclink' href='../src/mrusty/lib.rs.html#17-69' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-0' class='srclink' href='../src/mrusty/src/lib.rs.html#17-72' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'>
 <h1 id='mrusty-mruby-safe-bindings-for-rust' class='section-header'><a href='#mrusty-mruby-safe-bindings-for-rust'>mrusty. mruby safe bindings for Rust</a></h1>
 <h2 id='requirements' class='section-header'><a href='#requirements'>Requirements</a></h2>
@@ -76,9 +76,19 @@ example (make sure you add it after the comment):
                         <td><a class='macro' href='macro.describe!.html'
                                title='mrusty::describe!'>describe!</a></td>
                         <td class='docblock short'>
-                             <p>A <code>macro</code> useful to run mruby specs. You can pass a tuple of <code>MRubyFile</code>s dependencies
+                             <p>A <code>macro</code> useful to run mruby specs. You can pass a tuple of <code>MrubyFile</code>s dependencies
 as a second argument.</p>
-
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='macro' href='macro.mrclass!.html'
+                               title='mrusty::mrclass!'>mrclass!</a></td>
+                        <td class='docblock short'>
+                             <p>A <code>macro</code> that comes in handy when defining class in order to remove a large part of the
+clutter and ensure correction. It automates and simplifies the implementation of the
+<code>MrubyFile</code> <code>trait</code>. Thus, any type provided to <code>mrclass!</code> will get an <code>MrubyFile</code>
+implementation.</p>
                         </td>
                     </tr>
                 
@@ -87,7 +97,6 @@ as a second argument.</p>
                                title='mrusty::mrfn!'>mrfn!</a></td>
                         <td class='docblock short'>
                              <p>A <code>macro</code> useful for defining Rust closures for mruby. Requires <code>use mrusty::*;</code>.</p>
-
                         </td>
                     </tr>
                 </table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
@@ -98,18 +107,16 @@ as a second argument.</p>
                         <td class='docblock short'>
                              <p>A <code>struct</code> that implements <code>ReadLine</code> with very basic gnureadline functionality.
 Requires <code>gnu-readline</code> build feature.</p>
-
                         </td>
                     </tr>
                 
                     <tr class=' module-item'>
-                        <td><a class='struct' href='struct.MRuby.html'
-                               title='mrusty::MRuby'>MRuby</a></td>
+                        <td><a class='struct' href='struct.Mruby.html'
+                               title='mrusty::Mruby'>Mruby</a></td>
                         <td class='docblock short'>
                              <p>A safe <code>struct</code> for the mruby API. The <code>struct</code> only contains creation and desctruction
-methods. Creating an <code>MRuby</code> returns a <code>MRubyType</code> (<code>Rc&lt;RefCell&lt;MRuby&gt;&gt;</code>) which implements
-<code>MRubyImpl</code> where the rest of the implemented API is found.</p>
-
+methods. Creating an <code>Mruby</code> returns a <code>MrubyType</code> (<code>Rc&lt;RefCell&lt;Mruby&gt;&gt;</code>) which implements
+<code>MrubyImpl</code> where the rest of the implemented API is found.</p>
                         </td>
                     </tr>
                 
@@ -117,8 +124,7 @@ methods. Creating an <code>MRuby</code> returns a <code>MRubyType</code> (<code>
                         <td><a class='struct' href='struct.Repl.html'
                                title='mrusty::Repl'>Repl</a></td>
                         <td class='docblock short'>
-                             <p>A <code>struct</code> that exposes an <code>MRuby</code> to a REPL.</p>
-
+                             <p>A <code>struct</code> that exposes an <code>Mruby</code> to a REPL.</p>
                         </td>
                     </tr>
                 
@@ -127,7 +133,6 @@ methods. Creating an <code>MRuby</code> returns a <code>MRubyType</code> (<code>
                                title='mrusty::Spec'>Spec</a></td>
                         <td class='docblock short'>
                              <p>A <code>struct</code> useful for mruby spec definition and running.</p>
-
                         </td>
                     </tr>
                 
@@ -136,36 +141,32 @@ methods. Creating an <code>MRuby</code> returns a <code>MRubyType</code> (<code>
                                title='mrusty::Value'>Value</a></td>
                         <td class='docblock short'>
                              <p>A <code>struct</code> that wraps around any mruby variable.</p>
-
                         </td>
                     </tr>
                 </table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
 <table>
                     <tr class=' module-item'>
-                        <td><a class='enum' href='enum.MRubyError.html'
-                               title='mrusty::MRubyError'>MRubyError</a></td>
+                        <td><a class='enum' href='enum.MrubyError.html'
+                               title='mrusty::MrubyError'>MrubyError</a></td>
                         <td class='docblock short'>
                              <p>An <code>enum</code> containing all possbile types of errors.</p>
-
                         </td>
                     </tr>
                 </table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
 <table>
                     <tr class=' module-item'>
-                        <td><a class='trait' href='trait.MRubyFile.html'
-                               title='mrusty::MRubyFile'>MRubyFile</a></td>
+                        <td><a class='trait' href='trait.MrubyFile.html'
+                               title='mrusty::MrubyFile'>MrubyFile</a></td>
                         <td class='docblock short'>
                              <p>A <code>trait</code> useful for organising Rust types into dynamic mruby files.</p>
-
                         </td>
                     </tr>
                 
                     <tr class=' module-item'>
-                        <td><a class='trait' href='trait.MRubyImpl.html'
-                               title='mrusty::MRubyImpl'>MRubyImpl</a></td>
+                        <td><a class='trait' href='trait.MrubyImpl.html'
+                               title='mrusty::MrubyImpl'>MrubyImpl</a></td>
                         <td class='docblock short'>
-                             <p>A <code>trait</code> used on <code>MRubyType</code> which implements mruby functionality.</p>
-
+                             <p>A <code>trait</code> used on <code>MrubyType</code> which implements mruby functionality.</p>
                         </td>
                     </tr>
                 
@@ -174,17 +175,15 @@ methods. Creating an <code>MRuby</code> returns a <code>MRubyType</code> (<code>
                                title='mrusty::ReadLine'>ReadLine</a></td>
                         <td class='docblock short'>
                              <p>A <code>trait</code> which performs very basic readline utility.</p>
-
                         </td>
                     </tr>
                 </table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
 <table>
                     <tr class=' module-item'>
-                        <td><a class='type' href='type.MRubyType.html'
-                               title='mrusty::MRubyType'>MRubyType</a></td>
+                        <td><a class='type' href='type.MrubyType.html'
+                               title='mrusty::MrubyType'>MrubyType</a></td>
                         <td class='docblock short'>
-                             <p>A <code>type</code> wrapper around a <code>Rc&lt;RefCell&lt;MRuby&gt;&gt;</code>. Created with <code>MRuby::new()</code>.</p>
-
+                             <p>A <code>type</code> wrapper around a <code>Rc&lt;RefCell&lt;Mruby&gt;&gt;</code>. Created with <code>Mruby::new()</code>.</p>
                         </td>
                     </tr>
                 </table></section>
@@ -230,7 +229,7 @@ methods. Creating an <code>MRuby</code> returns a <code>MRubyType</code> (<code>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

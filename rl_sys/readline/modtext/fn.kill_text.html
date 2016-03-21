@@ -52,7 +52,8 @@ prepending to the last kill if the last command was a kill command. The text is 
 start is less than end, the text is appended, otherwise prepended. If the last command was not
 a kill, a new kill ring slot is used.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>readline</span>::{<span class='ident'>modtext</span>, <span class='ident'>util</span>};
 
 <span class='ident'>util</span>::<span class='ident'>init</span>();
@@ -102,7 +103,7 @@ a kill, a new kill ring slot is used.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

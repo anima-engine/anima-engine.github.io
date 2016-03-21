@@ -49,7 +49,8 @@
         </span><a id='src-486' class='srclink' href='../../../src/rl_sys/history/vars.rs.html#301-315' title='goto source code'>[src]</a></span></h1>
 <pre class='rust fn'>pub fn remove_search_delimiter_char(c: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.char.html'>char</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../../rl_sys/struct.HistoryError.html' title='rl_sys::HistoryError'>HistoryError</a>&gt;</pre><div class='docblock'><p>Remove a character from the list of search delimiter characters.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>history</span>::<span class='ident'>vars</span>;
 
 <span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>vars</span>::<span class='ident'>add_search_delimiter_char</span>(<span class='string'>&#39;:&#39;</span>).<span class='ident'>is_ok</span>());
@@ -97,7 +98,7 @@
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

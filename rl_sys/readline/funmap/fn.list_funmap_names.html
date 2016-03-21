@@ -49,7 +49,8 @@
         </span><a id='src-885' class='srclink' href='../../../src/rl_sys/readline/funmap.rs.html#215-217' title='goto source code'>[src]</a></span></h1>
 <pre class='rust fn'>pub fn list_funmap_names()</pre><div class='docblock'><p>Print the names of all bindable Readline functions to <code>rl_outstream</code>.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>readline</span>::{<span class='ident'>funmap</span>, <span class='ident'>util</span>};
 
 <span class='ident'>util</span>::<span class='ident'>init</span>();
@@ -98,7 +99,7 @@
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

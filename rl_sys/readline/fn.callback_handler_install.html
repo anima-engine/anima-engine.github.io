@@ -47,7 +47,7 @@
                 [<span class='inner'>&#x2212;</span>]
             </a>
         </span><a id='src-1815' class='srclink' href='../../src/rl_sys/readline/mod.rs.html#378-384' title='goto source code'>[src]</a></span></h1>
-<pre class='rust fn'>pub fn callback_handler_install(p: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, lhandler: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rl_sys/readline/type.HandlerFunction.html' title='rl_sys::readline::HandlerFunction'>HandlerFunction</a>&gt;</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rl_sys/struct.ReadlineError.html' title='rl_sys::ReadlineError'>ReadlineError</a>&gt;</pre><div class='docblock'><p><a href="https://goo.gl/gg9u4P">2.4.12 Alternate Interface</a></p>
+<pre class='rust fn'>pub fn callback_handler_install(p: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, lhandler: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../rl_sys/readline/type.HandlerFunction.html' title='rl_sys::readline::HandlerFunction'>HandlerFunction</a>&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../rl_sys/struct.ReadlineError.html' title='rl_sys::ReadlineError'>ReadlineError</a>&gt;</pre><div class='docblock'><p><a href="https://goo.gl/gg9u4P">2.4.12 Alternate Interface</a></p>
 
 <p>An alternate interface is available to plain <code>readline()</code>`. Some applications need to interleave
 keyboard I/O with file, device, or window system I/O, typically by using a main loop to select()
@@ -100,7 +100,7 @@ been entered. The handler function receives the text of the line as an argument.
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

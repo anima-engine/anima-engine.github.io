@@ -57,7 +57,6 @@
                              <p>Clear the history list by deleting all of the entries, in the same manner as the History
 library&#39;s <code>clear_history()</code> function. This differs from <code>clear_history</code> because it frees
 private data Readline saves in the history list.</p>
-
                         </td>
                     </tr>
                 
@@ -70,7 +69,6 @@ for the current terminal name and uses those capabilities to move around the scr
 perform other terminal-specific operations, like erasing a line. Readline does not use all of a
 terminal&#39;s capabilities, and this function will return values for only those capabilities
 Readline uses.</p>
-
                         </td>
                     </tr>
                 
@@ -81,7 +79,6 @@ Readline uses.</p>
                              <p>Print the key sequences bound to macros and their values, using the current keymap, to
 <code>rl_outstream</code>. If <code>readable</code> is true, the list is formatted in such a way that it can be made
 part of an inputrc file and re-read.</p>
-
                         </td>
                     </tr>
                 
@@ -91,7 +88,6 @@ part of an inputrc file and re-read.</p>
                         <td class='docblock short'>
                              <p>Set the time interval (in microseconds) that Readline waits when showing a balancing character
 when <code>blink-matching-paren</code> has been enabled.</p>
-
                         </td>
                     </tr>
                 
@@ -102,7 +98,6 @@ when <code>blink-matching-paren</code> has been enabled.</p>
                              <p>Make the Readline variable <code>name</code> have <code>value</code>. This behaves as if the readline command
 <code>set variable value</code> had been executed in an inputrc file (see section
 <a href="https://goo.gl/Ivqovs">1.3.1 Readline Init File Syntax</a>).</p>
-
                         </td>
                     </tr>
                 
@@ -113,7 +108,6 @@ when <code>blink-matching-paren</code> has been enabled.</p>
                              <p>Print the readline variable names and their current values to <code>rl_outstream</code>. If readable is
 true, the list is formatted in such a way that it can be made part of an inputrc file and
 re-read.</p>
-
                         </td>
                     </tr>
                 
@@ -123,7 +117,6 @@ re-read.</p>
                         <td class='docblock short'>
                              <p>Return a string representing the value of the Readline variable <code>name</code>. For boolean variables,
 this string is either <code>on&#39; or</code>off&#39;.</p>
-
                         </td>
                     </tr>
                 </table></section>
@@ -169,7 +162,7 @@ this string is either <code>on&#39; or</code>off&#39;.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

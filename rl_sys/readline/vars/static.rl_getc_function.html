@@ -47,7 +47,7 @@
                 [<span class='inner'>&#x2212;</span>]
             </a>
         </span><a id='src-1619' class='srclink' href='../../../src/rl_sys/readline/vars.rs.html#153' title='goto source code'>[src]</a></span></h1>
-<pre class='rust static'>pub static rl_getc_function: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='type' href='../../../rl_sys/readline/type.GetcFunction.html' title='rl_sys::readline::GetcFunction'>GetcFunction</a></a></pre><div class='docblock'><p>If non-zero, Readline will call indirectly through this pointer to get a character from the
+<pre class='rust static'>pub static rl_getc_function: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../rl_sys/readline/type.GetcFunction.html' title='rl_sys::readline::GetcFunction'>GetcFunction</a></pre><div class='docblock'><p>If non-zero, Readline will call indirectly through this pointer to get a character from the
 input stream. By default, it is set to <code>rl_getc</code>, the default Readline character input
 function (see section <a href="https://goo.gl/olQQLc">2.4.8 Character Input</a>). In general, an application that sets
 <code>rl_getc_function</code> should consider setting <code>rl_input_available_hook</code> as well.</p>
@@ -94,7 +94,7 @@ function (see section <a href="https://goo.gl/olQQLc">2.4.8 Character Input</a>)
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

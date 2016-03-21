@@ -59,7 +59,6 @@ and tell Readline which keymap to use.</p>
                                title='rl_sys::readline::keymap::copy'>copy</a></td>
                         <td class='docblock short'>
                              <p>Return a new keymap which is a copy of map.</p>
-
                         </td>
                     </tr>
                 
@@ -69,7 +68,6 @@ and tell Readline which keymap to use.</p>
                         <td class='docblock short'>
                              <p>Returns a new, empty keymap. The space for the keymap is allocated with <code>malloc()</code>; the caller
 should free it by calling <code>rl_free_keymap()</code> when done.</p>
-
                         </td>
                     </tr>
                 
@@ -78,7 +76,6 @@ should free it by calling <code>rl_free_keymap()</code> when done.</p>
                                title='rl_sys::readline::keymap::discard'>discard</a></td>
                         <td class='docblock short'>
                              <p>Free the storage associated with the data in keymap. The caller should free keymap.</p>
-
                         </td>
                     </tr>
                 
@@ -88,7 +85,6 @@ should free it by calling <code>rl_free_keymap()</code> when done.</p>
                         <td class='docblock short'>
                              <p>Free all storage associated with keymap. This calls <code>rl_discard_keymap</code> to free subordindate
 keymaps and macros.</p>
-
                         </td>
                     </tr>
                 
@@ -97,7 +93,6 @@ keymaps and macros.</p>
                                title='rl_sys::readline::keymap::get'>get</a></td>
                         <td class='docblock short'>
                              <p>Returns the currently active keymap.</p>
-
                         </td>
                     </tr>
                 
@@ -107,7 +102,6 @@ keymaps and macros.</p>
                         <td class='docblock short'>
                              <p>Return the keymap matching <code>name</code>. <code>name</code> is one which would be supplied in a set keymap inputrc
 line (see section <a href="https://goo.gl/VtaCdx">1.3 Readline Init File</a>).</p>
-
                         </td>
                     </tr>
                 
@@ -117,7 +111,6 @@ line (see section <a href="https://goo.gl/VtaCdx">1.3 Readline Init File</a>).</
                         <td class='docblock short'>
                              <p>Return the name matching <code>map</code>. <code>name</code> is one which would be supplied in a set keymap inputrc
 line (see section <a href="https://goo.gl/VtaCdx">1.3 Readline Init File</a>).</p>
-
                         </td>
                     </tr>
                 
@@ -128,7 +121,6 @@ line (see section <a href="https://goo.gl/VtaCdx">1.3 Readline Init File</a>).</
                              <p>Return a new keymap with the printing characters bound to <code>rl_insert</code>, the lowercase Meta
 characters bound to run their equivalents, and the Meta digits bound to produce numeric
 arguments.</p>
-
                         </td>
                     </tr>
                 
@@ -137,7 +129,6 @@ arguments.</p>
                                title='rl_sys::readline::keymap::set'>set</a></td>
                         <td class='docblock short'>
                              <p>Makes keymap the currently active keymap.</p>
-
                         </td>
                     </tr>
                 </table></section>
@@ -183,7 +174,7 @@ arguments.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

@@ -47,7 +47,7 @@
                 [<span class='inner'>&#x2212;</span>]
             </a>
         </span><a id='src-1595' class='srclink' href='../../../src/rl_sys/readline/vars.rs.html#73' title='goto source code'>[src]</a></span></h1>
-<pre class='rust static'>pub static mut rl_line_buffer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='type' href='../../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></a></pre><div class='docblock'><p>This is the line gathered so far. You are welcome to modify the contents of the line, but
+<pre class='rust static'>pub static mut rl_line_buffer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></pre><div class='docblock'><p>This is the line gathered so far. You are welcome to modify the contents of the line, but
 see <a href="https://goo.gl/oYj9bq">2.4.5 Allowing Undoing</a>. The function <code>rl_extend_line_buffer</code>
 is available to increase the memory allocated to <code>rl_line_buffer</code>.</p>
 </div></section>
@@ -93,7 +93,7 @@ is available to increase the memory allocated to <code>rl_line_buffer</code>.</p
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

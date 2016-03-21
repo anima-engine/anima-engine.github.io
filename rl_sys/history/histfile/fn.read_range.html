@@ -52,7 +52,8 @@
 then read until the end of the file. If filename is None, then read from <code>~/.history</code>. Returns 0
 if successful, or <code>HistoryError</code> with errno information if not.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>history</span>::{<span class='ident'>listmgmt</span>, <span class='ident'>histfile</span>};
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>env</span>;
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>fs</span>;
@@ -108,7 +109,7 @@ if successful, or <code>HistoryError</code> with errno information if not.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

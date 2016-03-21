@@ -55,7 +55,6 @@
                                title='rl_sys::readline::util::alphabetic'>alphabetic</a></td>
                         <td class='docblock short'>
                              <p>Return 1 if <code>c</code> is an alphabetic character.</p>
-
                         </td>
                     </tr>
                 
@@ -64,7 +63,6 @@
                                title='rl_sys::readline::util::ding'>ding</a></td>
                         <td class='docblock short'>
                              <p>Ring the terminal bell, obeying the setting of <code>bell-style</code>.</p>
-
                         </td>
                     </tr>
                 
@@ -80,7 +78,6 @@ matches are displayed (see section <a href="https://goo.gl/Ivqovs">1.3.1 Readlin
 completions, this function sets the number of columns used for display to the value of
 <code>completion-display-width</code>, the value of the environment variable COLUMNS, or the screen width,
 in that order.</p>
-
                         </td>
                     </tr>
                 
@@ -90,7 +87,6 @@ in that order.</p>
                         <td class='docblock short'>
                              <p>Ensure that <code>rl_line_buffer</code> has enough space to hold len characters, possibly reallocating it
 if necessary.</p>
-
                         </td>
                     </tr>
                 
@@ -99,7 +95,6 @@ if necessary.</p>
                                title='rl_sys::readline::util::free'>free</a></td>
                         <td class='docblock short'>
                              <p>Deallocate the memory pointed to by <code>ptr</code>. <code>ptr</code> must have been allocated by malloc.</p>
-
                         </td>
                     </tr>
                 
@@ -110,7 +105,6 @@ if necessary.</p>
                              <p>Initialize or re-initialize Readline&#39;s internal state. It&#39;s not strictly necessary to call this;
 <code>readline()</code> calls it before reading any input. Note that this will only call <code>initialize</code> once
 after first use.</p>
-
                         </td>
                     </tr>
                 
@@ -120,7 +114,6 @@ after first use.</p>
                         <td class='docblock short'>
                              <p>Replace the contents of <code>rl_line_buffer</code> with text. The point and mark are preserved, if
 possible. If <code>clear_undo</code> is true, the undo list associated with the current line is cleared.</p>
-
                         </td>
                     </tr>
                 
@@ -131,7 +124,6 @@ possible. If <code>clear_undo</code> is true, the undo list associated with the 
                              <p>Restore Readline&#39;s internal state to that stored in <code>state</code>, which must have been saved by a
 call to <code>save_state</code>. The contents of the <code>readline_state</code> structure are documented in
 &#39;readline.h&#39;. The caller is responsible for freeing the structure.</p>
-
                         </td>
                     </tr>
                 
@@ -142,7 +134,6 @@ call to <code>save_state</code>. The contents of the <code>readline_state</code>
                              <p>Save a snapshot of Readline&#39;s internal state to <code>state</code>. The contents of the <code>readline_state</code>
 structure are documented in &#39;readline.h&#39;. The caller is responsible for allocating the
 structure.</p>
-
                         </td>
                     </tr>
                 </table></section>
@@ -188,7 +179,7 @@ structure.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

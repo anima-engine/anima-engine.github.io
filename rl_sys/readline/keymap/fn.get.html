@@ -49,7 +49,8 @@
         </span><a id='src-928' class='srclink' href='../../../src/rl_sys/readline/keymap.rs.html#139-149' title='goto source code'>[src]</a></span></h1>
 <pre class='rust fn'>pub fn get() -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='type' href='../../../rl_sys/readline/type.Keymap.html' title='rl_sys::readline::Keymap'>Keymap</a>, <a class='struct' href='../../../rl_sys/struct.ReadlineError.html' title='rl_sys::ReadlineError'>ReadlineError</a>&gt;</pre><div class='docblock'><p>Returns the currently active keymap.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>readline</span>::<span class='ident'>keymap</span>;
 
 <span class='kw'>let</span> <span class='ident'>keymap</span> <span class='op'>=</span> <span class='ident'>keymap</span>::<span class='ident'>get</span>().<span class='ident'>unwrap</span>();
@@ -97,7 +98,7 @@
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

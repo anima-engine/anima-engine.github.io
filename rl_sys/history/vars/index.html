@@ -57,7 +57,6 @@
                                title='rl_sys::history::vars::history_base'>history_base</a></td>
                         <td class='docblock short'>
                              <p>The logical offset of the first entry in the history list.</p>
-
                         </td>
                     </tr>
                 
@@ -66,7 +65,6 @@
                                title='rl_sys::history::vars::history_length'>history_length</a></td>
                         <td class='docblock short'>
                              <p>The number of entries currently stored in the history list.</p>
-
                         </td>
                     </tr>
                 
@@ -75,7 +73,6 @@
                                title='rl_sys::history::vars::history_max_entries'>history_max_entries</a></td>
                         <td class='docblock short'>
                              <p>The maximum number of history entries. This must be changed using <code>stifle_history()</code>.</p>
-
                         </td>
                     </tr>
                 </table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
@@ -85,7 +82,6 @@
                                title='rl_sys::history::vars::add_no_expand_char'>add_no_expand_char</a></td>
                         <td class='docblock short'>
                              <p>Add a character to the list of no expand characters.</p>
-
                         </td>
                     </tr>
                 
@@ -94,7 +90,6 @@
                                title='rl_sys::history::vars::add_search_delimiter_char'>add_search_delimiter_char</a></td>
                         <td class='docblock short'>
                              <p>Add a character to the list of search delimiter characters.</p>
-
                         </td>
                     </tr>
                 
@@ -103,7 +98,6 @@
                                title='rl_sys::history::vars::add_word_delimiter'>add_word_delimiter</a></td>
                         <td class='docblock short'>
                              <p>Add a character from the list of word delimiter characters.</p>
-
                         </td>
                     </tr>
                 
@@ -112,7 +106,6 @@
                                title='rl_sys::history::vars::get_comment_char'>get_comment_char</a></td>
                         <td class='docblock short'>
                              <p>Get the current value of the <code>history_comment_char</code> variable.</p>
-
                         </td>
                     </tr>
                 
@@ -121,7 +114,6 @@
                                title='rl_sys::history::vars::get_expansion_char'>get_expansion_char</a></td>
                         <td class='docblock short'>
                              <p>Get the current value of the <code>history_expansion_char</code> variable.</p>
-
                         </td>
                     </tr>
                 
@@ -130,7 +122,6 @@
                                title='rl_sys::history::vars::get_inhibit_expansion_function'>get_inhibit_expansion_function</a></td>
                         <td class='docblock short'>
                              <p>Get the value of the inhibit expansion function.  This will be None if it is not set.</p>
-
                         </td>
                     </tr>
                 
@@ -140,7 +131,6 @@
                         <td class='docblock short'>
                              <p>The list of characters which inhibit history expansion if found immediately following
 <code>history_expansion_char</code>. The default is space, tab, newline, carriage return, and `=&#39;.</p>
-
                         </td>
                     </tr>
                 
@@ -149,7 +139,6 @@
                                title='rl_sys::history::vars::get_quotes_inhibit_expansion'>get_quotes_inhibit_expansion</a></td>
                         <td class='docblock short'>
                              <p>Get the current value of the <code>history_quotes_inhibit_expansion</code> variable.</p>
-
                         </td>
                     </tr>
                 
@@ -160,7 +149,6 @@
                              <p>Get the list of search delimiter characters. The list of additional characters which can delimit
 a history search string, in addition to space, TAB, &#39;:&#39; and &#39;?&#39; in the case of a substring
 search. The default is empty.</p>
-
                         </td>
                     </tr>
                 
@@ -169,7 +157,6 @@ search. The default is empty.</p>
                                title='rl_sys::history::vars::get_subst_char'>get_subst_char</a></td>
                         <td class='docblock short'>
                              <p>Get the current value of the <code>history_subst_char</code> variable.</p>
-
                         </td>
                     </tr>
                 
@@ -179,7 +166,6 @@ search. The default is empty.</p>
                         <td class='docblock short'>
                              <p>Get the list of word delimiter characters. The characters that separate tokens for
 <code>history_tokenize()</code>. The default value is <code>&quot; \t\n;&amp;()&lt;&gt;&quot;</code>.</p>
-
                         </td>
                     </tr>
                 
@@ -188,7 +174,6 @@ search. The default is empty.</p>
                                title='rl_sys::history::vars::get_write_timestamps'>get_write_timestamps</a></td>
                         <td class='docblock short'>
                              <p>Get the current value of the <code>history_write_timestamps</code> variable.</p>
-
                         </td>
                     </tr>
                 
@@ -197,7 +182,6 @@ search. The default is empty.</p>
                                title='rl_sys::history::vars::remove_no_expand_char'>remove_no_expand_char</a></td>
                         <td class='docblock short'>
                              <p>Remove a character from the list of no expand characters.</p>
-
                         </td>
                     </tr>
                 
@@ -206,7 +190,6 @@ search. The default is empty.</p>
                                title='rl_sys::history::vars::remove_search_delimiter_char'>remove_search_delimiter_char</a></td>
                         <td class='docblock short'>
                              <p>Remove a character from the list of search delimiter characters.</p>
-
                         </td>
                     </tr>
                 
@@ -215,7 +198,6 @@ search. The default is empty.</p>
                                title='rl_sys::history::vars::remove_word_delimiter'>remove_word_delimiter</a></td>
                         <td class='docblock short'>
                              <p>Remove a character from the list of word delimiter characters.</p>
-
                         </td>
                     </tr>
                 
@@ -226,7 +208,6 @@ search. The default is empty.</p>
                              <p>During tokenization, if this character is seen as the first character of a word, then it
 and all subsequent characters up to a newline are ignored, suppressing history expansion for
 the remainder of the line. This is disabled by default.</p>
-
                         </td>
                     </tr>
                 
@@ -236,7 +217,6 @@ the remainder of the line. This is disabled by default.</p>
                         <td class='docblock short'>
                              <p>The character that introduces a history event. The default is `!&#39;. Setting this to 0
 inhibits history expansion.</p>
-
                         </td>
                     </tr>
                 
@@ -250,7 +230,6 @@ and the second is an int index into that string. It should return a non-zero val
 history expansion starting at string[i] should not be performed; zero if the expansion should
 be done. It is intended for use by applications like Bash that use the history expansion
 character for additional purposes. By default, this variable is set to NULL.</p>
-
                         </td>
                     </tr>
                 
@@ -259,7 +238,6 @@ character for additional purposes. By default, this variable is set to NULL.</p>
                                title='rl_sys::history::vars::set_no_expand_chars'>set_no_expand_chars</a></td>
                         <td class='docblock short'>
                              <p>Set the list of no expand characters.  Note, this will replace any existing list.</p>
-
                         </td>
                     </tr>
                 
@@ -269,7 +247,6 @@ character for additional purposes. By default, this variable is set to NULL.</p>
                         <td class='docblock short'>
                              <p>If non-zero, single-quoted words are not scanned for the history expansion character. The
 default value is 0.</p>
-
                         </td>
                     </tr>
                 
@@ -278,7 +255,6 @@ default value is 0.</p>
                                title='rl_sys::history::vars::set_search_delimiter_chars'>set_search_delimiter_chars</a></td>
                         <td class='docblock short'>
                              <p>Set the list of search delimiter characters.  Note, this will replace any existing list.</p>
-
                         </td>
                     </tr>
                 
@@ -288,7 +264,6 @@ default value is 0.</p>
                         <td class='docblock short'>
                              <p>The character that invokes word substitution if found at the start of a line. The default
 is `<sup>&#39;.</sup></p>
-
                         </td>
                     </tr>
                 
@@ -297,7 +272,6 @@ is `<sup>&#39;.</sup></p>
                                title='rl_sys::history::vars::set_word_delimiters'>set_word_delimiters</a></td>
                         <td class='docblock short'>
                              <p>Set the list of word delimiter characters.  Note, this will replace any existing list.</p>
-
                         </td>
                     </tr>
                 
@@ -307,7 +281,6 @@ is `<sup>&#39;.</sup></p>
                         <td class='docblock short'>
                              <p>If non-zero, timestamps are written to the history file, so they can be preserved between
 sessions. The default value is 0, meaning that timestamps are not saved.</p>
-
                         </td>
                     </tr>
                 </table></section>
@@ -353,7 +326,7 @@ sessions. The default value is 0, meaning that timestamps are not saved.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

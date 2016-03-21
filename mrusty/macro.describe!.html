@@ -46,22 +46,23 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-875' class='srclink' href='../src/mrusty/spec.rs.html#56-87' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-897' class='srclink' href='../src/mrusty/src/spec.rs.html#56-87' title='goto source code'>[src]</a></span></h1>
 <pre class='rust macro'>
 <span class='macro'>macro_rules</span><span class='macro'>!</span> <span class='ident'>describe</span> {
     ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span>:<span class='ident'>ident</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>spec</span>:<span class='ident'>expr</span> ) <span class='op'>=&gt;</span> { ... };
     ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span>:<span class='ident'>ident</span>, ( $( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>ts</span>:<span class='ident'>ident</span> ),<span class='op'>+</span> ), <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>spec</span>:<span class='ident'>expr</span> ) <span class='op'>=&gt;</span> { ... };
 }</pre>
-<div class='docblock'><p>A <code>macro</code> useful to run mruby specs. You can pass a tuple of <code>MRubyFile</code>s dependencies
+<div class='docblock'><p>A <code>macro</code> useful to run mruby specs. You can pass a tuple of <code>MrubyFile</code>s dependencies
 as a second argument.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>mrusty</span>::<span class='op'>*</span>;
 
 <span class='kw'>struct</span> <span class='ident'>Cont</span>;
 
-<span class='kw'>impl</span> <span class='ident'>MRubyFile</span> <span class='kw'>for</span> <span class='ident'>Cont</span> {
-    <span class='kw'>fn</span> <span class='ident'>require</span>(<span class='ident'>mruby</span>: <span class='ident'>MRubyType</span>) {
+<span class='kw'>impl</span> <span class='ident'>MrubyFile</span> <span class='kw'>for</span> <span class='ident'>Cont</span> {
+    <span class='kw'>fn</span> <span class='ident'>require</span>(<span class='ident'>mruby</span>: <span class='ident'>MrubyType</span>) {
         <span class='ident'>mruby</span>.<span class='ident'>def_class</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;Container&quot;</span>);
     }
 }
@@ -125,7 +126,7 @@ as a second argument.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

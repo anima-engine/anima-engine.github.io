@@ -52,7 +52,8 @@ kind of data is pointed to by data; this can be a function (IsFunc), a macro (Is
 keymap (IsKmap). This makes new keymaps as necessary. The initial keymap in which to do bindings
 is <code>map</code>.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span>;
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>readline</span>::{<span class='ident'>binding</span>, <span class='ident'>keymap</span>, <span class='ident'>util</span>};
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>readline</span>::<span class='ident'>binding</span>::<span class='ident'>BindType</span>;
@@ -131,7 +132,7 @@ is <code>map</code>.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

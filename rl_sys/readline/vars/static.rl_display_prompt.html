@@ -47,7 +47,7 @@
                 [<span class='inner'>&#x2212;</span>]
             </a>
         </span><a id='src-1605' class='srclink' href='../../../src/rl_sys/readline/vars.rs.html#106' title='goto source code'>[src]</a></span></h1>
-<pre class='rust static'>pub static rl_display_prompt: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const <a class='type' href='../../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></a></pre><div class='docblock'><p>The string displayed as the prompt. This is usually identical to <code>rl_prompt</code>, but may be
+<pre class='rust static'>pub static rl_display_prompt: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../../libc/unix/bsd/type.c_char.html' title='libc::unix::bsd::c_char'>c_char</a></pre><div class='docblock'><p>The string displayed as the prompt. This is usually identical to <code>rl_prompt</code>, but may be
 changed temporarily by functions that use the prompt string as a message area, such as
 incremental search.</p>
 </div></section>
@@ -93,7 +93,7 @@ incremental search.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

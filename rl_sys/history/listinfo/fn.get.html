@@ -50,7 +50,8 @@
 <pre class='rust fn'>pub fn get&lt;'a&gt;(offset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;&amp;'a mut <a class='struct' href='../../../rl_sys/history/struct.HistoryEntry.html' title='rl_sys::history::HistoryEntry'>HistoryEntry</a>, <a class='struct' href='../../../rl_sys/struct.HistoryError.html' title='rl_sys::HistoryError'>HistoryError</a>&gt;</pre><div class='docblock'><p>Return the history entry at position offset, starting from <code>history_base</code>. If there is no entry
 there, or if offset is greater than the history length, return a HistoryError.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>history</span>::{<span class='ident'>listinfo</span>, <span class='ident'>listmgmt</span>, <span class='ident'>vars</span>};
 
 <span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>listmgmt</span>::<span class='ident'>add</span>(<span class='string'>&quot;test&quot;</span>).<span class='ident'>is_ok</span>());
@@ -99,7 +100,7 @@ there, or if offset is greater than the history length, return a HistoryError.</
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

@@ -59,7 +59,6 @@ when you want to use the history functions in your program.</p>
                         <td class='docblock short'>
                              <p>Cleanup the history state.  This should be called on program exit or after you are completely
 finished using the History API.</p>
-
                         </td>
                     </tr>
                 
@@ -68,7 +67,6 @@ finished using the History API.</p>
                                title='rl_sys::history::mgmt::get_state'>get_state</a></td>
                         <td class='docblock short'>
                              <p>Return a structure describing the current state of the input history.</p>
-
                         </td>
                     </tr>
                 
@@ -78,7 +76,6 @@ finished using the History API.</p>
                         <td class='docblock short'>
                              <p>Begin a session in which the history functions might be used. This initializes the interactive
 variables.  Note that this will only call <code>using_history</code> once after first use.</p>
-
                         </td>
                     </tr>
                 
@@ -87,7 +84,6 @@ variables.  Note that this will only call <code>using_history</code> once after 
                                title='rl_sys::history::mgmt::set_state'>set_state</a></td>
                         <td class='docblock short'>
                              <p>Set the state of the history list according to state.</p>
-
                         </td>
                     </tr>
                 </table></section>
@@ -133,7 +129,7 @@ variables.  Note that this will only call <code>using_history</code> once after 
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

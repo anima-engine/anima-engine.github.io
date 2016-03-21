@@ -60,7 +60,6 @@ function.</p>
                         <td class='docblock short'>
                              <p>Add <code>name</code> to the list of bindable Readline command names, and make function <code>f</code> the function to
 be called when <code>name</code> is invoked.</p>
-
                         </td>
                     </tr>
                 
@@ -71,7 +70,6 @@ be called when <code>name</code> is invoked.</p>
                              <p>Print the readline function names and the key sequences currently bound to them to
 <code>rl_outstream</code>. If <code>readable</code> is true, the list is formatted in such a way that it can be made
 part of an <code>inputrc</code> file and re-read.</p>
-
                         </td>
                     </tr>
                 
@@ -82,7 +80,6 @@ part of an <code>inputrc</code> file and re-read.</p>
                              <p>Return the function invoked by <code>keyseq</code> in keymap <code>map</code>. If <code>map</code> is None, the current keymap is
 used. If <code>add_type</code> is true, the type of the object is returned (one of IsFunc, IsKmap, or
 IsMacr).</p>
-
                         </td>
                     </tr>
                 
@@ -92,7 +89,6 @@ IsMacr).</p>
                         <td class='docblock short'>
                              <p>Return an array of strings representing the key sequences used to invoke function in the current
 keymap.</p>
-
                         </td>
                     </tr>
                 
@@ -102,7 +98,6 @@ keymap.</p>
                         <td class='docblock short'>
                              <p>Return an array of strings representing the key sequences used to invoke function in the current
 keymap.</p>
-
                         </td>
                     </tr>
                 
@@ -111,7 +106,6 @@ keymap.</p>
                                title='rl_sys::readline::funmap::list_funmap_names'>list_funmap_names</a></td>
                         <td class='docblock short'>
                              <p>Print the names of all bindable Readline functions to <code>rl_outstream</code>.</p>
-
                         </td>
                     </tr>
                 
@@ -120,7 +114,6 @@ keymap.</p>
                                title='rl_sys::readline::funmap::named_function'>named_function</a></td>
                         <td class='docblock short'>
                              <p>Return the function with name <code>name</code>.</p>
-
                         </td>
                     </tr>
                 </table></section>
@@ -166,7 +159,7 @@ keymap.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

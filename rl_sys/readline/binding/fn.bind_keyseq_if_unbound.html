@@ -47,10 +47,11 @@
                 [<span class='inner'>&#x2212;</span>]
             </a>
         </span><a id='src-741' class='srclink' href='../../../src/rl_sys/readline/binding.rs.html#530-536' title='goto source code'>[src]</a></span></h1>
-<pre class='rust fn'>pub fn bind_keyseq_if_unbound(keyseq: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, f: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../../rl_sys/readline/type.CommandFunction.html' title='rl_sys::readline::CommandFunction'>CommandFunction</a>&gt;</a>) -&gt; <a class='type' href='../../../rl_sys/readline/binding/type.BindResult.html' title='rl_sys::readline::binding::BindResult'>BindResult</a></pre><div class='docblock'><p>Binds <code>keyseq</code> to function <code>f</code> if it is not already bound in the currently active keymap.
+<pre class='rust fn'>pub fn bind_keyseq_if_unbound(keyseq: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, f: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='type' href='../../../rl_sys/readline/type.CommandFunction.html' title='rl_sys::readline::CommandFunction'>CommandFunction</a>&gt;) -&gt; <a class='type' href='../../../rl_sys/readline/binding/type.BindResult.html' title='rl_sys::readline::binding::BindResult'>BindResult</a></pre><div class='docblock'><p>Binds <code>keyseq</code> to function <code>f</code> if it is not already bound in the currently active keymap.
 Returns non-zero in the case of an invalid <code>keyseq</code> or if <code>keyseq</code> is already bound.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span>;
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>readline</span>::{<span class='ident'>binding</span>, <span class='ident'>util</span>};
 
@@ -112,7 +113,7 @@ Returns non-zero in the case of an invalid <code>keyseq</code> or if <code>keyse
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

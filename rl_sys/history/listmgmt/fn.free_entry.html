@@ -47,11 +47,12 @@
                 [<span class='inner'>&#x2212;</span>]
             </a>
         </span><a id='src-305' class='srclink' href='../../../src/rl_sys/history/listmgmt.rs.html#119-130' title='goto source code'>[src]</a></span></h1>
-<pre class='rust fn'>pub fn free_entry(entry: &amp;mut <a class='struct' href='../../../rl_sys/history/struct.HistoryEntry.html' title='rl_sys::history::HistoryEntry'>HistoryEntry</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut <a class='enum' href='../../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></a>&gt;</pre><div class='docblock'><p>Free the history entry and any history library private data associated with it. If there is
+<pre class='rust fn'>pub fn free_entry(entry: &amp;mut <a class='struct' href='../../../rl_sys/history/struct.HistoryEntry.html' title='rl_sys::history::HistoryEntry'>HistoryEntry</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>&gt;</pre><div class='docblock'><p>Free the history entry and any history library private data associated with it. If there is
 application-specific data, an Err is returned with a pointer to the data so the caller can
 dispose of it</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>history</span>::<span class='ident'>listmgmt</span>;
 
 <span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>listmgmt</span>::<span class='ident'>add</span>(<span class='string'>&quot;ls -al&quot;</span>).<span class='ident'>is_ok</span>());
@@ -100,7 +101,7 @@ dispose of it</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

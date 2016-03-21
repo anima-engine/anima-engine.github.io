@@ -50,7 +50,8 @@
 <pre class='rust fn'>pub fn remove&lt;'a&gt;(offset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>) -&gt; &amp;'a mut <a class='struct' href='../../../rl_sys/history/struct.HistoryEntry.html' title='rl_sys::history::HistoryEntry'>HistoryEntry</a></pre><div class='docblock'><p>Remove history entry at the given offset from the history. The removed element is returned so
 you can free the line, data, and containing structure.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>history</span>::<span class='ident'>listmgmt</span>;
 
 <span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>listmgmt</span>::<span class='ident'>add</span>(<span class='string'>&quot;ls -al&quot;</span>).<span class='ident'>is_ok</span>());
@@ -98,7 +99,7 @@ you can free the line, data, and containing structure.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

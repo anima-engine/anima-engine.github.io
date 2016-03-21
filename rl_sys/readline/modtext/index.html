@@ -55,7 +55,6 @@
                                title='rl_sys::readline::modtext::copy_text'>copy_text</a></td>
                         <td class='docblock short'>
                              <p>Return a copy of the text between <code>start</code> and <code>end</code> in the current line.</p>
-
                         </td>
                     </tr>
                 
@@ -65,7 +64,6 @@
                         <td class='docblock short'>
                              <p>Delete the text between <code>start</code> and <code>end</code> in the current line. Returns the number of characters
 deleted.</p>
-
                         </td>
                     </tr>
                 
@@ -75,7 +73,6 @@ deleted.</p>
                         <td class='docblock short'>
                              <p>Insert text into the line at the current cursor position. Returns the number of characters
 inserted.</p>
-
                         </td>
                     </tr>
                 
@@ -87,7 +84,6 @@ inserted.</p>
 prepending to the last kill if the last command was a kill command. The text is deleted. If
 start is less than end, the text is appended, otherwise prepended. If the last command was not
 a kill, a new kill ring slot is used.</p>
-
                         </td>
                     </tr>
                 
@@ -97,7 +93,6 @@ a kill, a new kill ring slot is used.</p>
                         <td class='docblock short'>
                              <p>Cause macro <code>m</code> to be inserted into the line, as if it had been invoked by a key bound to a
 macro. Not especially useful; use <code>rl_insert_text()</code> instead.</p>
-
                         </td>
                     </tr>
                 </table></section>
@@ -143,7 +138,7 @@ macro. Not especially useful; use <code>rl_insert_text()</code> instead.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

@@ -52,7 +52,8 @@ for input before calling any function assigned to <code>rl_event_hook</code>. <c
 equal to zero (a zero-length timeout is equivalent to a poll). The default waiting period is
 one-tenth of a second. Returns the old timeout value.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>readline</span>::<span class='ident'>charin</span>;
 
 <span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>charin</span>::<span class='ident'>set_keyboard_input_timeout</span>(<span class='number'>500000</span>).<span class='ident'>is_ok</span>());</pre>
@@ -99,7 +100,7 @@ one-tenth of a second. Returns the old timeout value.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

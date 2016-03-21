@@ -51,7 +51,8 @@
 call to <code>save_state</code>. The contents of the <code>readline_state</code> structure are documented in
 &#39;readline.h&#39;. The caller is responsible for freeing the structure.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>readline</span>::{<span class='ident'>ReadlineState</span>, <span class='ident'>redisplay</span>, <span class='ident'>util</span>};
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>default</span>::<span class='ident'>Default</span>;
 
@@ -109,7 +110,7 @@ call to <code>save_state</code>. The contents of the <code>readline_state</code>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

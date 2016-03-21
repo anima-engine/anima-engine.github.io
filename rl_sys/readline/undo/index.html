@@ -74,7 +74,6 @@ text. That is, the undo code tells what to undo, not how to undo it. <strong>UND
                                title='rl_sys::readline::undo::UndoType'>UndoType</a></td>
                         <td class='docblock short'>
                              <p>Undo Event Types</p>
-
                         </td>
                     </tr>
                 </table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
@@ -84,7 +83,6 @@ text. That is, the undo code tells what to undo, not how to undo it. <strong>UND
                                title='rl_sys::readline::undo::add_undo'>add_undo</a></td>
                         <td class='docblock short'>
                              <p>Remember how to undo an event (according to <code>what</code>).</p>
-
                         </td>
                     </tr>
                 
@@ -95,7 +93,6 @@ text. That is, the undo code tells what to undo, not how to undo it. <strong>UND
                              <p>Begins saving undo information in a group construct. The undo information usually comes from
 calls to <code>rl_insert_text()</code> and <code>rl_delete_text()</code>, but could be the result of calls to
 <code>rl_add_undo()</code>.</p>
-
                         </td>
                     </tr>
                 
@@ -105,7 +102,6 @@ calls to <code>rl_insert_text()</code> and <code>rl_delete_text()</code>, but co
                         <td class='docblock short'>
                              <p>Undo the first thing on the undo list. Returns an Err if there was nothing to undo, Ok if
 something was undone. Note that this depends on history being initialized and used.</p>
-
                         </td>
                     </tr>
                 
@@ -115,7 +111,6 @@ something was undone. Note that this depends on history being initialized and us
                         <td class='docblock short'>
                              <p>Closes the current undo group started with <code>rl_begin_undo_group()</code>. There should be one call to
 <code>rl_end_undo_group()</code> for each call to <code>rl_begin_undo_group()</code>.</p>
-
                         </td>
                     </tr>
                 
@@ -124,7 +119,6 @@ something was undone. Note that this depends on history being initialized and us
                                title='rl_sys::readline::undo::free_undo_list'>free_undo_list</a></td>
                         <td class='docblock short'>
                              <p>Free the existing undo list.  Note that this depends on history being initialized and used.</p>
-
                         </td>
                     </tr>
                 
@@ -134,7 +128,6 @@ something was undone. Note that this depends on history being initialized and us
                         <td class='docblock short'>
                              <p>Tell Readline to save the text between <code>start</code> and <code>end</code> as a single undo unit. It is assumed
 that you will subsequently modify that text.</p>
-
                         </td>
                     </tr>
                 </table></section>
@@ -180,7 +173,7 @@ that you will subsequently modify that text.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

@@ -52,7 +52,8 @@
 <p>If readline encounters an <code>EOF</code> while reading the line, and the line is empty at that point,
 then <code>Ok(None)</code> is returned. Otherwise, the line is ended just as if a newline has been typed.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>readline</span>;
 
 <span class='kw'>loop</span> {
@@ -108,7 +109,7 @@ then <code>Ok(None)</code> is returned. Otherwise, the line is ended just as if 
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

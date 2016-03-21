@@ -52,7 +52,8 @@ after the event specifier. At function entry, <code>*idx</code> points to the in
 history event specification begins. <code>add_delim</code> is a character that is allowed to end the event
 specification in addition to the &quot;normal&quot; terminating characters.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>history</span>::{<span class='ident'>listmgmt</span>, <span class='ident'>expand</span>};
 
 <span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>listmgmt</span>::<span class='ident'>add</span>(<span class='string'>&quot;ls -al&quot;</span>).<span class='ident'>is_ok</span>());
@@ -103,7 +104,7 @@ specification in addition to the &quot;normal&quot; terminating characters.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

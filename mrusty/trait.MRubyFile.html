@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="API documentation for the Rust `MRubyFile` trait in crate `mrusty`.">
-    <meta name="keywords" content="rust, rustlang, rust-lang, MRubyFile">
+    <meta name="description" content="API documentation for the Rust `MrubyFile` trait in crate `mrusty`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, MrubyFile">
 
-    <title>mrusty::MRubyFile - Rust</title>
+    <title>mrusty::MrubyFile - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
@@ -27,7 +27,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'><a href='index.html'>mrusty</a></p><script>window.sidebarCurrent = {name: 'MRubyFile', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'><a href='index.html'>mrusty</a></p><script>window.sidebarCurrent = {name: 'MrubyFile', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -42,37 +42,38 @@
     </nav>
 
     <section id='main' class="content trait">
-<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>mrusty</a>::<wbr><a class='trait' href=''>MRubyFile</a></span><span class='out-of-band'><span id='render-detail'>
+<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>mrusty</a>::<wbr><a class='trait' href=''>MrubyFile</a></span><span class='out-of-band'><span id='render-detail'>
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-122' class='srclink' href='../src/mrusty/mruby.rs.html#591-593' title='goto source code'>[src]</a></span></h1>
-<pre class='rust trait'>pub trait MRubyFile {
-    fn <a href='#tymethod.require' class='fnname'>require</a>(mruby: <a class='type' href='../mrusty/type.MRubyType.html' title='mrusty::MRubyType'>MRubyType</a>);
+        </span><a id='src-126' class='srclink' href='../src/mrusty/src/mruby.rs.html#274-276' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait MrubyFile {
+    fn <a href='#tymethod.require' class='fnname'>require</a>(mruby: <a class='type' href='../mrusty/type.MrubyType.html' title='mrusty::MrubyType'>MrubyType</a>);
 }</pre><div class='docblock'><p>A <code>trait</code> useful for organising Rust types into dynamic mruby files.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>struct</span> <span class='ident'>Cont</span> {
     <span class='ident'>value</span>: <span class='ident'>i32</span>
 }
 
-<span class='kw'>impl</span> <span class='ident'>MRubyFile</span> <span class='kw'>for</span> <span class='ident'>Cont</span> {
-    <span class='kw'>fn</span> <span class='ident'>require</span>(<span class='ident'>mruby</span>: <span class='ident'>MRubyType</span>) {
+<span class='kw'>impl</span> <span class='ident'>MrubyFile</span> <span class='kw'>for</span> <span class='ident'>Cont</span> {
+    <span class='kw'>fn</span> <span class='ident'>require</span>(<span class='ident'>mruby</span>: <span class='ident'>MrubyType</span>) {
         <span class='ident'>mruby</span>.<span class='ident'>def_class</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;Container&quot;</span>);
     }
 }
 
-<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>MRuby</span>::<span class='ident'>new</span>();
+<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>Mruby</span>::<span class='ident'>new</span>();
 
 <span class='ident'>mruby</span>.<span class='ident'>def_file</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;cont&quot;</span>);</pre>
 </div>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.require' class='method stab '><code>fn <a href='#tymethod.require' class='fnname'>require</a>(mruby: <a class='type' href='../mrusty/type.MRubyType.html' title='mrusty::MRubyType'>MRubyType</a>)</code></h3></div>
+        <h3 id='tymethod.require' class='method stab '><code>fn <a href='#tymethod.require' class='fnname'>require</a>(mruby: <a class='type' href='../mrusty/type.MrubyType.html' title='mrusty::MrubyType'>MrubyType</a>)</code></h3></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
     </ul><script type="text/javascript" async
-                              src="../implementors/mrusty/trait.MRubyFile.js">
+                              src="../implementors/mrusty/trait.MrubyFile.js">
                       </script></section>
     <section id='search' class="content hidden"></section>
 
@@ -116,7 +117,7 @@
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

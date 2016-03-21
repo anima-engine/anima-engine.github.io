@@ -57,7 +57,6 @@
                              <p>Unset <code>rl_pending_input</code>, effectively negating the effect of any previous call to
 <code>rl_execute_next()</code>. This works only if the pending input has not already been read with
 <code>rl_read_key()</code>.</p>
-
                         </td>
                     </tr>
                 
@@ -66,7 +65,6 @@
                                title='rl_sys::readline::charin::execute_next'>execute_next</a></td>
                         <td class='docblock short'>
                              <p>Make <code>c</code> be the next command to be executed when <code>rl_read_key()</code><code>is called. This sets</code>rl_pending_input`.</p>
-
                         </td>
                     </tr>
                 
@@ -75,7 +73,6 @@
                                title='rl_sys::readline::charin::getc'>getc</a></td>
                         <td class='docblock short'>
                              <p>Return the next character available from <code>stream</code>, which is assumed to be the keyboard.</p>
-
                         </td>
                     </tr>
                 
@@ -87,7 +84,6 @@
 inserted into the input stream via <code>rl_pending_input</code> (see section <a href="https://goo.gl/E1D6om">2.3 Readline Variables</a>) and
 <code>rl_stuff_char()</code>, macros, and characters read from the keyboard. While waiting for input, this
 function will call any function assigned to the <code>rl_event_hook</code> variable.</p>
-
                         </td>
                     </tr>
                 
@@ -99,7 +95,6 @@ function will call any function assigned to the <code>rl_event_hook</code> varia
 for input before calling any function assigned to <code>rl_event_hook</code>. <code>us</code> must be greater than or
 equal to zero (a zero-length timeout is equivalent to a poll). The default waiting period is
 one-tenth of a second. Returns the old timeout value.</p>
-
                         </td>
                     </tr>
                 
@@ -110,7 +105,6 @@ one-tenth of a second. Returns the old timeout value.</p>
                              <p>Insert <code>c</code> into the Readline input stream. It will be &quot;read&quot; before Readline attempts to read
 characters from the terminal with <code>rl_read_key()</code>. Up to 512 characters may be pushed back.
 <code>rl_stuff_char</code> returns 1 if the character was successfully inserted; 0 otherwise.</p>
-
                         </td>
                     </tr>
                 </table></section>
@@ -156,7 +150,7 @@ characters from the terminal with <code>rl_read_key()</code>. Up to 512 characte
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

@@ -50,7 +50,8 @@
 <pre class='rust fn'>pub fn set_pos(offset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></pre><div class='docblock'><p>Set the current history offset, an absolute index into the list. Returns true on success, false
 if the offset is less than zero or greater than the number of history entries.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>history</span>::{<span class='ident'>listmgmt</span>, <span class='ident'>move_</span>};
 
 <span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>listmgmt</span>::<span class='ident'>add</span>(<span class='string'>&quot;ls -al&quot;</span>).<span class='ident'>is_ok</span>());
@@ -100,7 +101,7 @@ if the offset is less than zero or greater than the number of history entries.</
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

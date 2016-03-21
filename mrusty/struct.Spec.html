@@ -46,7 +46,7 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-804' class='srclink' href='../src/mrusty/spec.rs.html#138-142' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-824' class='srclink' href='../src/mrusty/src/spec.rs.html#138-142' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct Spec {
     // some fields omitted
 }</pre><div class='docblock'><p>A <code>struct</code> useful for mruby spec definition and running.</p>
@@ -66,16 +66,17 @@
 <li><code>be_within(value).of</code> - test value</li>
 </ul>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>struct</span> <span class='ident'>Cont</span>;
 
-<span class='kw'>impl</span> <span class='ident'>MRubyFile</span> <span class='kw'>for</span> <span class='ident'>Cont</span> {
-    <span class='kw'>fn</span> <span class='ident'>require</span>(<span class='ident'>mruby</span>: <span class='ident'>MRubyType</span>) {
+<span class='kw'>impl</span> <span class='ident'>MrubyFile</span> <span class='kw'>for</span> <span class='ident'>Cont</span> {
+    <span class='kw'>fn</span> <span class='ident'>require</span>(<span class='ident'>mruby</span>: <span class='ident'>MrubyType</span>) {
         <span class='ident'>mruby</span>.<span class='ident'>def_class</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;Container&quot;</span>);
     }
 }
 
-<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>MRuby</span>::<span class='ident'>new</span>();
+<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>Mruby</span>::<span class='ident'>new</span>();
 <span class='ident'>Cont</span>::<span class='ident'>require</span>(<span class='ident'>mruby</span>.<span class='ident'>clone</span>());
 
 <span class='kw'>let</span> <span class='ident'>spec</span> <span class='op'>=</span> <span class='ident'>Spec</span>::<span class='ident'>new</span>(<span class='ident'>mruby</span>, <span class='string'>&quot;Container&quot;</span>, <span class='string'>&quot;
@@ -96,19 +97,20 @@
 &quot;</span>);
 
 <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>spec</span>.<span class='ident'>run</span>(), <span class='boolval'>true</span>);</pre>
-</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../mrusty/struct.Spec.html' title='mrusty::Spec'>Spec</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(mruby: <a class='type' href='../mrusty/type.MRubyType.html' title='mrusty::MRubyType'>MRubyType</a>, name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, script: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='struct' href='../mrusty/struct.Spec.html' title='mrusty::Spec'>Spec</a></code></h4>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../mrusty/struct.Spec.html' title='mrusty::Spec'>Spec</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(mruby: <a class='type' href='../mrusty/type.MrubyType.html' title='mrusty::MrubyType'>MrubyType</a>, name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, script: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='struct' href='../mrusty/struct.Spec.html' title='mrusty::Spec'>Spec</a></code></h4>
 <div class='docblock'><p>Creates an mruby spec runner.</p>
 
-<h1 id='examples-1' class='section-header'><a href='#examples-1'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples-1' class='section-header'><a href='#examples-1'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>struct</span> <span class='ident'>Cont</span>;
 
-<span class='kw'>impl</span> <span class='ident'>MRubyFile</span> <span class='kw'>for</span> <span class='ident'>Cont</span> {
-    <span class='kw'>fn</span> <span class='ident'>require</span>(<span class='ident'>mruby</span>: <span class='ident'>MRubyType</span>) {
+<span class='kw'>impl</span> <span class='ident'>MrubyFile</span> <span class='kw'>for</span> <span class='ident'>Cont</span> {
+    <span class='kw'>fn</span> <span class='ident'>require</span>(<span class='ident'>mruby</span>: <span class='ident'>MrubyType</span>) {
         <span class='ident'>mruby</span>.<span class='ident'>def_class</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;Container&quot;</span>);
     }
 }
 
-<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>MRuby</span>::<span class='ident'>new</span>();
+<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>Mruby</span>::<span class='ident'>new</span>();
 <span class='ident'>Cont</span>::<span class='ident'>require</span>(<span class='ident'>mruby</span>.<span class='ident'>clone</span>());
 
 <span class='kw'>let</span> <span class='ident'>spec</span> <span class='op'>=</span> <span class='ident'>Spec</span>::<span class='ident'>new</span>(<span class='ident'>mruby</span>, <span class='string'>&quot;Container&quot;</span>, <span class='string'>&quot;
@@ -130,16 +132,17 @@
 </div><h4 id='method.run' class='method'><code>fn <a href='#method.run' class='fnname'>run</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
 <div class='docblock'><p>Runs mruby specs.</p>
 
-<h1 id='examples-2' class='section-header'><a href='#examples-2'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples-2' class='section-header'><a href='#examples-2'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>struct</span> <span class='ident'>Cont</span>;
 
-<span class='kw'>impl</span> <span class='ident'>MRubyFile</span> <span class='kw'>for</span> <span class='ident'>Cont</span> {
-    <span class='kw'>fn</span> <span class='ident'>require</span>(<span class='ident'>mruby</span>: <span class='ident'>MRubyType</span>) {
+<span class='kw'>impl</span> <span class='ident'>MrubyFile</span> <span class='kw'>for</span> <span class='ident'>Cont</span> {
+    <span class='kw'>fn</span> <span class='ident'>require</span>(<span class='ident'>mruby</span>: <span class='ident'>MrubyType</span>) {
         <span class='ident'>mruby</span>.<span class='ident'>def_class</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;Container&quot;</span>);
     }
 }
 
-<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>MRuby</span>::<span class='ident'>new</span>();
+<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>Mruby</span>::<span class='ident'>new</span>();
 <span class='ident'>Cont</span>::<span class='ident'>require</span>(<span class='ident'>mruby</span>.<span class='ident'>clone</span>());
 
 <span class='kw'>let</span> <span class='ident'>spec</span> <span class='op'>=</span> <span class='ident'>Spec</span>::<span class='ident'>new</span>(<span class='ident'>mruby</span>, <span class='string'>&quot;Container&quot;</span>, <span class='string'>&quot;
@@ -203,7 +206,7 @@
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

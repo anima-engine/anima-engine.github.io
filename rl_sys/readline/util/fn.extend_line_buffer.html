@@ -50,7 +50,8 @@
 <pre class='rust fn'>pub fn extend_line_buffer(len: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>)</pre><div class='docblock'><p>Ensure that <code>rl_line_buffer</code> has enough space to hold len characters, possibly reallocating it
 if necessary.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>readline</span>::<span class='ident'>util</span>;
 
 <span class='ident'>util</span>::<span class='ident'>init</span>();
@@ -99,7 +100,7 @@ if necessary.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

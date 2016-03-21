@@ -56,7 +56,6 @@
                         <td class='docblock short'>
                              <p>Clear the message in the echo area. If the prompt was saved with a call to <code>rl_save_prompt</code>
 before the last call to <code>rl_message</code>, call <code>rl_restore_prompt</code> before calling this function.</p>
-
                         </td>
                     </tr>
                 
@@ -65,7 +64,6 @@ before the last call to <code>rl_message</code>, call <code>rl_restore_prompt</c
                                title='rl_sys::readline::redisplay::crlf'>crlf</a></td>
                         <td class='docblock short'>
                              <p>Move the cursor to the start of the next screen line.</p>
-
                         </td>
                     </tr>
                 
@@ -81,7 +79,6 @@ prompt. Applications may indicate that the prompt contains characters that take 
 screen space when displayed by bracketing a sequence of such characters with the special markers
 <strong>RL_PROMPT_START_IGNORE</strong> and <strong>RL_PROMPT_END_IGNORE</strong> (declared in `readline.h&#39;. This may be
 used to embed terminal-specific escape sequences in prompts.</p>
-
                         </td>
                     </tr>
                 
@@ -91,7 +88,6 @@ used to embed terminal-specific escape sequences in prompts.</p>
                         <td class='docblock short'>
                              <p>Force the line to be updated and redisplayed, whether or not Readline thinks the screen display
 is correct.</p>
-
                         </td>
                     </tr>
                 
@@ -102,7 +98,6 @@ is correct.</p>
                              <p>The arguments are a format string as would be supplied to printf, possibly containing conversion
 specifications such as <code>%d&#39;, and any additional arguments necessary to satisfy the conversion specifications. The resulting string is displayed in the echo area. The echo area is also used to display numeric arguments and search strings. You should call</code>rl_save_prompt` to save the
 prompt information before calling this function.</p>
-
                         </td>
                     </tr>
                 
@@ -112,7 +107,6 @@ prompt information before calling this function.</p>
                         <td class='docblock short'>
                              <p>Tell the update functions that we have moved onto a new (empty) line, usually after outputting a
 newline.</p>
-
                         </td>
                     </tr>
                 
@@ -124,7 +118,6 @@ newline.</p>
 displayed. This could be used by applications that want to output the prompt string themselves,
 but still need Readline to know the prompt string length for redisplay. It should be used after
 setting <code>rl_already_prompted</code>.</p>
-
                         </td>
                     </tr>
                 
@@ -133,7 +126,6 @@ setting <code>rl_already_prompted</code>.</p>
                                title='rl_sys::readline::redisplay::redisplay'>redisplay</a></td>
                         <td class='docblock short'>
                              <p>Change what&#39;s displayed on the screen to reflect the current contents of <code>rl_line_buffer</code>.</p>
-
                         </td>
                     </tr>
                 
@@ -142,7 +134,6 @@ setting <code>rl_already_prompted</code>.</p>
                                title='rl_sys::readline::redisplay::reset_line_state'>reset_line_state</a></td>
                         <td class='docblock short'>
                              <p>Reset the display state to a clean state and redisplay the current line starting on a new line.</p>
-
                         </td>
                     </tr>
                 
@@ -154,7 +145,6 @@ setting <code>rl_already_prompted</code>.</p>
 <code>rl_save_prompt</code>.  If <code>rl_save_prompt</code> was called to save the prompt before a call to
 <code>rl_message</code>, this function should be called before the corresponding call to
 <code>rl_clear_message</code>.</p>
-
                         </td>
                     </tr>
                 
@@ -164,7 +154,6 @@ setting <code>rl_already_prompted</code>.</p>
                         <td class='docblock short'>
                              <p>Save the local Readline prompt display state in preparation for displaying a new message in the
 message area with <code>rl_message()</code>.</p>
-
                         </td>
                     </tr>
                 
@@ -173,7 +162,6 @@ message area with <code>rl_message()</code>.</p>
                                title='rl_sys::readline::redisplay::set_prompt'>set_prompt</a></td>
                         <td class='docblock short'>
                              <p>Make Readline use prompt for subsequent redisplay. This calls <code>rl_expand_prompt()</code><code>to expand the prompt and sets</code>rl_prompt` to the result.</p>
-
                         </td>
                     </tr>
                 
@@ -184,7 +172,6 @@ message area with <code>rl_message()</code>.</p>
                              <p>Display character <code>c</code> on <code>rl_outstream</code>. If Readline has not been set to display meta characters
 directly, this will convert meta characters to a meta-prefixed key sequence. This is intended
 for use by applications which wish to do their own redisplay.</p>
-
                         </td>
                     </tr>
                 </table></section>
@@ -230,7 +217,7 @@ for use by applications which wish to do their own redisplay.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

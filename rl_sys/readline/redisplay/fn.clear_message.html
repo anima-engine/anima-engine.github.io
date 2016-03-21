@@ -50,7 +50,8 @@
 <pre class='rust fn'>pub fn clear_message() -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='struct' href='../../../rl_sys/struct.ReadlineError.html' title='rl_sys::ReadlineError'>ReadlineError</a>&gt;</pre><div class='docblock'><p>Clear the message in the echo area. If the prompt was saved with a call to <code>rl_save_prompt</code>
 before the last call to <code>rl_message</code>, call <code>rl_restore_prompt</code> before calling this function.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>readline</span>::{<span class='ident'>redisplay</span>, <span class='ident'>util</span>};
 
 <span class='ident'>util</span>::<span class='ident'>init</span>();
@@ -102,7 +103,7 @@ before the last call to <code>rl_message</code>, call <code>rl_restore_prompt</c
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

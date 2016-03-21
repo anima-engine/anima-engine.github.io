@@ -49,7 +49,8 @@
         </span><a id='src-323' class='srclink' href='../../../src/rl_sys/history/listmgmt.rs.html#228-231' title='goto source code'>[src]</a></span></h1>
 <pre class='rust fn'>pub fn is_stifled() -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></pre><div class='docblock'><p>Returns true if the history is stifled, false if it is not.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>history</span>::<span class='ident'>listmgmt</span>;
 
 <span class='macro'>assert</span><span class='macro'>!</span>(<span class='op'>!</span><span class='ident'>listmgmt</span>::<span class='ident'>is_stifled</span>());
@@ -98,7 +99,7 @@
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

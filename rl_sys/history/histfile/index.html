@@ -60,7 +60,6 @@ functions for managing a history file.</p>
                              <p>Append the last <code>n</code> elements of the history list to <code>filename</code>. If <code>filename</code> is None, then
 append to <code>~/.history</code>. Returns 0 on success, or <code>HistoryError</code> with <code>errno</code> information on a
 write error.</p>
-
                         </td>
                     </tr>
                 
@@ -71,7 +70,6 @@ write error.</p>
                              <p>Add the contents of filename at path to the history list, a line at a time. If the path is
 <code>None</code>, then read from <code>~/.history</code>. Returns 0 if successful, or <code>HistoryError</code> with errno
 information if not.</p>
-
                         </td>
                     </tr>
                 
@@ -83,7 +81,6 @@ information if not.</p>
 <code>from</code> and end at <code>to</code>. If <code>from</code> is zero, start at the beginning. If <code>to</code> is less than <code>from</code>,
 then read until the end of the file. If filename is None, then read from <code>~/.history</code>. Returns 0
 if successful, or <code>HistoryError</code> with errno information if not.</p>
-
                         </td>
                     </tr>
                 
@@ -94,7 +91,6 @@ if successful, or <code>HistoryError</code> with errno information if not.</p>
                              <p>Truncate the history file <code>filename</code>, leaving only the last <code>n</code> lines. If <code>filename</code> is None,
 then <code>~/.history&#39; is truncated. Returns 0 on success, or</code>HistoryError<code>with</code>errno` information
 on a write error.</p>
-
                         </td>
                     </tr>
                 
@@ -105,7 +101,6 @@ on a write error.</p>
                              <p>Write the current history to <code>filename</code>, overwriting <code>filename</code> if necessary. If <code>filename</code> is
 None, then write the history list to <code>~/.history</code>. Returns 0 on success, or <code>HistoryError</code> with
 <code>errno</code> information on a read or write error.</p>
-
                         </td>
                     </tr>
                 </table></section>
@@ -151,7 +146,7 @@ None, then write the history list to <code>~/.history</code>. Returns 0 on succe
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

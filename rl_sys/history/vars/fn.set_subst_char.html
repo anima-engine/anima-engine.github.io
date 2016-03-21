@@ -50,7 +50,8 @@
 <pre class='rust fn'>pub fn set_subst_char(c: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.char.html'>char</a>)</pre><div class='docblock'><p>The character that invokes word substitution if found at the start of a line. The default
 is `<sup>&#39;.</sup></p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>history</span>::<span class='ident'>vars</span>;
 
 <span class='ident'>vars</span>::<span class='ident'>set_subst_char</span>(<span class='string'>&#39;:&#39;</span>);</pre>
@@ -97,7 +98,7 @@ is `<sup>&#39;.</sup></p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

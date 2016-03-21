@@ -50,7 +50,8 @@
 <pre class='rust fn'>pub fn add_func(name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, key: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.char.html'>char</a>, f: <a class='type' href='../../../rl_sys/readline/type.CommandFunction.html' title='rl_sys::readline::CommandFunction'>CommandFunction</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='struct' href='../../../rl_sys/struct.ReadlineError.html' title='rl_sys::ReadlineError'>ReadlineError</a>&gt;</pre><div class='docblock'><p>Add <code>name</code> to the list of named functions. Make <code>f</code> be the function that gets called. If <code>key</code>
 is not -1, then bind it to function using <code>rl_bind_key()</code>.</p>
 
-<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>libc</span>::<span class='ident'>c_int</span>;
 <span class='kw'>use</span> <span class='ident'>rl_sys</span>::<span class='ident'>readline</span>::{<span class='ident'>naming</span>, <span class='ident'>util</span>};
 
@@ -107,7 +108,7 @@ is not -1, then bind it to function using <code>rl_bind_key()</code>.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>

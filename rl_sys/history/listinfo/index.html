@@ -58,7 +58,6 @@
                         <td class='docblock short'>
                              <p>Return the history entry at the current position, as determined by <code>where_history()</code>`. If there
 is no entry there, return a HistoryError.</p>
-
                         </td>
                     </tr>
                 
@@ -68,7 +67,6 @@ is no entry there, return a HistoryError.</p>
                         <td class='docblock short'>
                              <p>Return the history entry at position offset, starting from <code>history_base</code>. If there is no entry
 there, or if offset is greater than the history length, return a HistoryError.</p>
-
                         </td>
                     </tr>
                 
@@ -77,7 +75,6 @@ there, or if offset is greater than the history length, return a HistoryError.</
                                title='rl_sys::history::listinfo::get_time'>get_time</a></td>
                         <td class='docblock short'>
                              <p>Return the time stamp associated with the history entry entry.</p>
-
                         </td>
                     </tr>
                 
@@ -87,7 +84,6 @@ there, or if offset is greater than the history length, return a HistoryError.</
                         <td class='docblock short'>
                              <p>Return a Vec<HistoryEntry> which is the current input history. Element 0 of this list is the
 beginning of time. If there is no history, return an empty vector.</p>
-
                         </td>
                     </tr>
                 
@@ -96,7 +92,6 @@ beginning of time. If there is no history, return an empty vector.</p>
                                title='rl_sys::history::listinfo::offset'>offset</a></td>
                         <td class='docblock short'>
                              <p>Returns the offset of the current history element.</p>
-
                         </td>
                     </tr>
                 
@@ -106,7 +101,6 @@ beginning of time. If there is no history, return an empty vector.</p>
                         <td class='docblock short'>
                              <p>Return the number of bytes that the primary history entries are using. This function returns the
 sum of the lengths of all the lines in the history.</p>
-
                         </td>
                     </tr>
                 </table></section>
@@ -152,7 +146,7 @@ sum of the lengths of all the lines in the history.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>
