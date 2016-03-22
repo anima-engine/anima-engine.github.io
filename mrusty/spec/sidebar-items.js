@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Spec","A `struct` useful for mruby spec definition and running."]]});
