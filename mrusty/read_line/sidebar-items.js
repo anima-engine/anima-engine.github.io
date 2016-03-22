@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["GnuReadLine","A `struct` that implements `ReadLine` with very basic gnureadline functionality. Requires `gnu-readline` build feature."]],"trait":[["ReadLine","A `trait` which performs very basic readline utility."]]});

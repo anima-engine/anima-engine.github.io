@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["Repl","A `struct` that exposes an `Mruby` to a REPL."]]});
