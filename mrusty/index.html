@@ -46,30 +46,18 @@
             <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                 [<span class='inner'>&#x2212;</span>]
             </a>
-        </span><a id='src-0' class='srclink' href='../src/mrusty/src/lib.rs.html#17-72' title='goto source code'>[src]</a></span></h1>
+        </span><a id='src-0' class='srclink' href='../src/mrusty/src/lib.rs.html#17-58' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'>
 <h1 id='mrusty-mruby-safe-bindings-for-rust' class='section-header'><a href='#mrusty-mruby-safe-bindings-for-rust'>mrusty. mruby safe bindings for Rust</a></h1>
-<h2 id='requirements' class='section-header'><a href='#requirements'>Requirements</a></h2>
-<ul>
-<li><a href="https://github.com/mruby/mruby">mruby</a></li>
-</ul>
-
-<p>mrusty requires mruby compiled with <code>fPIC</code>. To compile and install mruby 1.2.0:</p>
+<p>mrusty lets you:</p>
 
 <ul>
-<li>make sure you have <a href="https://www.gnu.org/software/bison/">Bison</a>
-&amp; <a href="https://www.ruby-lang.org/">Ruby</a> installed</li>
-<li>download the <a href="https://github.com/mruby/mruby/archive/1.2.0.zip">source</a></li>
-<li>unzip and <code>cd</code> to <code>mruby-1.2.0/</code></li>
-<li>add the following lines to <code>build_config.rb</code> as in the <code># C compiler settings</code>
-example (make sure you add it after the comment):
-<code>ruby conf.cc do |cc| cc.flags &lt;&lt; &#39;-fPIC&#39; end</code></li>
-<li>run <code>./minirake</code></li>
-<li>copy header files from <code>include</code> to <code>/usr/loca/include</code></li>
-<li>copy <code>build/host/lib/libmruby.a</code> to <code>/usr/local/lib</code></li>
+<li>run Ruby 1.9 files with a very restricted API (without having to install Ruby)</li>
+<li>reflect Rust <code>struct</code>s and <code>enum</code>s in mruby and run them</li>
 </ul>
 
-<p><em>Note:</em> On OSX you can install it from homebrew with <code>brew install mruby</code>.</p>
+<p>It does all this in a safely neat way while also bringing spec testing and a
+REPL to the table.</p>
 </div><h2 id='macros' class='section-header'><a href="#macros">Macros</a></h2>
 <table>
                     <tr class=' module-item'>
