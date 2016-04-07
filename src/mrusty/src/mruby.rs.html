@@ -1590,6 +1590,11 @@
 <span id="1547">1547</span>
 <span id="1548">1548</span>
 <span id="1549">1549</span>
+<span id="1550">1550</span>
+<span id="1551">1551</span>
+<span id="1552">1552</span>
+<span id="1553">1553</span>
+<span id="1554">1554</span>
 </pre><pre class='rust '>
 <span class='comment'>// mrusty. mruby safe bindings for Rust</span>
 <span class='comment'>// Copyright (C) 2016  Dragoș Tiselice</span>
@@ -1796,10 +1801,15 @@
 <span class='doccomment'>/// An `enum` containing all possbile types of errors.</span>
 <span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>MrubyError</span> {
+    <span class='doccomment'>/// type cast error</span>
     <span class='ident'>Cast</span>(<span class='ident'>String</span>),
+    <span class='doccomment'>/// undefined type error</span>
     <span class='ident'>Undef</span>,
+    <span class='doccomment'>/// mruby runtime error</span>
     <span class='ident'>Runtime</span>(<span class='ident'>String</span>),
+    <span class='doccomment'>/// unrecognized file type error</span>
     <span class='ident'>Filetype</span>,
+    <span class='doccomment'>/// Rust Io error</span>
     <span class='ident'>Io</span>(<span class='ident'>io</span>::<span class='ident'>Error</span>)
 }
 
