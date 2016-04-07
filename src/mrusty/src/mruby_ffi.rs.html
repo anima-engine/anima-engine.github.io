@@ -464,7 +464,7 @@
         <span class='kw'>match</span> <span class='self'>self</span>.<span class='ident'>typ</span> {
             <span class='ident'>MrType</span>::<span class='ident'>MRB_TT_FALSE</span> <span class='op'>=&gt;</span> <span class='prelude-val'>Ok</span>(<span class='boolval'>false</span>),
             <span class='ident'>MrType</span>::<span class='ident'>MRB_TT_TRUE</span>  <span class='op'>=&gt;</span> <span class='prelude-val'>Ok</span>(<span class='boolval'>true</span>),
-            _ <span class='op'>=&gt;</span> <span class='prelude-val'>Err</span>(<span class='ident'>MrubyError</span>::<span class='ident'>Cast</span>(<span class='string'>&quot;TrueClass or FalseClass&quot;</span>))
+            _ <span class='op'>=&gt;</span> <span class='prelude-val'>Err</span>(<span class='ident'>MrubyError</span>::<span class='ident'>Cast</span>(<span class='string'>&quot;TrueClass or FalseClass&quot;</span>.<span class='ident'>to_owned</span>()))
         }
     }
 
@@ -474,7 +474,7 @@
             <span class='ident'>MrType</span>::<span class='ident'>MRB_TT_FIXNUM</span> <span class='op'>=&gt;</span> {
                 <span class='prelude-val'>Ok</span>(<span class='ident'>mrb_ext_fixnum_to_cint</span>(<span class='op'>*</span><span class='self'>self</span>))
             },
-            _ <span class='op'>=&gt;</span> <span class='prelude-val'>Err</span>(<span class='ident'>MrubyError</span>::<span class='ident'>Cast</span>(<span class='string'>&quot;Fixnum&quot;</span>))
+            _ <span class='op'>=&gt;</span> <span class='prelude-val'>Err</span>(<span class='ident'>MrubyError</span>::<span class='ident'>Cast</span>(<span class='string'>&quot;Fixnum&quot;</span>.<span class='ident'>to_owned</span>()))
         }
     }
 
@@ -484,7 +484,7 @@
             <span class='ident'>MrType</span>::<span class='ident'>MRB_TT_FLOAT</span> <span class='op'>=&gt;</span> {
                 <span class='prelude-val'>Ok</span>(<span class='ident'>mrb_ext_float_to_cdouble</span>(<span class='op'>*</span><span class='self'>self</span>))
             },
-            _ <span class='op'>=&gt;</span> <span class='prelude-val'>Err</span>(<span class='ident'>MrubyError</span>::<span class='ident'>Cast</span>(<span class='string'>&quot;Float&quot;</span>))
+            _ <span class='op'>=&gt;</span> <span class='prelude-val'>Err</span>(<span class='ident'>MrubyError</span>::<span class='ident'>Cast</span>(<span class='string'>&quot;Float&quot;</span>.<span class='ident'>to_owned</span>()))
         }
     }
 
@@ -501,7 +501,7 @@
 
                 <span class='prelude-val'>Ok</span>(<span class='ident'>CStr</span>::<span class='ident'>from_ptr</span>(<span class='ident'>s</span>).<span class='ident'>to_str</span>().<span class='ident'>unwrap</span>().<span class='ident'>clone</span>())
             },
-            _ <span class='op'>=&gt;</span> <span class='prelude-val'>Err</span>(<span class='ident'>MrubyError</span>::<span class='ident'>Cast</span>(<span class='string'>&quot;String&quot;</span>))
+            _ <span class='op'>=&gt;</span> <span class='prelude-val'>Err</span>(<span class='ident'>MrubyError</span>::<span class='ident'>Cast</span>(<span class='string'>&quot;String&quot;</span>.<span class='ident'>to_owned</span>()))
         }
     }
 
@@ -519,7 +519,7 @@
 
                 <span class='ident'>result</span>
             },
-            _ <span class='op'>=&gt;</span> <span class='prelude-val'>Err</span>(<span class='ident'>MrubyError</span>::<span class='ident'>Cast</span>(<span class='string'>&quot;Data(Rust Rc)&quot;</span>))
+            _ <span class='op'>=&gt;</span> <span class='prelude-val'>Err</span>(<span class='ident'>MrubyError</span>::<span class='ident'>Cast</span>(<span class='string'>&quot;Data(Rust Rc)&quot;</span>.<span class='ident'>to_owned</span>()))
         }
     }
 
@@ -536,7 +536,7 @@
 
                 <span class='prelude-val'>Ok</span>(<span class='ident'>vec</span>)
             },
-            _ <span class='op'>=&gt;</span> <span class='prelude-val'>Err</span>(<span class='ident'>MrubyError</span>::<span class='ident'>Cast</span>(<span class='string'>&quot;Array&quot;</span>))
+            _ <span class='op'>=&gt;</span> <span class='prelude-val'>Err</span>(<span class='ident'>MrubyError</span>::<span class='ident'>Cast</span>(<span class='string'>&quot;Array&quot;</span>.<span class='ident'>to_owned</span>()))
         }
     }
 }
