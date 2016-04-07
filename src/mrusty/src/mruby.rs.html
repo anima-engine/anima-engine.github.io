@@ -1593,8 +1593,6 @@
 <span id="1550">1550</span>
 <span id="1551">1551</span>
 <span id="1552">1552</span>
-<span id="1553">1553</span>
-<span id="1554">1554</span>
 </pre><pre class='rust '>
 <span class='comment'>// mrusty. mruby safe bindings for Rust</span>
 <span class='comment'>// Copyright (C) 2016  Dragoș Tiselice</span>
@@ -1757,9 +1755,7 @@
                                 } <span class='kw'>else</span> {
                                     <span class='ident'>mruby</span>.<span class='ident'>raise</span>(<span class='string'>&quot;RuntimeError&quot;</span>,
                                                 <span class='kw-2'>&amp;</span><span class='macro'>format</span><span class='macro'>!</span>(<span class='string'>&quot;cannot load {}.rb or {}.mrb&quot;</span>,
-                                                         <span class='ident'>name</span>, <span class='ident'>name</span>));
-
-                                    <span class='ident'>mruby</span>.<span class='ident'>nil</span>()
+                                                         <span class='ident'>name</span>, <span class='ident'>name</span>))
                                 }
                             }
                         }

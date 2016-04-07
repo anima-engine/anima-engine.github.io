@@ -184,6 +184,10 @@
 <span id="141">141</span>
 <span id="142">142</span>
 <span id="143">143</span>
+<span id="144">144</span>
+<span id="145">145</span>
+<span id="146">146</span>
+<span id="147">147</span>
 </pre><pre class='rust '>
 <span class='comment'>// mrusty. mruby safe bindings for Rust</span>
 <span class='comment'>// Copyright (C) 2016  Dragoș Tiselice</span>
@@ -210,11 +214,13 @@
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// # Examples</span>
 <span class='doccomment'>///</span>
+<span class='doccomment'>/// Using `GnuReadLine`, which requires the `gnu-readline` feature:</span>
+<span class='doccomment'>///</span>
 <span class='doccomment'>/// ```no-run</span>
 <span class='doccomment'>/// let mruby = Mruby::new();</span>
 <span class='doccomment'>/// let repl = Repl::new(mruby);</span>
 <span class='doccomment'>///</span>
-<span class='doccomment'>/// repl.start();</span>
+<span class='doccomment'>/// repl.start(&amp;GnuReadLine);</span>
 <span class='doccomment'>/// ```</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Repl</span> {
     <span class='ident'>mruby</span>: <span class='ident'>MrubyType</span>,
@@ -260,6 +266,8 @@
     <span class='doccomment'>/// Use `&#39;\&#39;` for multiline statements.</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// # Examples</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// Using `GnuReadLine`, which requires the `gnu-readline` feature:</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// ```no-run</span>
     <span class='doccomment'>/// let mruby = Mruby::new();</span>
