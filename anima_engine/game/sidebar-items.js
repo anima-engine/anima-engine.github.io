@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GameLoop","A `struct` that helps you create a very simple game loop."],["MrubyGame","A `struct` used to run games from mruby directly."]],"trait":[["Game","A `trait` runnable within a `GameLoop`. `dt` is the `Duration` since last frame. `update` should return the boolean value of whether the game should continue."]]});

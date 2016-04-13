@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Vector","A simple vector `struct` tailored specifically for graphics."]]});

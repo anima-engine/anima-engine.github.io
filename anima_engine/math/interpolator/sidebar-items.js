@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Behavior","An `enum` containing useful interpolation techniques."]],"struct":[["Interpolator","A `struct` useful to easily compute interpolation ratios."]]});

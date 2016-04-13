@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Matrix` struct in crate `anima_engine`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Matrix">
+
+    <title>anima_engine::math::Matrix - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>anima_engine</a>::<wbr><a href='index.html'>math</a></p><script>window.sidebarCurrent = {name: 'Matrix', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>anima_engine</a>::<wbr><a href='index.html'>math</a>::<wbr><a class='struct' href=''>Matrix</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-678' class='srclink' href='../../src/anima_engine/src/math/matrix.rs.html#37-40' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Matrix {
+    pub array: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 16]</a>,
+}</pre><div class='docblock'><p>A simple matrix <code>struct</code> tailored specifically for graphics.</p>
+
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>m</span> <span class='op'>=</span> <span class='ident'>Matrix</span>::<span class='ident'>ident</span>().<span class='ident'>scale</span>(<span class='ident'>Vector</span>::<span class='ident'>new_unf</span>(<span class='number'>2.0</span>)).<span class='ident'>trans</span>(<span class='ident'>Vector</span>::<span class='ident'>one</span>());
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>m</span>.<span class='ident'>array</span>[<span class='number'>0</span>], <span class='number'>2.0</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>m</span>.<span class='ident'>array</span>[<span class='number'>12</span>], <span class='number'>1.0</span>);
+
+<span class='kw'>let</span> <span class='ident'>inv</span> <span class='op'>=</span> <span class='ident'>m</span>.<span class='ident'>inv</span>();
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>m</span> <span class='op'>*</span> <span class='ident'>inv</span>, <span class='ident'>Matrix</span>::<span class='ident'>ident</span>());
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>inv</span> <span class='op'>*</span> <span class='ident'>m</span>, <span class='ident'>Matrix</span>::<span class='ident'>ident</span>());</pre>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.array'><code>array</code></td><td><div class='docblock'><p><code>[f32; 16]</code> containing values; columns incremented first</p>
+</div></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(array: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 16]</a>) -&gt; <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h4>
+<div class='docblock'><p>Creates a matrix using a length 16 array. (columns incremented first)</p>
+
+<h1 id='examples-1' class='section-header'><a href='#examples-1'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>m</span> <span class='op'>=</span> <span class='ident'>Matrix</span>::<span class='ident'>new</span>([<span class='number'>1.0</span>; <span class='number'>16</span>]);
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>m</span>, <span class='ident'>Matrix</span> { <span class='ident'>array</span>: [<span class='number'>1.0</span>; <span class='number'>16</span>] });</pre>
+</div><h4 id='method.ident' class='method'><code>fn <a href='#method.ident' class='fnname'>ident</a>() -&gt; <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h4>
+<div class='docblock'><p>Creates an identity (1.0 on primary diagonal) matrix.</p>
+
+<h1 id='examples-2' class='section-header'><a href='#examples-2'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>m</span> <span class='op'>=</span> <span class='ident'>Matrix</span>::<span class='ident'>new</span>([<span class='number'>2.0</span>; <span class='number'>16</span>]);
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>m</span> <span class='op'>*</span> <span class='ident'>Matrix</span>::<span class='ident'>ident</span>(), <span class='ident'>Matrix</span> { <span class='ident'>array</span>: [<span class='number'>2.0</span>; <span class='number'>16</span>] });</pre>
+</div><h4 id='method.trans' class='method'><code>fn <a href='#method.trans' class='fnname'>trans</a>(&amp;self, vector: <a class='struct' href='../../anima_engine/math/struct.Vector.html' title='anima_engine::math::Vector'>Vector</a>) -&gt; <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h4>
+<div class='docblock'><p>Translates a matrix according to the scale represented by a vector.
+The translation is applied to the left. (<code>t * m</code>)</p>
+
+<h1 id='examples-3' class='section-header'><a href='#examples-3'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>v</span> <span class='op'>=</span> <span class='ident'>Vector</span>::<span class='ident'>new_unf</span>(<span class='number'>1.0</span>);
+<span class='kw'>let</span> <span class='ident'>m</span> <span class='op'>=</span> <span class='ident'>Matrix</span>::<span class='ident'>ident</span>().<span class='ident'>trans</span>(<span class='ident'>Vector</span>::<span class='ident'>new</span>(<span class='number'>1.0</span>, <span class='number'>0.0</span>, <span class='number'>1.0</span>));
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>m</span> <span class='op'>*</span> <span class='ident'>v</span>, <span class='ident'>Vector</span> { <span class='ident'>x</span>: <span class='number'>2.0</span>, <span class='ident'>y</span>: <span class='number'>1.0</span>, <span class='ident'>z</span>: <span class='number'>2.0</span> });</pre>
+</div><h4 id='method.scale' class='method'><code>fn <a href='#method.scale' class='fnname'>scale</a>(&amp;self, vector: <a class='struct' href='../../anima_engine/math/struct.Vector.html' title='anima_engine::math::Vector'>Vector</a>) -&gt; <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h4>
+<div class='docblock'><p>Scales a matrix according to the scale represented by a vector.
+The scaling is applied to the left. (<code>s * m</code>)</p>
+
+<h1 id='examples-4' class='section-header'><a href='#examples-4'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>v</span> <span class='op'>=</span> <span class='ident'>Vector</span>::<span class='ident'>new_unf</span>(<span class='number'>2.0</span>);
+<span class='kw'>let</span> <span class='ident'>m</span> <span class='op'>=</span> <span class='ident'>Matrix</span>::<span class='ident'>ident</span>().<span class='ident'>scale</span>(<span class='ident'>Vector</span>::<span class='ident'>new</span>(<span class='number'>2.0</span>, <span class='number'>3.0</span>, <span class='number'>4.0</span>));
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>m</span> <span class='op'>*</span> <span class='ident'>v</span>, <span class='ident'>Vector</span> { <span class='ident'>x</span>: <span class='number'>4.0</span>, <span class='ident'>y</span>: <span class='number'>6.0</span>, <span class='ident'>z</span>: <span class='number'>8.0</span> });</pre>
+</div><h4 id='method.rot' class='method'><code>fn <a href='#method.rot' class='fnname'>rot</a>(self, quaternion: <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a>) -&gt; <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h4>
+<div class='docblock'><p>Rotates a matrix according to the rotation represented by a quaternion.
+The rotation is applied to the left. (<code>r * m</code>)</p>
+
+<h1 id='examples-5' class='section-header'><a href='#examples-5'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>q</span> <span class='op'>=</span> <span class='ident'>Quaternion</span>::<span class='ident'>new</span>(<span class='number'>0.0</span>, <span class='number'>1.0</span>, <span class='number'>0.0</span>, <span class='number'>0.0</span>);
+<span class='kw'>let</span> <span class='ident'>v</span> <span class='op'>=</span> <span class='ident'>Vector</span>::<span class='ident'>new</span>(<span class='number'>1.0</span>, <span class='number'>0.0</span>, <span class='number'>0.0</span>);
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>Matrix</span>::<span class='ident'>ident</span>().<span class='ident'>rot</span>(<span class='ident'>q</span>) <span class='op'>*</span> <span class='ident'>v</span>, <span class='ident'>Vector</span> { <span class='ident'>x</span>: <span class='op'>-</span><span class='number'>1.0</span>, <span class='ident'>y</span>: <span class='number'>0.0</span>, <span class='ident'>z</span>: <span class='number'>0.0</span> });</pre>
+</div><h4 id='method.rot_around' class='method'><code>fn <a href='#method.rot_around' class='fnname'>rot_around</a>(&amp;self, quaternion: <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a>, point: <a class='struct' href='../../anima_engine/math/struct.Vector.html' title='anima_engine::math::Vector'>Vector</a>) -&gt; <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h4>
+<div class='docblock'><p>Rotates a matrix according to the rotation represented by the quaternion around a point.
+The rotation is applied to the left. (<code>r * m</code>)</p>
+
+<h1 id='examples-6' class='section-header'><a href='#examples-6'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>q</span> <span class='op'>=</span> <span class='ident'>Quaternion</span>::<span class='ident'>new</span>(<span class='number'>0.0</span>, <span class='number'>1.0</span>, <span class='number'>0.0</span>, <span class='number'>0.0</span>);
+<span class='kw'>let</span> <span class='ident'>v</span> <span class='op'>=</span> <span class='ident'>Vector</span>::<span class='ident'>new</span>(<span class='number'>1.0</span>, <span class='number'>0.0</span>, <span class='number'>0.0</span>);
+<span class='kw'>let</span> <span class='ident'>p</span> <span class='op'>=</span> <span class='ident'>Vector</span>::<span class='ident'>new</span>(<span class='number'>2.0</span>, <span class='number'>0.0</span>, <span class='number'>0.0</span>);
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>Matrix</span>::<span class='ident'>ident</span>().<span class='ident'>rot_around</span>(<span class='ident'>q</span>, <span class='ident'>p</span>) <span class='op'>*</span> <span class='ident'>v</span>, <span class='ident'>Vector</span> { <span class='ident'>x</span>: <span class='number'>3.0</span>, <span class='ident'>y</span>: <span class='number'>0.0</span>, <span class='ident'>z</span>: <span class='number'>0.0</span> });</pre>
+</div><h4 id='method.inv' class='method'><code>fn <a href='#method.inv' class='fnname'>inv</a>(&amp;self) -&gt; <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h4>
+<div class='docblock'><p>Inverts a matrix.</p>
+
+<h1 id='examples-7' class='section-header'><a href='#examples-7'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>Matrix</span>::<span class='ident'>ident</span>().<span class='ident'>inv</span>(), <span class='ident'>Matrix</span>::<span class='ident'>ident</span>());</pre>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html' title='core::ops::Mul'>Mul</a>&lt;<a class='struct' href='../../anima_engine/math/struct.Vector.html' title='anima_engine::math::Vector'>Vector</a>&gt; for <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h3><div class='impl-items'><h4 id='associatedtype.Output' class='type'><code>type Output = <a class='struct' href='../../anima_engine/math/struct.Vector.html' title='anima_engine::math::Vector'>Vector</a></code></h4>
+<h4 id='method.mul' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html#method.mul' class='fnname'>mul</a>(self, vector: <a class='struct' href='../../anima_engine/math/struct.Vector.html' title='anima_engine::math::Vector'>Vector</a>) -&gt; <a class='struct' href='../../anima_engine/math/struct.Vector.html' title='anima_engine::math::Vector'>Vector</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html' title='core::ops::Mul'>Mul</a>&lt;<a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a>&gt; for <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h3><div class='impl-items'><h4 id='associatedtype.Output-1' class='type'><code>type Output = <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h4>
+<h4 id='method.mul-1' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html#method.mul' class='fnname'>mul</a>(self, other: <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a>) -&gt; <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='../../mrusty/mruby/trait.MrubyFile.html' title='mrusty::mruby::MrubyFile'>MrubyFile</a> for <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h3><div class='impl-items'><h4 id='method.require' class='method'><code>fn <a href='../../mrusty/mruby/trait.MrubyFile.html#method.require' class='fnname'>require</a>(mruby: <a class='type' href='../../mrusty/mruby/type.MrubyType.html' title='mrusty::mruby::MrubyType'>MrubyType</a>)</code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h3><div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h3><div class='impl-items'></div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h3><div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../anima_engine/math/struct.Matrix.html' title='anima_engine::math::Matrix'>Matrix</a></code></h4>
+<h4 id='method.clone_from' class='method'><span class="since">1.0.0</span><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "anima_engine";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

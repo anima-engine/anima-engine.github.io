@@ -1,0 +1,1 @@
+initSidebarItems({"macro":[["bez!","A `macro` useful for defining Bézier curves."],["path!","A `macro` useful for defining Bézier paths."]],"mod":[["game","A `mod` containing game running constructs."],["math","A `mod` containing linear math constructs useful in graphics."],["scripting","A `mod` containing scripting-related helpers."]]});

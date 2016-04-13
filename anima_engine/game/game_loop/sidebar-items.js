@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GameLoop","A `struct` that helps you create a very simple game loop."]]});

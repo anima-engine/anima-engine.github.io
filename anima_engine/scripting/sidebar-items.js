@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["get_mruby","A `fn` that returns a new mruby state with `require`able Anima API."]]});

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Quaternion` struct in crate `anima_engine`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Quaternion">
+
+    <title>anima_engine::math::Quaternion - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>anima_engine</a>::<wbr><a href='index.html'>math</a></p><script>window.sidebarCurrent = {name: 'Quaternion', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>anima_engine</a>::<wbr><a href='index.html'>math</a>::<wbr><a class='struct' href=''>Quaternion</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-441' class='srclink' href='../../src/anima_engine/src/math/quaternion.rs.html#41-50' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Quaternion {
+    pub x: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub y: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub z: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub w: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+}</pre><div class='docblock'><p>A simple quaterion <code>struct</code> tailored specifically for graphics.</p>
+
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>f32</span>::<span class='ident'>consts</span>;
+
+<span class='kw'>let</span> <span class='ident'>q1</span> <span class='op'>=</span> <span class='ident'>Quaternion</span>::<span class='ident'>new_rot</span>(<span class='ident'>Vector</span>::<span class='ident'>up</span>(), <span class='ident'>consts</span>::<span class='ident'>PI</span> <span class='op'>/</span> <span class='number'>4.0</span>);
+<span class='kw'>let</span> <span class='ident'>q2</span> <span class='op'>=</span> <span class='ident'>Quaternion</span>::<span class='ident'>new_rot</span>(<span class='ident'>Vector</span>::<span class='ident'>up</span>(), <span class='ident'>consts</span>::<span class='ident'>PI</span> <span class='op'>/</span> <span class='number'>2.0</span>);
+
+<span class='kw'>let</span> <span class='ident'>q3</span> <span class='op'>=</span> <span class='ident'>q1</span> <span class='op'>*</span> <span class='ident'>q1</span>;
+
+<span class='kw'>const</span> <span class='ident'>EPSILON</span>: <span class='ident'>f32</span> <span class='op'>=</span> <span class='number'>0.00001</span>;
+
+<span class='macro'>assert</span><span class='macro'>!</span>((<span class='ident'>q3</span>.<span class='ident'>x</span> <span class='op'>-</span> <span class='ident'>q2</span>.<span class='ident'>x</span>).<span class='ident'>abs</span>() <span class='op'>&lt;</span> <span class='ident'>EPSILON</span>);
+<span class='macro'>assert</span><span class='macro'>!</span>((<span class='ident'>q3</span>.<span class='ident'>y</span> <span class='op'>-</span> <span class='ident'>q2</span>.<span class='ident'>y</span>).<span class='ident'>abs</span>() <span class='op'>&lt;</span> <span class='ident'>EPSILON</span>);
+<span class='macro'>assert</span><span class='macro'>!</span>((<span class='ident'>q3</span>.<span class='ident'>z</span> <span class='op'>-</span> <span class='ident'>q2</span>.<span class='ident'>z</span>).<span class='ident'>abs</span>() <span class='op'>&lt;</span> <span class='ident'>EPSILON</span>);
+<span class='macro'>assert</span><span class='macro'>!</span>((<span class='ident'>q3</span>.<span class='ident'>w</span> <span class='op'>-</span> <span class='ident'>q2</span>.<span class='ident'>w</span>).<span class='ident'>abs</span>() <span class='op'>&lt;</span> <span class='ident'>EPSILON</span>);</pre>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.x'><code>x</code></td><td><div class='docblock'><p><code>f32</code> imaginary <em>i</em> value</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.y'><code>y</code></td><td><div class='docblock'><p><code>f32</code> imaginary <em>j</em> value</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.z'><code>z</code></td><td><div class='docblock'><p><code>f32</code> imaginary <em>k</em> value</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.w'><code>w</code></td><td><div class='docblock'><p><code>f32</code> real value</p>
+</div></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(x: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, y: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, z: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, w: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h4>
+<div class='docblock'><p>Creates a quaternion using 4 values.</p>
+
+<h1 id='examples-1' class='section-header'><a href='#examples-1'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>q</span> <span class='op'>=</span> <span class='ident'>Quaternion</span>::<span class='ident'>new</span>(<span class='number'>0.0</span>, <span class='number'>1.0</span>, <span class='number'>2.0</span>, <span class='number'>3.0</span>);
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>q</span>, <span class='ident'>Quaternion</span> { <span class='ident'>x</span>: <span class='number'>0.0</span>, <span class='ident'>y</span>: <span class='number'>1.0</span>, <span class='ident'>z</span>: <span class='number'>2.0</span>, <span class='ident'>w</span>: <span class='number'>3.0</span> });</pre>
+</div><h4 id='method.new_rot' class='method'><code>fn <a href='#method.new_rot' class='fnname'>new_rot</a>(direction: <a class='struct' href='../../anima_engine/math/struct.Vector.html' title='anima_engine::math::Vector'>Vector</a>, angle: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h4>
+<div class='docblock'><p>Creates a quaternion equivalent to a rotation around a direction.
+The rotation is measured in radians.</p>
+
+<h1 id='examples-2' class='section-header'><a href='#examples-2'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>q1</span> <span class='op'>=</span> <span class='ident'>Quaternion</span>::<span class='ident'>new_rot</span>(<span class='ident'>Vector</span>::<span class='ident'>up</span>(), <span class='ident'>consts</span>::<span class='ident'>PI</span> <span class='op'>/</span> <span class='number'>2.0</span>);
+<span class='kw'>let</span> <span class='ident'>q2</span> <span class='op'>=</span> <span class='ident'>Quaternion</span> { <span class='ident'>x</span>: <span class='number'>0.0</span>, <span class='ident'>y</span>: <span class='number'>0.70710677</span>, <span class='ident'>z</span>: <span class='number'>0.0</span>, <span class='ident'>w</span>: <span class='number'>0.70710677</span> };
+
+<span class='kw'>const</span> <span class='ident'>EPSILON</span>: <span class='ident'>f32</span> <span class='op'>=</span> <span class='number'>0.00001</span>;
+
+<span class='macro'>assert</span><span class='macro'>!</span>((<span class='ident'>q1</span>.<span class='ident'>x</span> <span class='op'>-</span> <span class='ident'>q2</span>.<span class='ident'>x</span>).<span class='ident'>abs</span>() <span class='op'>&lt;</span> <span class='ident'>EPSILON</span>);
+<span class='macro'>assert</span><span class='macro'>!</span>((<span class='ident'>q1</span>.<span class='ident'>y</span> <span class='op'>-</span> <span class='ident'>q2</span>.<span class='ident'>y</span>).<span class='ident'>abs</span>() <span class='op'>&lt;</span> <span class='ident'>EPSILON</span>);
+<span class='macro'>assert</span><span class='macro'>!</span>((<span class='ident'>q1</span>.<span class='ident'>z</span> <span class='op'>-</span> <span class='ident'>q2</span>.<span class='ident'>z</span>).<span class='ident'>abs</span>() <span class='op'>&lt;</span> <span class='ident'>EPSILON</span>);
+<span class='macro'>assert</span><span class='macro'>!</span>((<span class='ident'>q1</span>.<span class='ident'>w</span> <span class='op'>-</span> <span class='ident'>q2</span>.<span class='ident'>w</span>).<span class='ident'>abs</span>() <span class='op'>&lt;</span> <span class='ident'>EPSILON</span>);</pre>
+</div><h4 id='method.new_sph_rot' class='method'><code>fn <a href='#method.new_sph_rot' class='fnname'>new_sph_rot</a>(start: <a class='struct' href='../../anima_engine/math/struct.Vector.html' title='anima_engine::math::Vector'>Vector</a>, finish: <a class='struct' href='../../anima_engine/math/struct.Vector.html' title='anima_engine::math::Vector'>Vector</a>) -&gt; <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h4>
+<div class='docblock'><p>Creates a quaternion equivalent to the shortest rotation necessary to move
+the vector representing the direction <code>start</code> to the one representing <code>finish</code>.</p>
+
+<h1 id='examples-3' class='section-header'><a href='#examples-3'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>q</span> <span class='op'>=</span> <span class='ident'>Quaternion</span>::<span class='ident'>new_sph_rot</span>(<span class='ident'>Vector</span>::<span class='ident'>new</span>(<span class='number'>1.0</span>, <span class='number'>1.0</span>, <span class='number'>0.0</span>), <span class='ident'>Vector</span>::<span class='ident'>new</span>(<span class='number'>1.0</span>, <span class='number'>1.0</span>, <span class='number'>1.0</span>));
+<span class='kw'>let</span> <span class='ident'>v</span> <span class='op'>=</span> <span class='ident'>Vector</span>::<span class='ident'>new</span>(<span class='op'>-</span><span class='number'>1.0</span>, <span class='op'>-</span><span class='number'>1.0</span>, <span class='number'>0.0</span>);
+
+<span class='kw'>const</span> <span class='ident'>EPSILON</span>: <span class='ident'>f32</span> <span class='op'>=</span> <span class='number'>0.00001</span>;
+
+<span class='macro'>assert</span><span class='macro'>!</span>((<span class='ident'>v</span>.<span class='ident'>rot</span>(<span class='ident'>q</span>) <span class='op'>-</span> <span class='ident'>Vector</span>::<span class='ident'>new_unf</span>(<span class='op'>-</span><span class='number'>0.8164966</span>)).<span class='ident'>len</span>() <span class='op'>&lt;</span> <span class='ident'>EPSILON</span>);</pre>
+</div><h4 id='method.ident' class='method'><code>fn <a href='#method.ident' class='fnname'>ident</a>() -&gt; <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h4>
+<div class='docblock'><p>Creates an identity (0.0, 0.0, 0.0, 1.0) quaternion.</p>
+
+<h1 id='examples-4' class='section-header'><a href='#examples-4'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>Quaternion</span>::<span class='ident'>ident</span>(), <span class='ident'>Quaternion</span> { <span class='ident'>x</span>: <span class='number'>0.0</span>, <span class='ident'>y</span>: <span class='number'>0.0</span>, <span class='ident'>z</span>: <span class='number'>0.0</span>, <span class='ident'>w</span>: <span class='number'>1.0</span> });</pre>
+</div><h4 id='method.conj' class='method'><code>fn <a href='#method.conj' class='fnname'>conj</a>(&amp;self) -&gt; <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h4>
+<div class='docblock'><p>Computes the conjugate of a quaternion.</p>
+
+<h1 id='examples-5' class='section-header'><a href='#examples-5'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>q</span> <span class='op'>=</span> <span class='ident'>Quaternion</span>::<span class='ident'>new</span>(<span class='number'>1.0</span>, <span class='number'>1.0</span>, <span class='number'>1.0</span>, <span class='number'>1.0</span>);
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>q</span>.<span class='ident'>conj</span>(), <span class='ident'>Quaternion</span> { <span class='ident'>x</span>: <span class='op'>-</span><span class='number'>1.0</span>, <span class='ident'>y</span>: <span class='op'>-</span><span class='number'>1.0</span>, <span class='ident'>z</span>: <span class='op'>-</span><span class='number'>1.0</span>, <span class='ident'>w</span>: <span class='number'>1.0</span> });</pre>
+</div><h4 id='method.inv' class='method'><code>fn <a href='#method.inv' class='fnname'>inv</a>(&amp;self) -&gt; <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h4>
+<div class='docblock'><p>Computes the inverse of a quaternion.</p>
+
+<h1 id='examples-6' class='section-header'><a href='#examples-6'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>q</span> <span class='op'>=</span> <span class='ident'>anima_engine</span>::<span class='ident'>math</span>::<span class='ident'>Quaternion</span>::<span class='ident'>new</span>(<span class='number'>0.0</span>, <span class='number'>1.0</span>, <span class='number'>2.0</span>, <span class='number'>3.0</span>);
+
+<span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='ident'>q</span> <span class='op'>*</span> <span class='ident'>q</span>.<span class='ident'>inv</span>();
+<span class='kw'>let</span> <span class='ident'>identity</span> <span class='op'>=</span> <span class='ident'>anima_engine</span>::<span class='ident'>math</span>::<span class='ident'>Quaternion</span>::<span class='ident'>ident</span>();
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>result</span>.<span class='ident'>x</span>, <span class='ident'>identity</span>.<span class='ident'>x</span>);</pre>
+</div><h4 id='method.dot' class='method'><code>fn <a href='#method.dot' class='fnname'>dot</a>(&amp;self, other: <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Computes the dot product between two quaternions.</p>
+
+<h1 id='examples-7' class='section-header'><a href='#examples-7'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>q1</span> <span class='op'>=</span> <span class='ident'>Quaternion</span>::<span class='ident'>new</span>(<span class='number'>1.0</span>, <span class='number'>2.0</span>, <span class='number'>2.0</span>, <span class='number'>1.0</span>);
+<span class='kw'>let</span> <span class='ident'>q2</span> <span class='op'>=</span> <span class='ident'>Quaternion</span>::<span class='ident'>new</span>(<span class='number'>3.0</span>, <span class='number'>3.0</span>, <span class='number'>1.0</span>, <span class='number'>1.0</span>);
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>q1</span>.<span class='ident'>dot</span>(<span class='ident'>q2</span>), <span class='number'>12.0</span>);</pre>
+</div><h4 id='method.angle' class='method'><code>fn <a href='#method.angle' class='fnname'>angle</a>(&amp;self, other: <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Computes the angle in radians between two quaternions.</p>
+
+<h1 id='examples-8' class='section-header'><a href='#examples-8'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>q</span> <span class='op'>=</span> <span class='ident'>Quaternion</span>::<span class='ident'>new_rot</span>(<span class='ident'>Vector</span>::<span class='ident'>up</span>(), <span class='ident'>consts</span>::<span class='ident'>PI</span> <span class='op'>/</span> <span class='number'>2.0</span>);
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>Quaternion</span>::<span class='ident'>ident</span>().<span class='ident'>angle</span>(<span class='ident'>q</span>), <span class='ident'>consts</span>::<span class='ident'>PI</span> <span class='op'>/</span> <span class='number'>2.0</span>);</pre>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html' title='core::ops::Mul'>Mul</a> for <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h3><div class='impl-items'><h4 id='associatedtype.Output' class='type'><code>type Output = <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h4>
+<h4 id='method.mul' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html#method.mul' class='fnname'>mul</a>(self, other: <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a>) -&gt; <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='../../anima_engine/math/trait.Interpolate.html' title='anima_engine::math::Interpolate'>Interpolate</a> for <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h3><div class='impl-items'><h4 id='method.interpolate' class='method'><code>fn <a href='../../anima_engine/math/trait.Interpolate.html#method.interpolate' class='fnname'>interpolate</a>(&amp;self, other: <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a>, ratio: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='../../mrusty/mruby/trait.MrubyFile.html' title='mrusty::mruby::MrubyFile'>MrubyFile</a> for <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h3><div class='impl-items'><h4 id='method.require' class='method'><code>fn <a href='../../mrusty/mruby/trait.MrubyFile.html#method.require' class='fnname'>require</a>(mruby: <a class='type' href='../../mrusty/mruby/type.MrubyType.html' title='mrusty::mruby::MrubyType'>MrubyType</a>)</code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h3><div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h3><div class='impl-items'></div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h3><div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../anima_engine/math/struct.Quaternion.html' title='anima_engine::math::Quaternion'>Quaternion</a></code></h4>
+<h4 id='method.clone_from' class='method'><span class="since">1.0.0</span><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "anima_engine";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
