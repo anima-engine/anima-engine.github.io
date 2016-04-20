@@ -302,7 +302,7 @@ defined.</p>
 <span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>run</span>(<span class='string'>&quot;Object&quot;</span>).<span class='ident'>unwrap</span>();
 
 <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>result</span>.<span class='ident'>to_class</span>().<span class='ident'>unwrap</span>().<span class='ident'>to_str</span>(), <span class='string'>&quot;Object&quot;</span>);</pre>
-</div><h4 id='method.to_module' class='method'><code>fn <a href='#method.to_module' class='fnname'>to_module</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;Module, <a class='enum' href='../mrusty/enum.MrubyError.html' title='mrusty::MrubyError'>MrubyError</a>&gt;</code></h4>
+</div><h4 id='method.to_module' class='method'><code>fn <a href='#method.to_module' class='fnname'>to_module</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../mrusty/struct.Module.html' title='mrusty::Module'>Module</a>, <a class='enum' href='../mrusty/enum.MrubyError.html' title='mrusty::MrubyError'>MrubyError</a>&gt;</code></h4>
 <div class='docblock'><p>Casts mruby <code>Value</code> of <code>Class</code> <code>Module</code> to Rust type <code>Module</code>.</p>
 
 <h1 id='examples-12' class='section-header'><a href='#examples-12'>Examples</a></h1>
