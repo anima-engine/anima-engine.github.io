@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,35 +44,33 @@
 
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a>::<wbr><a class='mod' href=''>redisplay</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-1058' class='srclink' href='../../../src/rl_sys/readline/redisplay.rs.html#1-343' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1058' class='srclink' href='../../../src/rl_sys/readline/redisplay.rs.html#1-343' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><a href="https://goo.gl/i3PS2Q">2.4.6 Redisplay</a></p>
 </div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.clear_message.html'
-                               title='rl_sys::readline::redisplay::clear_message'>clear_message</a></td>
-                        <td class='docblock short'>
-                             <p>Clear the message in the echo area. If the prompt was saved with a call to <code>rl_save_prompt</code>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.clear_message.html'
+                                  title='rl_sys::readline::redisplay::clear_message'>clear_message</a></td>
+                           <td class='docblock short'>
+                                <p>Clear the message in the echo area. If the prompt was saved with a call to <code>rl_save_prompt</code>
 before the last call to <code>rl_message</code>, call <code>rl_restore_prompt</code> before calling this function.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.crlf.html'
-                               title='rl_sys::readline::redisplay::crlf'>crlf</a></td>
-                        <td class='docblock short'>
-                             <p>Move the cursor to the start of the next screen line.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.expand_prompt.html'
-                               title='rl_sys::readline::redisplay::expand_prompt'>expand_prompt</a></td>
-                        <td class='docblock short'>
-                             <p>Expand any special character sequences in prompt and set up the local Readline prompt redisplay
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.crlf.html'
+                                  title='rl_sys::readline::redisplay::crlf'>crlf</a></td>
+                           <td class='docblock short'>
+                                <p>Move the cursor to the start of the next screen line.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.expand_prompt.html'
+                                  title='rl_sys::readline::redisplay::expand_prompt'>expand_prompt</a></td>
+                           <td class='docblock short'>
+                                <p>Expand any special character sequences in prompt and set up the local Readline prompt redisplay
 variables. This function is called by <code>readline()</code>. It may also be called to expand the primary
 prompt if the <code>rl_on_new_line_with_prompt()</code> function or <code>rl_already_prompted</code> variable is used.
 It returns the number of visible characters on the last line of the (possibly multi-line)
@@ -79,102 +78,91 @@ prompt. Applications may indicate that the prompt contains characters that take 
 screen space when displayed by bracketing a sequence of such characters with the special markers
 <strong>RL_PROMPT_START_IGNORE</strong> and <strong>RL_PROMPT_END_IGNORE</strong> (declared in `readline.h&#39;. This may be
 used to embed terminal-specific escape sequences in prompts.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.forced_update_display.html'
-                               title='rl_sys::readline::redisplay::forced_update_display'>forced_update_display</a></td>
-                        <td class='docblock short'>
-                             <p>Force the line to be updated and redisplayed, whether or not Readline thinks the screen display
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.forced_update_display.html'
+                                  title='rl_sys::readline::redisplay::forced_update_display'>forced_update_display</a></td>
+                           <td class='docblock short'>
+                                <p>Force the line to be updated and redisplayed, whether or not Readline thinks the screen display
 is correct.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.message.html'
-                               title='rl_sys::readline::redisplay::message'>message</a></td>
-                        <td class='docblock short'>
-                             <p>The arguments are a format string as would be supplied to printf, possibly containing conversion
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.message.html'
+                                  title='rl_sys::readline::redisplay::message'>message</a></td>
+                           <td class='docblock short'>
+                                <p>The arguments are a format string as would be supplied to printf, possibly containing conversion
 specifications such as <code>%d&#39;, and any additional arguments necessary to satisfy the conversion specifications. The resulting string is displayed in the echo area. The echo area is also used to display numeric arguments and search strings. You should call</code>rl_save_prompt` to save the
 prompt information before calling this function.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.on_new_line.html'
-                               title='rl_sys::readline::redisplay::on_new_line'>on_new_line</a></td>
-                        <td class='docblock short'>
-                             <p>Tell the update functions that we have moved onto a new (empty) line, usually after outputting a
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.on_new_line.html'
+                                  title='rl_sys::readline::redisplay::on_new_line'>on_new_line</a></td>
+                           <td class='docblock short'>
+                                <p>Tell the update functions that we have moved onto a new (empty) line, usually after outputting a
 newline.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.on_new_line_with_prompt.html'
-                               title='rl_sys::readline::redisplay::on_new_line_with_prompt'>on_new_line_with_prompt</a></td>
-                        <td class='docblock short'>
-                             <p>Tell the update functions that we have moved onto a new line, with <code>rl_prompt</code> already
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.on_new_line_with_prompt.html'
+                                  title='rl_sys::readline::redisplay::on_new_line_with_prompt'>on_new_line_with_prompt</a></td>
+                           <td class='docblock short'>
+                                <p>Tell the update functions that we have moved onto a new line, with <code>rl_prompt</code> already
 displayed. This could be used by applications that want to output the prompt string themselves,
 but still need Readline to know the prompt string length for redisplay. It should be used after
 setting <code>rl_already_prompted</code>.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.redisplay.html'
-                               title='rl_sys::readline::redisplay::redisplay'>redisplay</a></td>
-                        <td class='docblock short'>
-                             <p>Change what&#39;s displayed on the screen to reflect the current contents of <code>rl_line_buffer</code>.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.reset_line_state.html'
-                               title='rl_sys::readline::redisplay::reset_line_state'>reset_line_state</a></td>
-                        <td class='docblock short'>
-                             <p>Reset the display state to a clean state and redisplay the current line starting on a new line.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.rl_restore_prompt.html'
-                               title='rl_sys::readline::redisplay::rl_restore_prompt'>rl_restore_prompt</a></td>
-                        <td class='docblock short'>
-                             <p>Restore the local Readline prompt display state saved by the most recent call to
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.redisplay.html'
+                                  title='rl_sys::readline::redisplay::redisplay'>redisplay</a></td>
+                           <td class='docblock short'>
+                                <p>Change what&#39;s displayed on the screen to reflect the current contents of <code>rl_line_buffer</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.reset_line_state.html'
+                                  title='rl_sys::readline::redisplay::reset_line_state'>reset_line_state</a></td>
+                           <td class='docblock short'>
+                                <p>Reset the display state to a clean state and redisplay the current line starting on a new line.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.rl_restore_prompt.html'
+                                  title='rl_sys::readline::redisplay::rl_restore_prompt'>rl_restore_prompt</a></td>
+                           <td class='docblock short'>
+                                <p>Restore the local Readline prompt display state saved by the most recent call to
 <code>rl_save_prompt</code>.  If <code>rl_save_prompt</code> was called to save the prompt before a call to
 <code>rl_message</code>, this function should be called before the corresponding call to
 <code>rl_clear_message</code>.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.save_prompt.html'
-                               title='rl_sys::readline::redisplay::save_prompt'>save_prompt</a></td>
-                        <td class='docblock short'>
-                             <p>Save the local Readline prompt display state in preparation for displaying a new message in the
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.save_prompt.html'
+                                  title='rl_sys::readline::redisplay::save_prompt'>save_prompt</a></td>
+                           <td class='docblock short'>
+                                <p>Save the local Readline prompt display state in preparation for displaying a new message in the
 message area with <code>rl_message()</code>.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.set_prompt.html'
-                               title='rl_sys::readline::redisplay::set_prompt'>set_prompt</a></td>
-                        <td class='docblock short'>
-                             <p>Make Readline use prompt for subsequent redisplay. This calls <code>rl_expand_prompt()</code><code>to expand the prompt and sets</code>rl_prompt` to the result.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.show_char.html'
-                               title='rl_sys::readline::redisplay::show_char'>show_char</a></td>
-                        <td class='docblock short'>
-                             <p>Display character <code>c</code> on <code>rl_outstream</code>. If Readline has not been set to display meta characters
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_prompt.html'
+                                  title='rl_sys::readline::redisplay::set_prompt'>set_prompt</a></td>
+                           <td class='docblock short'>
+                                <p>Make Readline use prompt for subsequent redisplay. This calls <code>rl_expand_prompt()</code><code>to expand the prompt and sets</code>rl_prompt` to the result.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.show_char.html'
+                                  title='rl_sys::readline::redisplay::show_char'>show_char</a></td>
+                           <td class='docblock short'>
+                                <p>Display character <code>c</code> on <code>rl_outstream</code>. If Readline has not been set to display meta characters
 directly, this will convert meta characters to a meta-prefixed key sequence. This is intended
 for use by applications which wish to do their own redisplay.</p>
-                        </td>
-                    </tr>
-                </table></section>
+                           </td>
+                       </tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

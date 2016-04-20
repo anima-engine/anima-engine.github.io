@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,10 +44,10 @@
 
     <section id='main' class="content fn">
 <h1 class='fqn'><span class='in-band'>Function <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a>::<wbr><a href='index.html'>util</a>::<wbr><a class='fn' href=''>restore_state</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-1181' class='srclink' href='../../../src/rl_sys/readline/util.rs.html#76-86' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1181' class='srclink' href='../../../src/rl_sys/readline/util.rs.html#76-86' title='goto source code'>[src]</a></span></h1>
 <pre class='rust fn'>pub fn restore_state(state: &amp;mut <a class='struct' href='../../../rl_sys/readline/struct.ReadlineState.html' title='rl_sys::readline::ReadlineState'>ReadlineState</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='struct' href='../../../rl_sys/struct.ReadlineError.html' title='rl_sys::ReadlineError'>ReadlineError</a>&gt;</pre><div class='docblock'><p>Restore Readline&#39;s internal state to that stored in <code>state</code>, which must have been saved by a
 call to <code>save_state</code>. The contents of the <code>readline_state</code> structure are documented in
 &#39;readline.h&#39;. The caller is responsible for freeing the structure.</p>

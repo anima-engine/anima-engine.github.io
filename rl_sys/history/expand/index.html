@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,57 +44,53 @@
 
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>history</a>::<wbr><a class='mod' href=''>expand</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-87' class='srclink' href='../../../src/rl_sys/history/expand.rs.html#1-180' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-87' class='srclink' href='../../../src/rl_sys/history/expand.rs.html#1-180' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><a href="https://goo.gl/OHS0L3">2.3.7 History Expansion</a></p>
 
 <p>These functions implement history expansion.</p>
 </div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.arg_extract.html'
-                               title='rl_sys::history::expand::arg_extract'>arg_extract</a></td>
-                        <td class='docblock short'>
-                             <p>Extract a string segment consisting of the <code>first</code> through <code>last</code> arguments present in string
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.arg_extract.html'
+                                  title='rl_sys::history::expand::arg_extract'>arg_extract</a></td>
+                           <td class='docblock short'>
+                                <p>Extract a string segment consisting of the <code>first</code> through <code>last</code> arguments present in string
 <code>s</code>. Arguments are split using <code>history_tokenize</code>. If either <code>first</code> or <code>last</code> is &lt; 0, then make
 that arg count from the right (subtract from the number of tokens, so that <code>first</code> = -1 means
 the next to last token on the line). If <code>first</code> and <code>last</code> are 36 (ASCII &#39;$&#39;) the last arg from
 string <code>s</code> is used.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.expand.html'
-                               title='rl_sys::history::expand::expand'>expand</a></td>
-                        <td class='docblock short'>
-                             <p>Expand string, placing the result into <code>output</code>, a pointer to a string
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.expand.html'
+                                  title='rl_sys::history::expand::expand'>expand</a></td>
+                           <td class='docblock short'>
+                                <p>Expand string, placing the result into <code>output</code>, a pointer to a string
 (see section <a href="https://goo.gl/aR8VB3">1.1 History Expansion</a>).</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get_event.html'
-                               title='rl_sys::history::expand::get_event'>get_event</a></td>
-                        <td class='docblock short'>
-                             <p>Returns the text of the history event beginning at <code>s + *idx</code>. <code>*idx</code> is modified to point to
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get_event.html'
+                                  title='rl_sys::history::expand::get_event'>get_event</a></td>
+                           <td class='docblock short'>
+                                <p>Returns the text of the history event beginning at <code>s + *idx</code>. <code>*idx</code> is modified to point to
 after the event specifier. At function entry, <code>*idx</code> points to the index into string where the
 history event specification begins. <code>add_delim</code> is a character that is allowed to end the event
 specification in addition to the &quot;normal&quot; terminating characters.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.tokenize.html'
-                               title='rl_sys::history::expand::tokenize'>tokenize</a></td>
-                        <td class='docblock short'>
-                             <p>Return an array of tokens parsed out of string <code>s</code>, much as the shell might. The tokens are
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.tokenize.html'
+                                  title='rl_sys::history::expand::tokenize'>tokenize</a></td>
+                           <td class='docblock short'>
+                                <p>Return an array of tokens parsed out of string <code>s</code>, much as the shell might. The tokens are
 split on the characters in the <code>history_word_delimiters</code> variable, and shell quoting conventions
 are obeyed.</p>
-                        </td>
-                    </tr>
-                </table></section>
+                           </td>
+                       </tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

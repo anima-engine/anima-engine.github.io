@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,42 +44,39 @@
 
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>history</a>::<wbr><a class='mod' href=''>move_</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-351' class='srclink' href='../../../src/rl_sys/history/move_.rs.html#1-88' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-351' class='srclink' href='../../../src/rl_sys/history/move_.rs.html#1-88' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><a href="https://goo.gl/ROYfRB">2.3.4 Moving Around the History List</a></p>
 
 <p>These functions allow the current index into the history list to be set or changed.</p>
 </div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.next.html'
-                               title='rl_sys::history::move_::next'>next</a></td>
-                        <td class='docblock short'>
-                             <p>Move the current history offset forward to the next history entry, and return a pointer to that
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.next.html'
+                                  title='rl_sys::history::move_::next'>next</a></td>
+                           <td class='docblock short'>
+                                <p>Move the current history offset forward to the next history entry, and return a pointer to that
 entry. If there is no next entry, return a <code>HistoryError</code>.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.previous.html'
-                               title='rl_sys::history::move_::previous'>previous</a></td>
-                        <td class='docblock short'>
-                             <p>Back up the current history offset to the previous history entry, and return a pointer to that
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.previous.html'
+                                  title='rl_sys::history::move_::previous'>previous</a></td>
+                           <td class='docblock short'>
+                                <p>Back up the current history offset to the previous history entry, and return a pointer to that
 entry. If there is no previous entry, return a <code>HistoryError</code>.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.set_pos.html'
-                               title='rl_sys::history::move_::set_pos'>set_pos</a></td>
-                        <td class='docblock short'>
-                             <p>Set the current history offset, an absolute index into the list. Returns true on success, false
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_pos.html'
+                                  title='rl_sys::history::move_::set_pos'>set_pos</a></td>
+                           <td class='docblock short'>
+                                <p>Set the current history offset, an absolute index into the list. Returns true on success, false
 if the offset is less than zero or greater than the number of history entries.</p>
-                        </td>
-                    </tr>
-                </table></section>
+                           </td>
+                       </tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

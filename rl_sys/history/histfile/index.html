@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,67 +44,62 @@
 
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>history</a>::<wbr><a class='mod' href=''>histfile</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-151' class='srclink' href='../../../src/rl_sys/history/histfile.rs.html#1-177' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-151' class='srclink' href='../../../src/rl_sys/history/histfile.rs.html#1-177' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><a href="https://goo.gl/ovVU4a">2.3.6 Managing the History File</a></p>
 
 <p>The History library can read the history from and write it to a file. This section documents the
 functions for managing a history file.</p>
 </div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.append.html'
-                               title='rl_sys::history::histfile::append'>append</a></td>
-                        <td class='docblock short'>
-                             <p>Append the last <code>n</code> elements of the history list to <code>filename</code>. If <code>filename</code> is None, then
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.append.html'
+                                  title='rl_sys::history::histfile::append'>append</a></td>
+                           <td class='docblock short'>
+                                <p>Append the last <code>n</code> elements of the history list to <code>filename</code>. If <code>filename</code> is None, then
 append to <code>~/.history</code>. Returns 0 on success, or <code>HistoryError</code> with <code>errno</code> information on a
 write error.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.read.html'
-                               title='rl_sys::history::histfile::read'>read</a></td>
-                        <td class='docblock short'>
-                             <p>Add the contents of filename at path to the history list, a line at a time. If the path is
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.read.html'
+                                  title='rl_sys::history::histfile::read'>read</a></td>
+                           <td class='docblock short'>
+                                <p>Add the contents of filename at path to the history list, a line at a time. If the path is
 <code>None</code>, then read from <code>~/.history</code>. Returns 0 if successful, or <code>HistoryError</code> with errno
 information if not.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.read_range.html'
-                               title='rl_sys::history::histfile::read_range'>read_range</a></td>
-                        <td class='docblock short'>
-                             <p>Read a range of lines from filename, adding them to the history list. Start reading at line
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.read_range.html'
+                                  title='rl_sys::history::histfile::read_range'>read_range</a></td>
+                           <td class='docblock short'>
+                                <p>Read a range of lines from filename, adding them to the history list. Start reading at line
 <code>from</code> and end at <code>to</code>. If <code>from</code> is zero, start at the beginning. If <code>to</code> is less than <code>from</code>,
 then read until the end of the file. If filename is None, then read from <code>~/.history</code>. Returns 0
 if successful, or <code>HistoryError</code> with errno information if not.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.truncate.html'
-                               title='rl_sys::history::histfile::truncate'>truncate</a></td>
-                        <td class='docblock short'>
-                             <p>Truncate the history file <code>filename</code>, leaving only the last <code>n</code> lines. If <code>filename</code> is None,
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.truncate.html'
+                                  title='rl_sys::history::histfile::truncate'>truncate</a></td>
+                           <td class='docblock short'>
+                                <p>Truncate the history file <code>filename</code>, leaving only the last <code>n</code> lines. If <code>filename</code> is None,
 then <code>~/.history&#39; is truncated. Returns 0 on success, or</code>HistoryError<code>with</code>errno` information
 on a write error.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.write.html'
-                               title='rl_sys::history::histfile::write'>write</a></td>
-                        <td class='docblock short'>
-                             <p>Write the current history to <code>filename</code>, overwriting <code>filename</code> if necessary. If <code>filename</code> is
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.write.html'
+                                  title='rl_sys::history::histfile::write'>write</a></td>
+                           <td class='docblock short'>
+                                <p>Write the current history to <code>filename</code>, overwriting <code>filename</code> if necessary. If <code>filename</code> is
 None, then write the history list to <code>~/.history</code>. Returns 0 on success, or <code>HistoryError</code> with
 <code>errno</code> information on a read or write error.</p>
-                        </td>
-                    </tr>
-                </table></section>
+                           </td>
+                       </tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

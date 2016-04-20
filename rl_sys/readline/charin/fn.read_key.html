@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,10 +44,10 @@
 
     <section id='main' class="content fn">
 <h1 class='fqn'><span class='in-band'>Function <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a>::<wbr><a href='index.html'>charin</a>::<wbr><a class='fn' href=''>read_key</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-793' class='srclink' href='../../../src/rl_sys/readline/charin.rs.html#25-27' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-793' class='srclink' href='../../../src/rl_sys/readline/charin.rs.html#25-27' title='goto source code'>[src]</a></span></h1>
 <pre class='rust fn'>pub fn read_key() -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.char.html'>char</a>, <a class='struct' href='../../../rl_sys/struct.ReadlineError.html' title='rl_sys::ReadlineError'>ReadlineError</a>&gt;</pre><div class='docblock'><p>Return the next character available from Readline&#39;s current input stream. This handles input
 inserted into the input stream via <code>rl_pending_input</code> (see section <a href="https://goo.gl/E1D6om">2.3 Readline Variables</a>) and
 <code>rl_stuff_char()</code>, macros, and characters read from the keyboard. While waiting for input, this

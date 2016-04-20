@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
+    
 
     
     
@@ -43,10 +44,10 @@
 
     <section id='main' class="content struct">
 <h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>mrusty</a>::<wbr><a class='struct' href=''>Mruby</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-23' class='srclink' href='../src/mrusty/mruby.rs.html#49-58' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-23' class='srclink' href='../src/mrusty/src/mruby.rs.html#40-51' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct Mruby {
     pub mrb: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a>MrState,
     // some fields omitted
@@ -64,13 +65,13 @@ methods. Creating an <code>Mruby</code> returns a <code>MrubyType</code> (<code>
 <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>result</span>.<span class='ident'>to_bool</span>().<span class='ident'>unwrap</span>(), <span class='boolval'>false</span>);</pre>
 </div><h2 class='fields'>Fields</h2>
 <table><tr class='stab '>
-                                  <td id='structfield.mrb'><code>mrb</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../mrusty/struct.Mruby.html' title='mrusty::Mruby'>Mruby</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; <a class='type' href='../mrusty/type.MrubyType.html' title='mrusty::MrubyType'>MrubyType</a></code></h4>
+                             <td id='structfield.mrb'><code>mrb</code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../mrusty/struct.Mruby.html' title='mrusty::Mruby'>Mruby</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; <a class='type' href='../mrusty/type.MrubyType.html' title='mrusty::MrubyType'>MrubyType</a></code></h4>
 <div class='docblock'><p>Creates an mruby state and context stored in a <code>MrubyType</code> (<code>Rc&lt;RefCell&lt;Mruby&gt;&gt;</code>).</p>
 
 <h1 id='example' class='section-header'><a href='#example'>Example</a></h1>
 <pre class='rust rust-example-rendered'>
 <span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>Mruby</span>::<span class='ident'>new</span>();</pre>
-</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../mrusty/struct.Mruby.html' title='mrusty::Mruby'>Mruby</a></code></h3><div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#method.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../mrusty/struct.Mruby.html' title='mrusty::Mruby'>Mruby</a></code></h3><div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 

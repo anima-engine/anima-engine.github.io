@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,59 +44,54 @@
 
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a>::<wbr><a class='mod' href=''>termmgmt</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-1113' class='srclink' href='../../../src/rl_sys/readline/termmgmt.rs.html#1-116' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1113' class='srclink' href='../../../src/rl_sys/readline/termmgmt.rs.html#1-116' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><a href="https://goo.gl/NKP48u">2.4.9 Terminal Management</a></p>
 </div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.deprep_terminal.html'
-                               title='rl_sys::readline::termmgmt::deprep_terminal'>deprep_terminal</a></td>
-                        <td class='docblock short'>
-                             <p>Undo the effects of <code>rl_prep_terminal()</code>, leaving the terminal in the state in which it was
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.deprep_terminal.html'
+                                  title='rl_sys::readline::termmgmt::deprep_terminal'>deprep_terminal</a></td>
+                           <td class='docblock short'>
+                                <p>Undo the effects of <code>rl_prep_terminal()</code>, leaving the terminal in the state in which it was
 before the most recent call to <code>rl_prep_terminal()</code>.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.prep_terminal.html'
-                               title='rl_sys::readline::termmgmt::prep_terminal'>prep_terminal</a></td>
-                        <td class='docblock short'>
-                             <p>Modify the terminal settings for Readline&#39;s use, so <code>readline()</code> can read a single character at
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.prep_terminal.html'
+                                  title='rl_sys::readline::termmgmt::prep_terminal'>prep_terminal</a></td>
+                           <td class='docblock short'>
+                                <p>Modify the terminal settings for Readline&#39;s use, so <code>readline()</code> can read a single character at
 a time from the keyboard. The <code>meta_flag</code> argument should be non-zero if Readline should read
 eight-bit input.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.reset_terminal.html'
-                               title='rl_sys::readline::termmgmt::reset_terminal'>reset_terminal</a></td>
-                        <td class='docblock short'>
-                             <p>Reinitialize Readline&#39;s idea of the terminal settings using <code>name</code> as the terminal type (e.g.,
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.reset_terminal.html'
+                                  title='rl_sys::readline::termmgmt::reset_terminal'>reset_terminal</a></td>
+                           <td class='docblock short'>
+                                <p>Reinitialize Readline&#39;s idea of the terminal settings using <code>name</code> as the terminal type (e.g.,
 vt100). If <code>name</code> is None, the value of the TERM environment variable is used.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.tty_set_default_bindings.html'
-                               title='rl_sys::readline::termmgmt::tty_set_default_bindings'>tty_set_default_bindings</a></td>
-                        <td class='docblock short'>
-                             <p>Read the operating system&#39;s terminal editing characters (as would be displayed by stty) to their
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.tty_set_default_bindings.html'
+                                  title='rl_sys::readline::termmgmt::tty_set_default_bindings'>tty_set_default_bindings</a></td>
+                           <td class='docblock short'>
+                                <p>Read the operating system&#39;s terminal editing characters (as would be displayed by stty) to their
 Readline equivalents. The bindings are performed in <code>kmap</code>.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.tty_unset_default_bindings.html'
-                               title='rl_sys::readline::termmgmt::tty_unset_default_bindings'>tty_unset_default_bindings</a></td>
-                        <td class='docblock short'>
-                             <p>Reset the bindings manipulated by <code>rl_tty_set_default_bindings</code> so that the terminal editing
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.tty_unset_default_bindings.html'
+                                  title='rl_sys::readline::termmgmt::tty_unset_default_bindings'>tty_unset_default_bindings</a></td>
+                           <td class='docblock short'>
+                                <p>Reset the bindings manipulated by <code>rl_tty_set_default_bindings</code> so that the terminal editing
 characters are bound to <code>rl_insert</code>. The bindings are performed in <code>kmap</code>.</p>
-                        </td>
-                    </tr>
-                </table></section>
+                           </td>
+                       </tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

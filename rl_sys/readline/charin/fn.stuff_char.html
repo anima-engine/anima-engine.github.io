@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,10 +44,10 @@
 
     <section id='main' class="content fn">
 <h1 class='fqn'><span class='in-band'>Function <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a>::<wbr><a href='index.html'>charin</a>::<wbr><a class='fn' href=''>stuff_char</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-796' class='srclink' href='../../../src/rl_sys/readline/charin.rs.html#38-48' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-796' class='srclink' href='../../../src/rl_sys/readline/charin.rs.html#38-48' title='goto source code'>[src]</a></span></h1>
 <pre class='rust fn'>pub fn stuff_char(c: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.char.html'>char</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='struct' href='../../../rl_sys/struct.ReadlineError.html' title='rl_sys::ReadlineError'>ReadlineError</a>&gt;</pre><div class='docblock'><p>Insert <code>c</code> into the Readline input stream. It will be &quot;read&quot; before Readline attempts to read
 characters from the terminal with <code>rl_read_key()</code>. Up to 512 characters may be pushed back.
 <code>rl_stuff_char</code> returns 1 if the character was successfully inserted; 0 otherwise.</p>

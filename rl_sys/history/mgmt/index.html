@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,50 +44,46 @@
 
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>history</a>::<wbr><a class='mod' href=''>mgmt</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-324' class='srclink' href='../../../src/rl_sys/history/mgmt.rs.html#1-114' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-324' class='srclink' href='../../../src/rl_sys/history/mgmt.rs.html#1-114' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><a href="https://goo.gl/An1iSg">2.3.1 Initializing History and State Management</a></p>
 
 <p>This section describes functions used to initialize and manage the state of the History library
 when you want to use the history functions in your program.</p>
 </div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.cleanup.html'
-                               title='rl_sys::history::mgmt::cleanup'>cleanup</a></td>
-                        <td class='docblock short'>
-                             <p>Cleanup the history state.  This should be called on program exit or after you are completely
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.cleanup.html'
+                                  title='rl_sys::history::mgmt::cleanup'>cleanup</a></td>
+                           <td class='docblock short'>
+                                <p>Cleanup the history state.  This should be called on program exit or after you are completely
 finished using the History API.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get_state.html'
-                               title='rl_sys::history::mgmt::get_state'>get_state</a></td>
-                        <td class='docblock short'>
-                             <p>Return a structure describing the current state of the input history.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.init.html'
-                               title='rl_sys::history::mgmt::init'>init</a></td>
-                        <td class='docblock short'>
-                             <p>Begin a session in which the history functions might be used. This initializes the interactive
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get_state.html'
+                                  title='rl_sys::history::mgmt::get_state'>get_state</a></td>
+                           <td class='docblock short'>
+                                <p>Return a structure describing the current state of the input history.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.init.html'
+                                  title='rl_sys::history::mgmt::init'>init</a></td>
+                           <td class='docblock short'>
+                                <p>Begin a session in which the history functions might be used. This initializes the interactive
 variables.  Note that this will only call <code>using_history</code> once after first use.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.set_state.html'
-                               title='rl_sys::history::mgmt::set_state'>set_state</a></td>
-                        <td class='docblock short'>
-                             <p>Set the state of the history list according to state.</p>
-                        </td>
-                    </tr>
-                </table></section>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_state.html'
+                                  title='rl_sys::history::mgmt::set_state'>set_state</a></td>
+                           <td class='docblock short'>
+                                <p>Set the state of the history list according to state.</p>
+                           </td>
+                       </tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

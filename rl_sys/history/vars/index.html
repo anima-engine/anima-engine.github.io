@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,247 +44,220 @@
 
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>history</a>::<wbr><a class='mod' href=''>vars</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-421' class='srclink' href='../../../src/rl_sys/history/vars.rs.html#1-758' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-421' class='srclink' href='../../../src/rl_sys/history/vars.rs.html#1-758' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><a href="https://goo.gl/la0XEf">2.4 History Variables</a></p>
 
 <p>This section describes the externally-visible variables exported by the GNU History Library.</p>
 </div><h2 id='statics' class='section-header'><a href="#statics">Statics</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='static' href='static.history_base.html'
-                               title='rl_sys::history::vars::history_base'>history_base</a></td>
-                        <td class='docblock short'>
-                             <p>The logical offset of the first entry in the history list.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='static' href='static.history_length.html'
-                               title='rl_sys::history::vars::history_length'>history_length</a></td>
-                        <td class='docblock short'>
-                             <p>The number of entries currently stored in the history list.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='static' href='static.history_max_entries.html'
-                               title='rl_sys::history::vars::history_max_entries'>history_max_entries</a></td>
-                        <td class='docblock short'>
-                             <p>The maximum number of history entries. This must be changed using <code>stifle_history()</code>.</p>
-                        </td>
-                    </tr>
-                </table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+                       <tr class=' module-item'>
+                           <td><a class='static' href='static.history_base.html'
+                                  title='rl_sys::history::vars::history_base'>history_base</a></td>
+                           <td class='docblock short'>
+                                <p>The logical offset of the first entry in the history list.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='static' href='static.history_length.html'
+                                  title='rl_sys::history::vars::history_length'>history_length</a></td>
+                           <td class='docblock short'>
+                                <p>The number of entries currently stored in the history list.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='static' href='static.history_max_entries.html'
+                                  title='rl_sys::history::vars::history_max_entries'>history_max_entries</a></td>
+                           <td class='docblock short'>
+                                <p>The maximum number of history entries. This must be changed using <code>stifle_history()</code>.</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.add_no_expand_char.html'
-                               title='rl_sys::history::vars::add_no_expand_char'>add_no_expand_char</a></td>
-                        <td class='docblock short'>
-                             <p>Add a character to the list of no expand characters.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.add_search_delimiter_char.html'
-                               title='rl_sys::history::vars::add_search_delimiter_char'>add_search_delimiter_char</a></td>
-                        <td class='docblock short'>
-                             <p>Add a character to the list of search delimiter characters.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.add_word_delimiter.html'
-                               title='rl_sys::history::vars::add_word_delimiter'>add_word_delimiter</a></td>
-                        <td class='docblock short'>
-                             <p>Add a character from the list of word delimiter characters.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get_comment_char.html'
-                               title='rl_sys::history::vars::get_comment_char'>get_comment_char</a></td>
-                        <td class='docblock short'>
-                             <p>Get the current value of the <code>history_comment_char</code> variable.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get_expansion_char.html'
-                               title='rl_sys::history::vars::get_expansion_char'>get_expansion_char</a></td>
-                        <td class='docblock short'>
-                             <p>Get the current value of the <code>history_expansion_char</code> variable.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get_inhibit_expansion_function.html'
-                               title='rl_sys::history::vars::get_inhibit_expansion_function'>get_inhibit_expansion_function</a></td>
-                        <td class='docblock short'>
-                             <p>Get the value of the inhibit expansion function.  This will be None if it is not set.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get_no_expand_chars.html'
-                               title='rl_sys::history::vars::get_no_expand_chars'>get_no_expand_chars</a></td>
-                        <td class='docblock short'>
-                             <p>The list of characters which inhibit history expansion if found immediately following
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.add_no_expand_char.html'
+                                  title='rl_sys::history::vars::add_no_expand_char'>add_no_expand_char</a></td>
+                           <td class='docblock short'>
+                                <p>Add a character to the list of no expand characters.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.add_search_delimiter_char.html'
+                                  title='rl_sys::history::vars::add_search_delimiter_char'>add_search_delimiter_char</a></td>
+                           <td class='docblock short'>
+                                <p>Add a character to the list of search delimiter characters.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.add_word_delimiter.html'
+                                  title='rl_sys::history::vars::add_word_delimiter'>add_word_delimiter</a></td>
+                           <td class='docblock short'>
+                                <p>Add a character from the list of word delimiter characters.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get_comment_char.html'
+                                  title='rl_sys::history::vars::get_comment_char'>get_comment_char</a></td>
+                           <td class='docblock short'>
+                                <p>Get the current value of the <code>history_comment_char</code> variable.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get_expansion_char.html'
+                                  title='rl_sys::history::vars::get_expansion_char'>get_expansion_char</a></td>
+                           <td class='docblock short'>
+                                <p>Get the current value of the <code>history_expansion_char</code> variable.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get_inhibit_expansion_function.html'
+                                  title='rl_sys::history::vars::get_inhibit_expansion_function'>get_inhibit_expansion_function</a></td>
+                           <td class='docblock short'>
+                                <p>Get the value of the inhibit expansion function.  This will be None if it is not set.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get_no_expand_chars.html'
+                                  title='rl_sys::history::vars::get_no_expand_chars'>get_no_expand_chars</a></td>
+                           <td class='docblock short'>
+                                <p>The list of characters which inhibit history expansion if found immediately following
 <code>history_expansion_char</code>. The default is space, tab, newline, carriage return, and `=&#39;.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get_quotes_inhibit_expansion.html'
-                               title='rl_sys::history::vars::get_quotes_inhibit_expansion'>get_quotes_inhibit_expansion</a></td>
-                        <td class='docblock short'>
-                             <p>Get the current value of the <code>history_quotes_inhibit_expansion</code> variable.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get_search_delimiter_chars.html'
-                               title='rl_sys::history::vars::get_search_delimiter_chars'>get_search_delimiter_chars</a></td>
-                        <td class='docblock short'>
-                             <p>Get the list of search delimiter characters. The list of additional characters which can delimit
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get_quotes_inhibit_expansion.html'
+                                  title='rl_sys::history::vars::get_quotes_inhibit_expansion'>get_quotes_inhibit_expansion</a></td>
+                           <td class='docblock short'>
+                                <p>Get the current value of the <code>history_quotes_inhibit_expansion</code> variable.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get_search_delimiter_chars.html'
+                                  title='rl_sys::history::vars::get_search_delimiter_chars'>get_search_delimiter_chars</a></td>
+                           <td class='docblock short'>
+                                <p>Get the list of search delimiter characters. The list of additional characters which can delimit
 a history search string, in addition to space, TAB, &#39;:&#39; and &#39;?&#39; in the case of a substring
 search. The default is empty.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get_subst_char.html'
-                               title='rl_sys::history::vars::get_subst_char'>get_subst_char</a></td>
-                        <td class='docblock short'>
-                             <p>Get the current value of the <code>history_subst_char</code> variable.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get_word_delimiters.html'
-                               title='rl_sys::history::vars::get_word_delimiters'>get_word_delimiters</a></td>
-                        <td class='docblock short'>
-                             <p>Get the list of word delimiter characters. The characters that separate tokens for
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get_subst_char.html'
+                                  title='rl_sys::history::vars::get_subst_char'>get_subst_char</a></td>
+                           <td class='docblock short'>
+                                <p>Get the current value of the <code>history_subst_char</code> variable.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get_word_delimiters.html'
+                                  title='rl_sys::history::vars::get_word_delimiters'>get_word_delimiters</a></td>
+                           <td class='docblock short'>
+                                <p>Get the list of word delimiter characters. The characters that separate tokens for
 <code>history_tokenize()</code>. The default value is <code>&quot; \t\n;&amp;()&lt;&gt;&quot;</code>.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get_write_timestamps.html'
-                               title='rl_sys::history::vars::get_write_timestamps'>get_write_timestamps</a></td>
-                        <td class='docblock short'>
-                             <p>Get the current value of the <code>history_write_timestamps</code> variable.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.remove_no_expand_char.html'
-                               title='rl_sys::history::vars::remove_no_expand_char'>remove_no_expand_char</a></td>
-                        <td class='docblock short'>
-                             <p>Remove a character from the list of no expand characters.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.remove_search_delimiter_char.html'
-                               title='rl_sys::history::vars::remove_search_delimiter_char'>remove_search_delimiter_char</a></td>
-                        <td class='docblock short'>
-                             <p>Remove a character from the list of search delimiter characters.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.remove_word_delimiter.html'
-                               title='rl_sys::history::vars::remove_word_delimiter'>remove_word_delimiter</a></td>
-                        <td class='docblock short'>
-                             <p>Remove a character from the list of word delimiter characters.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.set_comment_char.html'
-                               title='rl_sys::history::vars::set_comment_char'>set_comment_char</a></td>
-                        <td class='docblock short'>
-                             <p>During tokenization, if this character is seen as the first character of a word, then it
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get_write_timestamps.html'
+                                  title='rl_sys::history::vars::get_write_timestamps'>get_write_timestamps</a></td>
+                           <td class='docblock short'>
+                                <p>Get the current value of the <code>history_write_timestamps</code> variable.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.remove_no_expand_char.html'
+                                  title='rl_sys::history::vars::remove_no_expand_char'>remove_no_expand_char</a></td>
+                           <td class='docblock short'>
+                                <p>Remove a character from the list of no expand characters.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.remove_search_delimiter_char.html'
+                                  title='rl_sys::history::vars::remove_search_delimiter_char'>remove_search_delimiter_char</a></td>
+                           <td class='docblock short'>
+                                <p>Remove a character from the list of search delimiter characters.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.remove_word_delimiter.html'
+                                  title='rl_sys::history::vars::remove_word_delimiter'>remove_word_delimiter</a></td>
+                           <td class='docblock short'>
+                                <p>Remove a character from the list of word delimiter characters.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_comment_char.html'
+                                  title='rl_sys::history::vars::set_comment_char'>set_comment_char</a></td>
+                           <td class='docblock short'>
+                                <p>During tokenization, if this character is seen as the first character of a word, then it
 and all subsequent characters up to a newline are ignored, suppressing history expansion for
 the remainder of the line. This is disabled by default.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.set_expansion_char.html'
-                               title='rl_sys::history::vars::set_expansion_char'>set_expansion_char</a></td>
-                        <td class='docblock short'>
-                             <p>The character that introduces a history event. The default is `!&#39;. Setting this to 0
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_expansion_char.html'
+                                  title='rl_sys::history::vars::set_expansion_char'>set_expansion_char</a></td>
+                           <td class='docblock short'>
+                                <p>The character that introduces a history event. The default is `!&#39;. Setting this to 0
 inhibits history expansion.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.set_inhibit_expansion_function.html'
-                               title='rl_sys::history::vars::set_inhibit_expansion_function'>set_inhibit_expansion_function</a></td>
-                        <td class='docblock short'>
-                             <p>This should be set to a function of the following type:
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_inhibit_expansion_function.html'
+                                  title='rl_sys::history::vars::set_inhibit_expansion_function'>set_inhibit_expansion_function</a></td>
+                           <td class='docblock short'>
+                                <p>This should be set to a function of the following type:
 <code>extern fn(*mut c_char, c_uint) -&gt; c_int</code>.  The first argument is a string pointer
 and the second is an int index into that string. It should return a non-zero value if the
 history expansion starting at string[i] should not be performed; zero if the expansion should
 be done. It is intended for use by applications like Bash that use the history expansion
 character for additional purposes. By default, this variable is set to NULL.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.set_no_expand_chars.html'
-                               title='rl_sys::history::vars::set_no_expand_chars'>set_no_expand_chars</a></td>
-                        <td class='docblock short'>
-                             <p>Set the list of no expand characters.  Note, this will replace any existing list.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.set_quotes_inhibit_expansion.html'
-                               title='rl_sys::history::vars::set_quotes_inhibit_expansion'>set_quotes_inhibit_expansion</a></td>
-                        <td class='docblock short'>
-                             <p>If non-zero, single-quoted words are not scanned for the history expansion character. The
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_no_expand_chars.html'
+                                  title='rl_sys::history::vars::set_no_expand_chars'>set_no_expand_chars</a></td>
+                           <td class='docblock short'>
+                                <p>Set the list of no expand characters.  Note, this will replace any existing list.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_quotes_inhibit_expansion.html'
+                                  title='rl_sys::history::vars::set_quotes_inhibit_expansion'>set_quotes_inhibit_expansion</a></td>
+                           <td class='docblock short'>
+                                <p>If non-zero, single-quoted words are not scanned for the history expansion character. The
 default value is 0.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.set_search_delimiter_chars.html'
-                               title='rl_sys::history::vars::set_search_delimiter_chars'>set_search_delimiter_chars</a></td>
-                        <td class='docblock short'>
-                             <p>Set the list of search delimiter characters.  Note, this will replace any existing list.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.set_subst_char.html'
-                               title='rl_sys::history::vars::set_subst_char'>set_subst_char</a></td>
-                        <td class='docblock short'>
-                             <p>The character that invokes word substitution if found at the start of a line. The default
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_search_delimiter_chars.html'
+                                  title='rl_sys::history::vars::set_search_delimiter_chars'>set_search_delimiter_chars</a></td>
+                           <td class='docblock short'>
+                                <p>Set the list of search delimiter characters.  Note, this will replace any existing list.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_subst_char.html'
+                                  title='rl_sys::history::vars::set_subst_char'>set_subst_char</a></td>
+                           <td class='docblock short'>
+                                <p>The character that invokes word substitution if found at the start of a line. The default
 is `<sup>&#39;.</sup></p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.set_word_delimiters.html'
-                               title='rl_sys::history::vars::set_word_delimiters'>set_word_delimiters</a></td>
-                        <td class='docblock short'>
-                             <p>Set the list of word delimiter characters.  Note, this will replace any existing list.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.set_write_timestamps.html'
-                               title='rl_sys::history::vars::set_write_timestamps'>set_write_timestamps</a></td>
-                        <td class='docblock short'>
-                             <p>If non-zero, timestamps are written to the history file, so they can be preserved between
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_word_delimiters.html'
+                                  title='rl_sys::history::vars::set_word_delimiters'>set_word_delimiters</a></td>
+                           <td class='docblock short'>
+                                <p>Set the list of word delimiter characters.  Note, this will replace any existing list.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_write_timestamps.html'
+                                  title='rl_sys::history::vars::set_write_timestamps'>set_write_timestamps</a></td>
+                           <td class='docblock short'>
+                                <p>If non-zero, timestamps are written to the history file, so they can be preserved between
 sessions. The default value is 0, meaning that timestamps are not saved.</p>
-                        </td>
-                    </tr>
-                </table></section>
+                           </td>
+                       </tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

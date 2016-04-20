@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,10 +44,10 @@
 
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>history</a>::<wbr><a class='mod' href=''>search</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-372' class='srclink' href='../../../src/rl_sys/history/search.rs.html#1-109' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-372' class='srclink' href='../../../src/rl_sys/history/search.rs.html#1-109' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><a href="https://goo.gl/Xltw2k">2.3.5 Searching the History List</a></p>
 
 <p>These functions allow searching of the history list for entries containing a specific string.
@@ -55,49 +56,45 @@ search may be <em>anchored</em>, meaning that the string must match at the begin
 entry.</p>
 </div><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='enum' href='enum.Direction.html'
-                               title='rl_sys::history::search::Direction'>Direction</a></td>
-                        <td class='docblock short'>
-                             <p>The direction to search through the history entries.</p>
-                        </td>
-                    </tr>
-                </table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.Direction.html'
+                                  title='rl_sys::history::search::Direction'>Direction</a></td>
+                           <td class='docblock short'>
+                                <p>The direction to search through the history entries.</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.search.html'
-                               title='rl_sys::history::search::search'>search</a></td>
-                        <td class='docblock short'>
-                             <p>Search the history for string, starting at the current history offset. If direction is
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.search.html'
+                                  title='rl_sys::history::search::search'>search</a></td>
+                           <td class='docblock short'>
+                                <p>Search the history for string, starting at the current history offset. If direction is
 <code>Backward</code>, then the search is through previous entries, otherwise through subsequent entries.
 If string is found, then the current history index is set to that history entry, and the value
 returned is the offset in the line of the entry where string was found. Otherwise, nothing is
 changed, and a -1 is returned.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.search_pos.html'
-                               title='rl_sys::history::search::search_pos'>search_pos</a></td>
-                        <td class='docblock short'>
-                             <p>Search for string in the history list, starting at pos, an absolute index into the list. If
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.search_pos.html'
+                                  title='rl_sys::history::search::search_pos'>search_pos</a></td>
+                           <td class='docblock short'>
+                                <p>Search for string in the history list, starting at pos, an absolute index into the list. If
 direction <code>Backward</code>, the search proceeds backward from pos, otherwise forward. Returns the
 absolute index of the history element where string was found, or -1 otherwise.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.search_prefix.html'
-                               title='rl_sys::history::search::search_prefix'>search_prefix</a></td>
-                        <td class='docblock short'>
-                             <p>Search the history for string, starting at the current history offset. The search is anchored:
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.search_prefix.html'
+                                  title='rl_sys::history::search::search_prefix'>search_prefix</a></td>
+                           <td class='docblock short'>
+                                <p>Search the history for string, starting at the current history offset. The search is anchored:
 matching lines must begin with string. If direction is <code>Backward</code>, then the search is through
 previous entries, otherwise through subsequent entries. If string is found, then the current
 history index is set to that entry, and the return value is 0. Otherwise, nothing is changed,
 and a -1 is returned.</p>
-                        </td>
-                    </tr>
-                </table></section>
+                           </td>
+                       </tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

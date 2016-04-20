@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,96 +44,87 @@
 
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>history</a>::<wbr><a class='mod' href=''>listmgmt</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-257' class='srclink' href='../../../src/rl_sys/history/listmgmt.rs.html#1-249' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-257' class='srclink' href='../../../src/rl_sys/history/listmgmt.rs.html#1-249' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><a href="https://goo.gl/P6UC5s">2.3.2 History List Management</a></p>
 
 <p>These functions manage individual entries on the history list, or set parameters managing the
 list itself.</p>
 </div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.add.html'
-                               title='rl_sys::history::listmgmt::add'>add</a></td>
-                        <td class='docblock short'>
-                             <p>Place string at the end of the history list. The associated data field (if any) is set to NULL.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.add_time.html'
-                               title='rl_sys::history::listmgmt::add_time'>add_time</a></td>
-                        <td class='docblock short'>
-                             <p>Change the time stamp associated with the most recent history entry to the given time.  Note
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.add.html'
+                                  title='rl_sys::history::listmgmt::add'>add</a></td>
+                           <td class='docblock short'>
+                                <p>Place string at the end of the history list. The associated data field (if any) is set to NULL.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.add_time.html'
+                                  title='rl_sys::history::listmgmt::add_time'>add_time</a></td>
+                           <td class='docblock short'>
+                                <p>Change the time stamp associated with the most recent history entry to the given time.  Note
 that if the <code>history_comment_char</code> variable has not been set this will have no effect.  This is
 stored as seconds since the epoch, so you may lose some precision.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.clear.html'
-                               title='rl_sys::history::listmgmt::clear'>clear</a></td>
-                        <td class='docblock short'>
-                             <p>Clear the history list by deleting all the entries.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.free_entry.html'
-                               title='rl_sys::history::listmgmt::free_entry'>free_entry</a></td>
-                        <td class='docblock short'>
-                             <p>Free the history entry and any history library private data associated with it. If there is
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.clear.html'
+                                  title='rl_sys::history::listmgmt::clear'>clear</a></td>
+                           <td class='docblock short'>
+                                <p>Clear the history list by deleting all the entries.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.free_entry.html'
+                                  title='rl_sys::history::listmgmt::free_entry'>free_entry</a></td>
+                           <td class='docblock short'>
+                                <p>Free the history entry and any history library private data associated with it. If there is
 application-specific data, an Err is returned with a pointer to the data so the caller can
 dispose of it</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.is_stifled.html'
-                               title='rl_sys::history::listmgmt::is_stifled'>is_stifled</a></td>
-                        <td class='docblock short'>
-                             <p>Returns true if the history is stifled, false if it is not.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.remove.html'
-                               title='rl_sys::history::listmgmt::remove'>remove</a></td>
-                        <td class='docblock short'>
-                             <p>Remove history entry at the given offset from the history. The removed element is returned so
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.is_stifled.html'
+                                  title='rl_sys::history::listmgmt::is_stifled'>is_stifled</a></td>
+                           <td class='docblock short'>
+                                <p>Returns true if the history is stifled, false if it is not.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.remove.html'
+                                  title='rl_sys::history::listmgmt::remove'>remove</a></td>
+                           <td class='docblock short'>
+                                <p>Remove history entry at the given offset from the history. The removed element is returned so
 you can free the line, data, and containing structure.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.replace_entry.html'
-                               title='rl_sys::history::listmgmt::replace_entry'>replace_entry</a></td>
-                        <td class='docblock short'>
-                             <p>Replace the history entry at offset with the given line and data. This returns the old entry so
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.replace_entry.html'
+                                  title='rl_sys::history::listmgmt::replace_entry'>replace_entry</a></td>
+                           <td class='docblock short'>
+                                <p>Replace the history entry at offset with the given line and data. This returns the old entry so
 the caller can dispose of any application-specific data. In the case of an invalid offset, an
 Err is returned.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.stifle.html'
-                               title='rl_sys::history::listmgmt::stifle'>stifle</a></td>
-                        <td class='docblock short'>
-                             <p>Stifle the history list, remembering only the last <em>max</em> entries.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.unstifle.html'
-                               title='rl_sys::history::listmgmt::unstifle'>unstifle</a></td>
-                        <td class='docblock short'>
-                             <p>Stop stifling the history. This returns the previously-set maximum number of history entries
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.stifle.html'
+                                  title='rl_sys::history::listmgmt::stifle'>stifle</a></td>
+                           <td class='docblock short'>
+                                <p>Stifle the history list, remembering only the last <em>max</em> entries.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.unstifle.html'
+                                  title='rl_sys::history::listmgmt::unstifle'>unstifle</a></td>
+                           <td class='docblock short'>
+                                <p>Stop stifling the history. This returns the previously-set maximum number of history entries
 (as set by <code>stifle_history()</code>).</p>
-                        </td>
-                    </tr>
-                </table></section>
+                           </td>
+                       </tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

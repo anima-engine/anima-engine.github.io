@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,34 +44,32 @@
 
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a>::<wbr><a class='mod' href=''>util</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-1147' class='srclink' href='../../../src/rl_sys/readline/util.rs.html#1-245' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1147' class='srclink' href='../../../src/rl_sys/readline/util.rs.html#1-245' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><a href="https://goo.gl/wg27lL">2.4.10 Utility Functions</a></p>
 </div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.alphabetic.html'
-                               title='rl_sys::readline::util::alphabetic'>alphabetic</a></td>
-                        <td class='docblock short'>
-                             <p>Return 1 if <code>c</code> is an alphabetic character.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.ding.html'
-                               title='rl_sys::readline::util::ding'>ding</a></td>
-                        <td class='docblock short'>
-                             <p>Ring the terminal bell, obeying the setting of <code>bell-style</code>.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.display_match_list.html'
-                               title='rl_sys::readline::util::display_match_list'>display_match_list</a></td>
-                        <td class='docblock short'>
-                             <p>A convenience function for displaying a list of strings in columnar format on Readline&#39;s output
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.alphabetic.html'
+                                  title='rl_sys::readline::util::alphabetic'>alphabetic</a></td>
+                           <td class='docblock short'>
+                                <p>Return 1 if <code>c</code> is an alphabetic character.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.ding.html'
+                                  title='rl_sys::readline::util::ding'>ding</a></td>
+                           <td class='docblock short'>
+                                <p>Ring the terminal bell, obeying the setting of <code>bell-style</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.display_match_list.html'
+                                  title='rl_sys::readline::util::display_match_list'>display_match_list</a></td>
+                           <td class='docblock short'>
+                                <p>A convenience function for displaying a list of strings in columnar format on Readline&#39;s output
 stream. <code>matches</code> is the list of strings, in argv format, such as a list of completion matches.
 <code>len</code> is the number of strings in <code>matches</code>, and <code>max</code> is the length of the longest string in
 <code>matches</code>. This function uses the setting of <code>print-completions-horizontally</code> to select how the
@@ -78,65 +77,58 @@ matches are displayed (see section <a href="https://goo.gl/Ivqovs">1.3.1 Readlin
 completions, this function sets the number of columns used for display to the value of
 <code>completion-display-width</code>, the value of the environment variable COLUMNS, or the screen width,
 in that order.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.extend_line_buffer.html'
-                               title='rl_sys::readline::util::extend_line_buffer'>extend_line_buffer</a></td>
-                        <td class='docblock short'>
-                             <p>Ensure that <code>rl_line_buffer</code> has enough space to hold len characters, possibly reallocating it
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.extend_line_buffer.html'
+                                  title='rl_sys::readline::util::extend_line_buffer'>extend_line_buffer</a></td>
+                           <td class='docblock short'>
+                                <p>Ensure that <code>rl_line_buffer</code> has enough space to hold len characters, possibly reallocating it
 if necessary.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.free.html'
-                               title='rl_sys::readline::util::free'>free</a></td>
-                        <td class='docblock short'>
-                             <p>Deallocate the memory pointed to by <code>ptr</code>. <code>ptr</code> must have been allocated by malloc.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.init.html'
-                               title='rl_sys::readline::util::init'>init</a></td>
-                        <td class='docblock short'>
-                             <p>Initialize or re-initialize Readline&#39;s internal state. It&#39;s not strictly necessary to call this;
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.free.html'
+                                  title='rl_sys::readline::util::free'>free</a></td>
+                           <td class='docblock short'>
+                                <p>Deallocate the memory pointed to by <code>ptr</code>. <code>ptr</code> must have been allocated by malloc.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.init.html'
+                                  title='rl_sys::readline::util::init'>init</a></td>
+                           <td class='docblock short'>
+                                <p>Initialize or re-initialize Readline&#39;s internal state. It&#39;s not strictly necessary to call this;
 <code>readline()</code> calls it before reading any input. Note that this will only call <code>initialize</code> once
 after first use.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.replace_line.html'
-                               title='rl_sys::readline::util::replace_line'>replace_line</a></td>
-                        <td class='docblock short'>
-                             <p>Replace the contents of <code>rl_line_buffer</code> with text. The point and mark are preserved, if
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.replace_line.html'
+                                  title='rl_sys::readline::util::replace_line'>replace_line</a></td>
+                           <td class='docblock short'>
+                                <p>Replace the contents of <code>rl_line_buffer</code> with text. The point and mark are preserved, if
 possible. If <code>clear_undo</code> is true, the undo list associated with the current line is cleared.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.restore_state.html'
-                               title='rl_sys::readline::util::restore_state'>restore_state</a></td>
-                        <td class='docblock short'>
-                             <p>Restore Readline&#39;s internal state to that stored in <code>state</code>, which must have been saved by a
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.restore_state.html'
+                                  title='rl_sys::readline::util::restore_state'>restore_state</a></td>
+                           <td class='docblock short'>
+                                <p>Restore Readline&#39;s internal state to that stored in <code>state</code>, which must have been saved by a
 call to <code>save_state</code>. The contents of the <code>readline_state</code> structure are documented in
 &#39;readline.h&#39;. The caller is responsible for freeing the structure.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.save_state.html'
-                               title='rl_sys::readline::util::save_state'>save_state</a></td>
-                        <td class='docblock short'>
-                             <p>Save a snapshot of Readline&#39;s internal state to <code>state</code>. The contents of the <code>readline_state</code>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.save_state.html'
+                                  title='rl_sys::readline::util::save_state'>save_state</a></td>
+                           <td class='docblock short'>
+                                <p>Save a snapshot of Readline&#39;s internal state to <code>state</code>. The contents of the <code>readline_state</code>
 structure are documented in &#39;readline.h&#39;. The caller is responsible for allocating the
 structure.</p>
-                        </td>
-                    </tr>
-                </table></section>
+                           </td>
+                       </tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

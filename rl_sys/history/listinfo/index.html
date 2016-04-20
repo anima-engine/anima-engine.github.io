@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,67 +44,61 @@
 
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>history</a>::<wbr><a class='mod' href=''>listinfo</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-221' class='srclink' href='../../../src/rl_sys/history/listinfo.rs.html#1-173' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-221' class='srclink' href='../../../src/rl_sys/history/listinfo.rs.html#1-173' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><a href="https://goo.gl/8OWMTy">2.3.3 Information About the History List</a></p>
 
 <p>These functions return information about the entire history list or individual list entries.</p>
 </div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.current.html'
-                               title='rl_sys::history::listinfo::current'>current</a></td>
-                        <td class='docblock short'>
-                             <p>Return the history entry at the current position, as determined by <code>where_history()</code>`. If there
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.current.html'
+                                  title='rl_sys::history::listinfo::current'>current</a></td>
+                           <td class='docblock short'>
+                                <p>Return the history entry at the current position, as determined by <code>where_history()</code>`. If there
 is no entry there, return a HistoryError.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get.html'
-                               title='rl_sys::history::listinfo::get'>get</a></td>
-                        <td class='docblock short'>
-                             <p>Return the history entry at position offset, starting from <code>history_base</code>. If there is no entry
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get.html'
+                                  title='rl_sys::history::listinfo::get'>get</a></td>
+                           <td class='docblock short'>
+                                <p>Return the history entry at position offset, starting from <code>history_base</code>. If there is no entry
 there, or if offset is greater than the history length, return a HistoryError.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get_time.html'
-                               title='rl_sys::history::listinfo::get_time'>get_time</a></td>
-                        <td class='docblock short'>
-                             <p>Return the time stamp associated with the history entry entry.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.list.html'
-                               title='rl_sys::history::listinfo::list'>list</a></td>
-                        <td class='docblock short'>
-                             <p>Return a Vec<HistoryEntry> which is the current input history. Element 0 of this list is the
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get_time.html'
+                                  title='rl_sys::history::listinfo::get_time'>get_time</a></td>
+                           <td class='docblock short'>
+                                <p>Return the time stamp associated with the history entry entry.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.list.html'
+                                  title='rl_sys::history::listinfo::list'>list</a></td>
+                           <td class='docblock short'>
+                                <p>Return a Vec<HistoryEntry> which is the current input history. Element 0 of this list is the
 beginning of time. If there is no history, return an empty vector.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.offset.html'
-                               title='rl_sys::history::listinfo::offset'>offset</a></td>
-                        <td class='docblock short'>
-                             <p>Returns the offset of the current history element.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.total_bytes.html'
-                               title='rl_sys::history::listinfo::total_bytes'>total_bytes</a></td>
-                        <td class='docblock short'>
-                             <p>Return the number of bytes that the primary history entries are using. This function returns the
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.offset.html'
+                                  title='rl_sys::history::listinfo::offset'>offset</a></td>
+                           <td class='docblock short'>
+                                <p>Returns the offset of the current history element.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.total_bytes.html'
+                                  title='rl_sys::history::listinfo::total_bytes'>total_bytes</a></td>
+                           <td class='docblock short'>
+                                <p>Return the number of bytes that the primary history entries are using. This function returns the
 sum of the lengths of all the lines in the history.</p>
-                        </td>
-                    </tr>
-                </table></section>
+                           </td>
+                       </tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,10 +44,10 @@
 
     <section id='main' class="content fn">
 <h1 class='fqn'><span class='in-band'>Function <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>history</a>::<wbr><a href='index.html'>expand</a>::<wbr><a class='fn' href=''>arg_extract</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-142' class='srclink' href='../../../src/rl_sys/history/expand.rs.html#166-180' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-142' class='srclink' href='../../../src/rl_sys/history/expand.rs.html#166-180' title='goto source code'>[src]</a></span></h1>
 <pre class='rust fn'>pub fn arg_extract(s: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, first: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, last: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>, <a class='struct' href='../../../rl_sys/struct.HistoryError.html' title='rl_sys::HistoryError'>HistoryError</a>&gt;</pre><div class='docblock'><p>Extract a string segment consisting of the <code>first</code> through <code>last</code> arguments present in string
 <code>s</code>. Arguments are split using <code>history_tokenize</code>. If either <code>first</code> or <code>last</code> is &lt; 0, then make
 that arg count from the right (subtract from the number of tokens, so that <code>first</code> = -1 means

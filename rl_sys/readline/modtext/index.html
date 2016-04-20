@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,59 +44,54 @@
 
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a>::<wbr><a class='mod' href=''>modtext</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-993' class='srclink' href='../../../src/rl_sys/readline/modtext.rs.html#1-140' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-993' class='srclink' href='../../../src/rl_sys/readline/modtext.rs.html#1-140' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><a href="https://goo.gl/DLJ9Gn">2.4.7 Modifying Text</a></p>
 </div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.copy_text.html'
-                               title='rl_sys::readline::modtext::copy_text'>copy_text</a></td>
-                        <td class='docblock short'>
-                             <p>Return a copy of the text between <code>start</code> and <code>end</code> in the current line.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.delete_text.html'
-                               title='rl_sys::readline::modtext::delete_text'>delete_text</a></td>
-                        <td class='docblock short'>
-                             <p>Delete the text between <code>start</code> and <code>end</code> in the current line. Returns the number of characters
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.copy_text.html'
+                                  title='rl_sys::readline::modtext::copy_text'>copy_text</a></td>
+                           <td class='docblock short'>
+                                <p>Return a copy of the text between <code>start</code> and <code>end</code> in the current line.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.delete_text.html'
+                                  title='rl_sys::readline::modtext::delete_text'>delete_text</a></td>
+                           <td class='docblock short'>
+                                <p>Delete the text between <code>start</code> and <code>end</code> in the current line. Returns the number of characters
 deleted.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.insert_text.html'
-                               title='rl_sys::readline::modtext::insert_text'>insert_text</a></td>
-                        <td class='docblock short'>
-                             <p>Insert text into the line at the current cursor position. Returns the number of characters
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.insert_text.html'
+                                  title='rl_sys::readline::modtext::insert_text'>insert_text</a></td>
+                           <td class='docblock short'>
+                                <p>Insert text into the line at the current cursor position. Returns the number of characters
 inserted.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.kill_text.html'
-                               title='rl_sys::readline::modtext::kill_text'>kill_text</a></td>
-                        <td class='docblock short'>
-                             <p>Copy the text between <code>start</code> and <code>end</code> in the current line to the kill ring, appending or
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.kill_text.html'
+                                  title='rl_sys::readline::modtext::kill_text'>kill_text</a></td>
+                           <td class='docblock short'>
+                                <p>Copy the text between <code>start</code> and <code>end</code> in the current line to the kill ring, appending or
 prepending to the last kill if the last command was a kill command. The text is deleted. If
 start is less than end, the text is appended, otherwise prepended. If the last command was not
 a kill, a new kill ring slot is used.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.push_macro_input.html'
-                               title='rl_sys::readline::modtext::push_macro_input'>push_macro_input</a></td>
-                        <td class='docblock short'>
-                             <p>Cause macro <code>m</code> to be inserted into the line, as if it had been invoked by a key bound to a
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.push_macro_input.html'
+                                  title='rl_sys::readline::modtext::push_macro_input'>push_macro_input</a></td>
+                           <td class='docblock short'>
+                                <p>Cause macro <code>m</code> to be inserted into the line, as if it had been invoked by a key bound to a
 macro. Not especially useful; use <code>rl_insert_text()</code> instead.</p>
-                        </td>
-                    </tr>
-                </table></section>
+                           </td>
+                       </tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

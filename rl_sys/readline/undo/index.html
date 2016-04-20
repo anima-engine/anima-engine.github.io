@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,10 +44,10 @@
 
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a>::<wbr><a class='mod' href=''>undo</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-1214' class='srclink' href='../../../src/rl_sys/readline/undo.rs.html#1-211' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1214' class='srclink' href='../../../src/rl_sys/readline/undo.rs.html#1-211' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><a href="https://goo.gl/ZemRqX">2.4.5 Allowing Undoing</a></p>
 
 <p>Supporting the undo command is a painless thing, and makes your functions much more useful. It
@@ -69,68 +70,61 @@ text. That is, the undo code tells what to undo, not how to undo it. <strong>UND
 <strong>UNDO_END</strong> are tags added by <code>rl_begin_undo_group()</code> and <code>rl_end_undo_group()</code>.</p>
 </div><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='enum' href='enum.UndoType.html'
-                               title='rl_sys::readline::undo::UndoType'>UndoType</a></td>
-                        <td class='docblock short'>
-                             <p>Undo Event Types</p>
-                        </td>
-                    </tr>
-                </table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.UndoType.html'
+                                  title='rl_sys::readline::undo::UndoType'>UndoType</a></td>
+                           <td class='docblock short'>
+                                <p>Undo Event Types</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.add_undo.html'
-                               title='rl_sys::readline::undo::add_undo'>add_undo</a></td>
-                        <td class='docblock short'>
-                             <p>Remember how to undo an event (according to <code>what</code>).</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.begin_undo_group.html'
-                               title='rl_sys::readline::undo::begin_undo_group'>begin_undo_group</a></td>
-                        <td class='docblock short'>
-                             <p>Begins saving undo information in a group construct. The undo information usually comes from
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.add_undo.html'
+                                  title='rl_sys::readline::undo::add_undo'>add_undo</a></td>
+                           <td class='docblock short'>
+                                <p>Remember how to undo an event (according to <code>what</code>).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.begin_undo_group.html'
+                                  title='rl_sys::readline::undo::begin_undo_group'>begin_undo_group</a></td>
+                           <td class='docblock short'>
+                                <p>Begins saving undo information in a group construct. The undo information usually comes from
 calls to <code>rl_insert_text()</code> and <code>rl_delete_text()</code>, but could be the result of calls to
 <code>rl_add_undo()</code>.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.do_undo.html'
-                               title='rl_sys::readline::undo::do_undo'>do_undo</a></td>
-                        <td class='docblock short'>
-                             <p>Undo the first thing on the undo list. Returns an Err if there was nothing to undo, Ok if
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.do_undo.html'
+                                  title='rl_sys::readline::undo::do_undo'>do_undo</a></td>
+                           <td class='docblock short'>
+                                <p>Undo the first thing on the undo list. Returns an Err if there was nothing to undo, Ok if
 something was undone. Note that this depends on history being initialized and used.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.end_undo_group.html'
-                               title='rl_sys::readline::undo::end_undo_group'>end_undo_group</a></td>
-                        <td class='docblock short'>
-                             <p>Closes the current undo group started with <code>rl_begin_undo_group()</code>. There should be one call to
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.end_undo_group.html'
+                                  title='rl_sys::readline::undo::end_undo_group'>end_undo_group</a></td>
+                           <td class='docblock short'>
+                                <p>Closes the current undo group started with <code>rl_begin_undo_group()</code>. There should be one call to
 <code>rl_end_undo_group()</code> for each call to <code>rl_begin_undo_group()</code>.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.free_undo_list.html'
-                               title='rl_sys::readline::undo::free_undo_list'>free_undo_list</a></td>
-                        <td class='docblock short'>
-                             <p>Free the existing undo list.  Note that this depends on history being initialized and used.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.modifying.html'
-                               title='rl_sys::readline::undo::modifying'>modifying</a></td>
-                        <td class='docblock short'>
-                             <p>Tell Readline to save the text between <code>start</code> and <code>end</code> as a single undo unit. It is assumed
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.free_undo_list.html'
+                                  title='rl_sys::readline::undo::free_undo_list'>free_undo_list</a></td>
+                           <td class='docblock short'>
+                                <p>Free the existing undo list.  Note that this depends on history being initialized and used.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.modifying.html'
+                                  title='rl_sys::readline::undo::modifying'>modifying</a></td>
+                           <td class='docblock short'>
+                                <p>Tell Readline to save the text between <code>start</code> and <code>end</code> as a single undo unit. It is assumed
 that you will subsequently modify that text.</p>
-                        </td>
-                    </tr>
-                </table></section>
+                           </td>
+                       </tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,10 +44,10 @@
 
     <section id='main' class="content fn">
 <h1 class='fqn'><span class='in-band'>Function <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a>::<wbr><a href='index.html'>binding</a>::<wbr><a class='fn' href=''>generic_bind</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-754' class='srclink' href='../../../src/rl_sys/readline/binding.rs.html#631-650' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-754' class='srclink' href='../../../src/rl_sys/readline/binding.rs.html#631-650' title='goto source code'>[src]</a></span></h1>
 <pre class='rust fn'>pub fn generic_bind(keyseq: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, bind_type: <a class='enum' href='../../../rl_sys/readline/binding/enum.BindType.html' title='rl_sys::readline::binding::BindType'>BindType</a>, map: <a class='type' href='../../../rl_sys/readline/type.Keymap.html' title='rl_sys::readline::Keymap'>Keymap</a>) -&gt; <a class='type' href='../../../rl_sys/readline/binding/type.BindResult.html' title='rl_sys::readline::binding::BindResult'>BindResult</a></pre><div class='docblock'><p>Bind the key sequence represented by the string <code>keyseq</code> to the function <code>f</code>. type says what
 kind of data is pointed to by data; this can be a function (IsFunc), a macro (IsMacr), or a
 keymap (IsKmap). This makes new keymaps as necessary. The initial keymap in which to do bindings

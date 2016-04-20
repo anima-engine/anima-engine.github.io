@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
+    
 
     
     
@@ -43,19 +44,21 @@
 
     <section id='main' class="content struct">
 <h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>mrusty</a>::<wbr><a class='struct' href=''>Repl</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-849' class='srclink' href='../src/mrusty/repl.rs.html#32-35' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1213' class='srclink' href='../src/mrusty/src/repl.rs.html#25-28' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct Repl {
     // some fields omitted
 }</pre><div class='docblock'><p>A <code>struct</code> that exposes an <code>Mruby</code> to a REPL.</p>
 
 <h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<p>Using <code>GnuReadLine</code>, which requires the <code>gnu-readline</code> feature:</p>
+
 <pre><code class="language-no-run">let mruby = Mruby::new();
 let repl = Repl::new(mruby);
 
-repl.start();
+repl.start(&amp;GnuReadLine);
 </code></pre>
 </div><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../mrusty/struct.Repl.html' title='mrusty::Repl'>Repl</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(mruby: <a class='type' href='../mrusty/type.MrubyType.html' title='mrusty::MrubyType'>MrubyType</a>) -&gt; <a class='struct' href='../mrusty/struct.Repl.html' title='mrusty::Repl'>Repl</a></code></h4>
 <div class='docblock'><p>Creates a new <code>Repl</code>.</p>
@@ -79,6 +82,8 @@ repl.start();
 <p>Use <code>&#39;\&#39;</code> for multiline statements.</p>
 
 <h1 id='examples-3' class='section-header'><a href='#examples-3'>Examples</a></h1>
+<p>Using <code>GnuReadLine</code>, which requires the <code>gnu-readline</code> feature:</p>
+
 <pre><code class="language-no-run">let mruby = Mruby::new();
 let repl = Repl::new(mruby);
 

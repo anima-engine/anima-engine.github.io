@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
+    
 
     
     
@@ -43,10 +44,10 @@
 
     <section id='main' class="content macro">
 <h1 class='fqn'><span class='in-band'><a href='index.html'>mrusty</a>::<wbr><a class='macro' href=''>describe!</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-902' class='srclink' href='../src/mrusty/spec.rs.html#56-87' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1288' class='srclink' href='../src/mrusty/src/spec.rs.html#47-78' title='goto source code'>[src]</a></span></h1>
 <pre class='rust macro'>
 <span class='macro'>macro_rules</span><span class='macro'>!</span> <span class='ident'>describe</span> {
     ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span>:<span class='ident'>ident</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>spec</span>:<span class='ident'>expr</span> ) <span class='op'>=&gt;</span> { ... };
@@ -63,7 +64,7 @@ as a second argument.</p>
 
 <span class='kw'>impl</span> <span class='ident'>MrubyFile</span> <span class='kw'>for</span> <span class='ident'>Cont</span> {
     <span class='kw'>fn</span> <span class='ident'>require</span>(<span class='ident'>mruby</span>: <span class='ident'>MrubyType</span>) {
-        <span class='ident'>mruby</span>.<span class='ident'>def_class</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;Container&quot;</span>);
+        <span class='ident'>mruby</span>.<span class='ident'>def_class_for</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;Container&quot;</span>);
     }
 }
 

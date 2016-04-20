@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,10 +44,10 @@
 
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a>::<wbr><a class='mod' href=''>keymap</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-893' class='srclink' href='../../../src/rl_sys/readline/keymap.rs.html#1-233' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-893' class='srclink' href='../../../src/rl_sys/readline/keymap.rs.html#1-233' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><a href="https://cnswww.cns.cwru.edu/php/chet/readline/readline.html#SEC31">2.4.2 Selecting A Keymap</a></p>
 
 <p>Key bindings take place on a <code>keymap</code>. The keymap is the association between the keys that the
@@ -54,84 +55,75 @@ user types and the functions that get run. You can make your own keymaps, copy e
 and tell Readline which keymap to use.</p>
 </div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.copy.html'
-                               title='rl_sys::readline::keymap::copy'>copy</a></td>
-                        <td class='docblock short'>
-                             <p>Return a new keymap which is a copy of map.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.create_empty.html'
-                               title='rl_sys::readline::keymap::create_empty'>create_empty</a></td>
-                        <td class='docblock short'>
-                             <p>Returns a new, empty keymap. The space for the keymap is allocated with <code>malloc()</code>; the caller
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.copy.html'
+                                  title='rl_sys::readline::keymap::copy'>copy</a></td>
+                           <td class='docblock short'>
+                                <p>Return a new keymap which is a copy of map.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.create_empty.html'
+                                  title='rl_sys::readline::keymap::create_empty'>create_empty</a></td>
+                           <td class='docblock short'>
+                                <p>Returns a new, empty keymap. The space for the keymap is allocated with <code>malloc()</code>; the caller
 should free it by calling <code>rl_free_keymap()</code> when done.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.discard.html'
-                               title='rl_sys::readline::keymap::discard'>discard</a></td>
-                        <td class='docblock short'>
-                             <p>Free the storage associated with the data in keymap. The caller should free keymap.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.free.html'
-                               title='rl_sys::readline::keymap::free'>free</a></td>
-                        <td class='docblock short'>
-                             <p>Free all storage associated with keymap. This calls <code>rl_discard_keymap</code> to free subordindate
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.discard.html'
+                                  title='rl_sys::readline::keymap::discard'>discard</a></td>
+                           <td class='docblock short'>
+                                <p>Free the storage associated with the data in keymap. The caller should free keymap.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.free.html'
+                                  title='rl_sys::readline::keymap::free'>free</a></td>
+                           <td class='docblock short'>
+                                <p>Free all storage associated with keymap. This calls <code>rl_discard_keymap</code> to free subordindate
 keymaps and macros.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get.html'
-                               title='rl_sys::readline::keymap::get'>get</a></td>
-                        <td class='docblock short'>
-                             <p>Returns the currently active keymap.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get_by_name.html'
-                               title='rl_sys::readline::keymap::get_by_name'>get_by_name</a></td>
-                        <td class='docblock short'>
-                             <p>Return the keymap matching <code>name</code>. <code>name</code> is one which would be supplied in a set keymap inputrc
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get.html'
+                                  title='rl_sys::readline::keymap::get'>get</a></td>
+                           <td class='docblock short'>
+                                <p>Returns the currently active keymap.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get_by_name.html'
+                                  title='rl_sys::readline::keymap::get_by_name'>get_by_name</a></td>
+                           <td class='docblock short'>
+                                <p>Return the keymap matching <code>name</code>. <code>name</code> is one which would be supplied in a set keymap inputrc
 line (see section <a href="https://goo.gl/VtaCdx">1.3 Readline Init File</a>).</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get_name.html'
-                               title='rl_sys::readline::keymap::get_name'>get_name</a></td>
-                        <td class='docblock short'>
-                             <p>Return the name matching <code>map</code>. <code>name</code> is one which would be supplied in a set keymap inputrc
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get_name.html'
+                                  title='rl_sys::readline::keymap::get_name'>get_name</a></td>
+                           <td class='docblock short'>
+                                <p>Return the name matching <code>map</code>. <code>name</code> is one which would be supplied in a set keymap inputrc
 line (see section <a href="https://goo.gl/VtaCdx">1.3 Readline Init File</a>).</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.make.html'
-                               title='rl_sys::readline::keymap::make'>make</a></td>
-                        <td class='docblock short'>
-                             <p>Return a new keymap with the printing characters bound to <code>rl_insert</code>, the lowercase Meta
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.make.html'
+                                  title='rl_sys::readline::keymap::make'>make</a></td>
+                           <td class='docblock short'>
+                                <p>Return a new keymap with the printing characters bound to <code>rl_insert</code>, the lowercase Meta
 characters bound to run their equivalents, and the Meta digits bound to produce numeric
 arguments.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.set.html'
-                               title='rl_sys::readline::keymap::set'>set</a></td>
-                        <td class='docblock short'>
-                             <p>Makes keymap the currently active keymap.</p>
-                        </td>
-                    </tr>
-                </table></section>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set.html'
+                                  title='rl_sys::readline::keymap::set'>set</a></td>
+                           <td class='docblock short'>
+                                <p>Makes keymap the currently active keymap.</p>
+                           </td>
+                       </tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

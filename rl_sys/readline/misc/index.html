@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -43,83 +44,76 @@
 
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>rl_sys</a>::<wbr><a href='../index.html'>readline</a>::<wbr><a class='mod' href=''>misc</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-941' class='srclink' href='../../../src/rl_sys/readline/misc.rs.html#1-191' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-941' class='srclink' href='../../../src/rl_sys/readline/misc.rs.html#1-191' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p><a href="https://goo.gl/2BieXb">2.4.11 Miscellaneous Functions</a></p>
 </div><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.clear_history.html'
-                               title='rl_sys::readline::misc::clear_history'>clear_history</a></td>
-                        <td class='docblock short'>
-                             <p>Clear the history list by deleting all of the entries, in the same manner as the History
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.clear_history.html'
+                                  title='rl_sys::readline::misc::clear_history'>clear_history</a></td>
+                           <td class='docblock short'>
+                                <p>Clear the history list by deleting all of the entries, in the same manner as the History
 library&#39;s <code>clear_history()</code> function. This differs from <code>clear_history</code> because it frees
 private data Readline saves in the history list.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.get_termcap.html'
-                               title='rl_sys::readline::misc::get_termcap'>get_termcap</a></td>
-                        <td class='docblock short'>
-                             <p>Retrieve the string value of the termcap capability <code>cap</code>. Readline fetches the termcap entry
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.get_termcap.html'
+                                  title='rl_sys::readline::misc::get_termcap'>get_termcap</a></td>
+                           <td class='docblock short'>
+                                <p>Retrieve the string value of the termcap capability <code>cap</code>. Readline fetches the termcap entry
 for the current terminal name and uses those capabilities to move around the screen line and
 perform other terminal-specific operations, like erasing a line. Readline does not use all of a
 terminal&#39;s capabilities, and this function will return values for only those capabilities
 Readline uses.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.macro_dumper.html'
-                               title='rl_sys::readline::misc::macro_dumper'>macro_dumper</a></td>
-                        <td class='docblock short'>
-                             <p>Print the key sequences bound to macros and their values, using the current keymap, to
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.macro_dumper.html'
+                                  title='rl_sys::readline::misc::macro_dumper'>macro_dumper</a></td>
+                           <td class='docblock short'>
+                                <p>Print the key sequences bound to macros and their values, using the current keymap, to
 <code>rl_outstream</code>. If <code>readable</code> is true, the list is formatted in such a way that it can be made
 part of an inputrc file and re-read.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.set_paren_blink_timeout.html'
-                               title='rl_sys::readline::misc::set_paren_blink_timeout'>set_paren_blink_timeout</a></td>
-                        <td class='docblock short'>
-                             <p>Set the time interval (in microseconds) that Readline waits when showing a balancing character
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.set_paren_blink_timeout.html'
+                                  title='rl_sys::readline::misc::set_paren_blink_timeout'>set_paren_blink_timeout</a></td>
+                           <td class='docblock short'>
+                                <p>Set the time interval (in microseconds) that Readline waits when showing a balancing character
 when <code>blink-matching-paren</code> has been enabled.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.variable_bind.html'
-                               title='rl_sys::readline::misc::variable_bind'>variable_bind</a></td>
-                        <td class='docblock short'>
-                             <p>Make the Readline variable <code>name</code> have <code>value</code>. This behaves as if the readline command
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.variable_bind.html'
+                                  title='rl_sys::readline::misc::variable_bind'>variable_bind</a></td>
+                           <td class='docblock short'>
+                                <p>Make the Readline variable <code>name</code> have <code>value</code>. This behaves as if the readline command
 <code>set variable value</code> had been executed in an inputrc file (see section
 <a href="https://goo.gl/Ivqovs">1.3.1 Readline Init File Syntax</a>).</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.variable_dumper.html'
-                               title='rl_sys::readline::misc::variable_dumper'>variable_dumper</a></td>
-                        <td class='docblock short'>
-                             <p>Print the readline variable names and their current values to <code>rl_outstream</code>. If readable is
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.variable_dumper.html'
+                                  title='rl_sys::readline::misc::variable_dumper'>variable_dumper</a></td>
+                           <td class='docblock short'>
+                                <p>Print the readline variable names and their current values to <code>rl_outstream</code>. If readable is
 true, the list is formatted in such a way that it can be made part of an inputrc file and
 re-read.</p>
-                        </td>
-                    </tr>
-                
-                    <tr class=' module-item'>
-                        <td><a class='fn' href='fn.variable_value.html'
-                               title='rl_sys::readline::misc::variable_value'>variable_value</a></td>
-                        <td class='docblock short'>
-                             <p>Return a string representing the value of the Readline variable <code>name</code>. For boolean variables,
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.variable_value.html'
+                                  title='rl_sys::readline::misc::variable_value'>variable_value</a></td>
+                           <td class='docblock short'>
+                                <p>Return a string representing the value of the Readline variable <code>name</code>. For boolean variables,
 this string is either <code>on&#39; or</code>off&#39;.</p>
-                        </td>
-                    </tr>
-                </table></section>
+                           </td>
+                       </tr></table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

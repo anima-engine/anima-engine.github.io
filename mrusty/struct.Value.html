@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
+    
 
     
     
@@ -43,10 +44,10 @@
 
     <section id='main' class="content struct">
 <h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>mrusty</a>::<wbr><a class='struct' href=''>Value</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-392' class='srclink' href='../src/mrusty/mruby.rs.html#1168-1171' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-609' class='srclink' href='../src/mrusty/src/mruby.rs.html#1596-1599' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct Value {
     // some fields omitted
 }</pre><div class='docblock'><p>A <code>struct</code> that wraps around any mruby variable.</p>
@@ -86,8 +87,8 @@
     <span class='ident'>value</span>: <span class='ident'>i32</span>
 };
 
-<span class='ident'>mruby</span>.<span class='ident'>def_class</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;Container&quot;</span>);
-<span class='ident'>mruby</span>.<span class='ident'>def_method</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span>, _<span class='op'>&gt;</span>(<span class='string'>&quot;initialize&quot;</span>, <span class='macro'>mrfn</span><span class='macro'>!</span>(<span class='op'>|</span><span class='ident'>_mruby</span>, <span class='ident'>slf</span>: <span class='ident'>Value</span>, <span class='ident'>v</span>: <span class='ident'>i32</span><span class='op'>|</span> {
+<span class='ident'>mruby</span>.<span class='ident'>def_class_for</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;Container&quot;</span>);
+<span class='ident'>mruby</span>.<span class='ident'>def_method_for</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span>, _<span class='op'>&gt;</span>(<span class='string'>&quot;initialize&quot;</span>, <span class='macro'>mrfn</span><span class='macro'>!</span>(<span class='op'>|</span><span class='ident'>_mruby</span>, <span class='ident'>slf</span>: <span class='ident'>Value</span>, <span class='ident'>v</span>: <span class='ident'>i32</span><span class='op'>|</span> {
     <span class='kw'>let</span> <span class='ident'>cont</span> <span class='op'>=</span> <span class='ident'>Cont</span> { <span class='ident'>value</span>: <span class='ident'>v</span> };
 
     <span class='ident'>slf</span>.<span class='ident'>init</span>(<span class='ident'>cont</span>) <span class='comment'>// Return the same slf value.</span>
@@ -117,15 +118,69 @@ handle the exception.</p>
 
 <span class='kw'>let</span> <span class='ident'>one</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>string</span>(<span class='string'>&quot;&quot;</span>);
 <span class='ident'>one</span>.<span class='ident'>call</span>(<span class='string'>&quot;+&quot;</span>, <span class='macro'>vec</span><span class='macro'>!</span>[<span class='ident'>mruby</span>.<span class='ident'>fixnum</span>(<span class='number'>1</span>)]);</pre>
-</div><h4 id='method.type_name' class='method'><code>fn <a href='#method.type_name' class='fnname'>type_name</a>(&amp;self) -&gt; &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
-<div class='docblock'><p>Returns the name of the mruby <code>Class</code> as a <code>&amp;str</code>.</p>
+</div><h4 id='method.has_var' class='method'><code>fn <a href='#method.has_var' class='fnname'>has_var</a>(&amp;self, name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns whether the instance variable <code>name</code> is defined on a <code>Value</code>.</p>
 
 <h1 id='examples-4' class='section-header'><a href='#examples-4'>Examples</a></h1>
 <pre class='rust rust-example-rendered'>
 <span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>Mruby</span>::<span class='ident'>new</span>();
 
+<span class='ident'>mruby</span>.<span class='ident'>def_class</span>(<span class='string'>&quot;Container&quot;</span>);
+
+<span class='kw'>let</span> <span class='ident'>cont</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>run</span>(<span class='string'>&quot;Container.new&quot;</span>).<span class='ident'>unwrap</span>();
+
+<span class='macro'>assert</span><span class='macro'>!</span>(<span class='op'>!</span><span class='ident'>cont</span>.<span class='ident'>has_var</span>(<span class='string'>&quot;value&quot;</span>));</pre>
+</div><h4 id='method.get_var' class='method'><code>fn <a href='#method.get_var' class='fnname'>get_var</a>(&amp;self, name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a>&gt;</code></h4>
+<div class='docblock'><p>Returns the value of the instance variable <code>name</code> in a <code>Some</code> or <code>None</code> if it is not
+defined.</p>
+
+<h1 id='examples-5' class='section-header'><a href='#examples-5'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>Mruby</span>::<span class='ident'>new</span>();
+
+<span class='ident'>mruby</span>.<span class='ident'>def_class</span>(<span class='string'>&quot;Container&quot;</span>);
+
+<span class='kw'>let</span> <span class='ident'>cont</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>run</span>(<span class='string'>&quot;Container.new&quot;</span>).<span class='ident'>unwrap</span>();
+
+<span class='ident'>cont</span>.<span class='ident'>set_var</span>(<span class='string'>&quot;value&quot;</span>, <span class='ident'>mruby</span>.<span class='ident'>fixnum</span>(<span class='number'>2</span>));
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>cont</span>.<span class='ident'>get_var</span>(<span class='string'>&quot;value&quot;</span>).<span class='ident'>unwrap</span>().<span class='ident'>to_i32</span>().<span class='ident'>unwrap</span>(), <span class='number'>2</span>);
+<span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>cont</span>.<span class='ident'>get_var</span>(<span class='string'>&quot;valup&quot;</span>).<span class='ident'>is_none</span>());</pre>
+</div><h4 id='method.set_var' class='method'><code>fn <a href='#method.set_var' class='fnname'>set_var</a>(&amp;self, name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, value: <a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a>)</code></h4>
+<div class='docblock'><p>Sets the value of the instance variable <code>name</code> to <code>value</code>.</p>
+
+<h1 id='examples-6' class='section-header'><a href='#examples-6'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>Mruby</span>::<span class='ident'>new</span>();
+
+<span class='ident'>mruby</span>.<span class='ident'>def_class</span>(<span class='string'>&quot;Container&quot;</span>);
+
+<span class='kw'>let</span> <span class='ident'>cont</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>run</span>(<span class='string'>&quot;Container.new&quot;</span>).<span class='ident'>unwrap</span>();
+
+<span class='ident'>cont</span>.<span class='ident'>set_var</span>(<span class='string'>&quot;value&quot;</span>, <span class='ident'>mruby</span>.<span class='ident'>fixnum</span>(<span class='number'>2</span>));
+
+<span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>cont</span>.<span class='ident'>has_var</span>(<span class='string'>&quot;value&quot;</span>));
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>cont</span>.<span class='ident'>get_var</span>(<span class='string'>&quot;value&quot;</span>).<span class='ident'>unwrap</span>().<span class='ident'>to_i32</span>().<span class='ident'>unwrap</span>(), <span class='number'>2</span>);</pre>
+
+<p><br/></p>
+
+<p>Method panics if called on non-objects.</p>
+
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>Mruby</span>::<span class='ident'>new</span>();
+
+<span class='kw'>let</span> <span class='ident'>one</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>fixnum</span>(<span class='number'>1</span>);
+
+<span class='ident'>one</span>.<span class='ident'>set_var</span>(<span class='string'>&quot;value&quot;</span>, <span class='ident'>mruby</span>.<span class='ident'>fixnum</span>(<span class='number'>2</span>)); <span class='comment'>// panics because Fixnum cannot have instance vars</span></pre>
+</div><h4 id='method.class' class='method'><code>fn <a href='#method.class' class='fnname'>class</a>(&amp;self) -&gt; <a class='struct' href='../mrusty/struct.Class.html' title='mrusty::Class'>Class</a></code></h4>
+<div class='docblock'><p>Returns the <code>Class</code> of an mruby <code>Value</code>.</p>
+
+<h1 id='examples-7' class='section-header'><a href='#examples-7'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>Mruby</span>::<span class='ident'>new</span>();
+
 <span class='kw'>let</span> <span class='ident'>one</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>run</span>(<span class='string'>&quot;1&quot;</span>).<span class='ident'>unwrap</span>();
-<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>one</span>.<span class='ident'>type_name</span>(), <span class='string'>&quot;Fixnum&quot;</span>);</pre>
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>one</span>.<span class='ident'>class</span>().<span class='ident'>to_str</span>(), <span class='string'>&quot;Fixnum&quot;</span>);</pre>
 </div><h4 id='method.to_bool' class='method'><code>fn <a href='#method.to_bool' class='fnname'>to_bool</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, <a class='enum' href='../mrusty/enum.MrubyError.html' title='mrusty::MrubyError'>MrubyError</a>&gt;</code></h4>
 <div class='docblock'><p>Casts a <code>Value</code> and returns a <code>bool</code> in an <code>Ok</code> or an <code>Err</code> if the types mismatch.</p>
 
@@ -189,7 +244,7 @@ handle the exception.</p>
 
 <p><em>Note:</em> <code>T</code> must be defined on the current <code>Mruby</code> with <code>def_class</code>.</p>
 
-<h1 id='examples-5' class='section-header'><a href='#examples-5'>Examples</a></h1>
+<h1 id='examples-8' class='section-header'><a href='#examples-8'>Examples</a></h1>
 <pre class='rust rust-example-rendered'>
 <span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>Mruby</span>::<span class='ident'>new</span>();
 
@@ -197,7 +252,7 @@ handle the exception.</p>
     <span class='ident'>value</span>: <span class='ident'>i32</span>
 }
 
-<span class='ident'>mruby</span>.<span class='ident'>def_class</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;Container&quot;</span>);
+<span class='ident'>mruby</span>.<span class='ident'>def_class_for</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;Container&quot;</span>);
 
 <span class='kw'>let</span> <span class='ident'>value</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>obj</span>(<span class='ident'>Cont</span> { <span class='ident'>value</span>: <span class='number'>3</span> });
 <span class='kw'>let</span> <span class='ident'>cont</span> <span class='op'>=</span> <span class='ident'>value</span>.<span class='ident'>to_obj</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>().<span class='ident'>unwrap</span>();
@@ -208,7 +263,7 @@ handle the exception.</p>
 
 <p><em>Note:</em> <code>T</code> must be defined on the current <code>Mruby</code> with <code>def_class</code>.</p>
 
-<h1 id='examples-6' class='section-header'><a href='#examples-6'>Examples</a></h1>
+<h1 id='examples-9' class='section-header'><a href='#examples-9'>Examples</a></h1>
 <pre class='rust rust-example-rendered'>
 <span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>Mruby</span>::<span class='ident'>new</span>();
 
@@ -216,7 +271,7 @@ handle the exception.</p>
     <span class='ident'>value</span>: <span class='ident'>i32</span>
 }
 
-<span class='ident'>mruby</span>.<span class='ident'>def_class</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;Container&quot;</span>);
+<span class='ident'>mruby</span>.<span class='ident'>def_class_for</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='string'>&quot;Container&quot;</span>);
 
 <span class='kw'>let</span> <span class='ident'>value</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>obj</span>(<span class='ident'>Cont</span> { <span class='ident'>value</span>: <span class='number'>3</span> });
 <span class='kw'>let</span> <span class='ident'>cont</span> <span class='op'>=</span> <span class='ident'>value</span>.<span class='ident'>to_option</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>().<span class='ident'>unwrap</span>();
@@ -226,7 +281,7 @@ handle the exception.</p>
 </div><h4 id='method.to_vec' class='method'><code>fn <a href='#method.to_vec' class='fnname'>to_vec</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a>&gt;, <a class='enum' href='../mrusty/enum.MrubyError.html' title='mrusty::MrubyError'>MrubyError</a>&gt;</code></h4>
 <div class='docblock'><p>Casts mruby <code>Value</code> of <code>Class</code> <code>Array</code> to Rust type <code>Vec&lt;Value&gt;</code>.</p>
 
-<h1 id='examples-7' class='section-header'><a href='#examples-7'>Examples</a></h1>
+<h1 id='examples-10' class='section-header'><a href='#examples-10'>Examples</a></h1>
 <pre class='rust rust-example-rendered'>
 <span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>Mruby</span>::<span class='ident'>new</span>();
 <span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>run</span>(<span class='string'>&quot;
@@ -238,11 +293,29 @@ handle the exception.</p>
     <span class='ident'>mruby</span>.<span class='ident'>string</span>(<span class='string'>&quot;2&quot;</span>),
     <span class='ident'>mruby</span>.<span class='ident'>string</span>(<span class='string'>&quot;3&quot;</span>)
 ]);</pre>
-</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a></code></h3><div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a></code></h4>
+</div><h4 id='method.to_class' class='method'><code>fn <a href='#method.to_class' class='fnname'>to_class</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../mrusty/struct.Class.html' title='mrusty::Class'>Class</a>, <a class='enum' href='../mrusty/enum.MrubyError.html' title='mrusty::MrubyError'>MrubyError</a>&gt;</code></h4>
+<div class='docblock'><p>Casts mruby <code>Value</code> of <code>Class</code> <code>Class</code> to Rust type <code>Class</code>.</p>
+
+<h1 id='examples-11' class='section-header'><a href='#examples-11'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>Mruby</span>::<span class='ident'>new</span>();
+<span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>run</span>(<span class='string'>&quot;Object&quot;</span>).<span class='ident'>unwrap</span>();
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>result</span>.<span class='ident'>to_class</span>().<span class='ident'>unwrap</span>().<span class='ident'>to_str</span>(), <span class='string'>&quot;Object&quot;</span>);</pre>
+</div><h4 id='method.to_module' class='method'><code>fn <a href='#method.to_module' class='fnname'>to_module</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;Module, <a class='enum' href='../mrusty/enum.MrubyError.html' title='mrusty::MrubyError'>MrubyError</a>&gt;</code></h4>
+<div class='docblock'><p>Casts mruby <code>Value</code> of <code>Class</code> <code>Module</code> to Rust type <code>Module</code>.</p>
+
+<h1 id='examples-12' class='section-header'><a href='#examples-12'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>mruby</span> <span class='op'>=</span> <span class='ident'>Mruby</span>::<span class='ident'>new</span>();
+<span class='kw'>let</span> <span class='ident'>result</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>run</span>(<span class='string'>&quot;Kernel&quot;</span>).<span class='ident'>unwrap</span>();
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>result</span>.<span class='ident'>to_module</span>().<span class='ident'>unwrap</span>().<span class='ident'>to_str</span>(), <span class='string'>&quot;Kernel&quot;</span>);</pre>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a></code></h3><div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a></code></h4>
 <h4 id='method.clone_from' class='method'><span class="since">1.0.0</span><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
-</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a>&lt;<a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a>&gt; for <a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a></code></h3><div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.eq' class='fnname'>eq</a>(&amp;self, other: &amp;<a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a>&lt;<a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a>&gt; for <a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a></code></h3><div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, other: &amp;<a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
 <h4 id='method.ne' class='method'><span class="since">1.0.0</span><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
-</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 
