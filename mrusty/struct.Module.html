@@ -105,7 +105,7 @@
 
 <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>result</span>.<span class='ident'>to_i32</span>().<span class='ident'>unwrap</span>(), <span class='number'>1</span>);</pre>
 </div><h4 id='method.to_str' class='method'><code>fn <a href='#method.to_str' class='fnname'>to_str</a>(&amp;self) -&gt; &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
-<div class='docblock'><p>Returns a <code>&amp;str</code> with the mruby <code>Class</code> name.</p>
+<div class='docblock'><p>Returns a <code>&amp;str</code> with the mruby <code>Module</code> name.</p>
 
 <h1 id='examples-3' class='section-header'><a href='#examples-3'>Examples</a></h1>
 <pre class='rust rust-example-rendered'>
@@ -115,7 +115,7 @@
 
 <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>module</span>.<span class='ident'>to_str</span>(), <span class='string'>&quot;Container&quot;</span>);</pre>
 </div><h4 id='method.to_value' class='method'><code>fn <a href='#method.to_value' class='fnname'>to_value</a>(&amp;self) -&gt; <a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a></code></h4>
-<div class='docblock'><p>Casts <code>Class</code> to <code>Value</code>.</p>
+<div class='docblock'><p>Casts <code>Module</code> to <code>Value</code>.</p>
 
 <h1 id='examples-4' class='section-header'><a href='#examples-4'>Examples</a></h1>
 <pre class='rust rust-example-rendered'>
