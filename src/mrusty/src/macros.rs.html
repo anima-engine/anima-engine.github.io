@@ -890,6 +890,46 @@
 <span id="846">846</span>
 <span id="847">847</span>
 <span id="848">848</span>
+<span id="849">849</span>
+<span id="850">850</span>
+<span id="851">851</span>
+<span id="852">852</span>
+<span id="853">853</span>
+<span id="854">854</span>
+<span id="855">855</span>
+<span id="856">856</span>
+<span id="857">857</span>
+<span id="858">858</span>
+<span id="859">859</span>
+<span id="860">860</span>
+<span id="861">861</span>
+<span id="862">862</span>
+<span id="863">863</span>
+<span id="864">864</span>
+<span id="865">865</span>
+<span id="866">866</span>
+<span id="867">867</span>
+<span id="868">868</span>
+<span id="869">869</span>
+<span id="870">870</span>
+<span id="871">871</span>
+<span id="872">872</span>
+<span id="873">873</span>
+<span id="874">874</span>
+<span id="875">875</span>
+<span id="876">876</span>
+<span id="877">877</span>
+<span id="878">878</span>
+<span id="879">879</span>
+<span id="880">880</span>
+<span id="881">881</span>
+<span id="882">882</span>
+<span id="883">883</span>
+<span id="884">884</span>
+<span id="885">885</span>
+<span id="886">886</span>
+<span id="887">887</span>
+<span id="888">888</span>
 </pre><pre class='rust '>
 <span class='comment'>// mrusty. mruby safe bindings for Rust</span>
 <span class='comment'>// Copyright (C) 2016  Dragoș Tiselice</span>
@@ -1021,6 +1061,11 @@
 <span class='attribute'>#[<span class='ident'>doc</span>(<span class='ident'>hidden</span>)]</span>
 <span class='attribute'>#[<span class='ident'>macro_export</span>]</span>
 <span class='macro'>macro_rules</span><span class='macro'>!</span> <span class='ident'>slf</span> {
+    ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>:<span class='ident'>ident</span>, <span class='ident'>bool</span> )  <span class='op'>=&gt;</span> (<span class='kw'>let</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>.<span class='ident'>to_bool</span>().<span class='ident'>unwrap</span>(););
+    ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>:<span class='ident'>ident</span>, <span class='ident'>i32</span> )   <span class='op'>=&gt;</span> (<span class='kw'>let</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>.<span class='ident'>to_i32</span>().<span class='ident'>unwrap</span>(););
+    ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>:<span class='ident'>ident</span>, <span class='ident'>f64</span> )   <span class='op'>=&gt;</span> (<span class='kw'>let</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>.<span class='ident'>to_f64</span>().<span class='ident'>unwrap</span>(););
+    ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>:<span class='ident'>ident</span>, <span class='ident'>str</span> )   <span class='op'>=&gt;</span> (<span class='kw'>let</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>.<span class='ident'>to_str</span>().<span class='ident'>unwrap</span>(););
+    ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>:<span class='ident'>ident</span>, <span class='ident'>Vec</span> )   <span class='op'>=&gt;</span> (<span class='kw'>let</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>.<span class='ident'>to_vec</span>().<span class='ident'>unwrap</span>(););
     ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>:<span class='ident'>ident</span>, <span class='ident'>Class</span> ) <span class='op'>=&gt;</span> (<span class='kw'>let</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>.<span class='ident'>to_class</span>().<span class='ident'>unwrap</span>(););
     ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>:<span class='ident'>ident</span>, <span class='ident'>Value</span> ) <span class='op'>=&gt;</span> ();
     ( <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>:<span class='ident'>ident</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span>:<span class='ident'>ty</span> ) <span class='op'>=&gt;</span> (<span class='kw'>let</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>slf</span>.<span class='ident'>to_obj</span>::<span class='op'>&lt;</span><span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>t</span><span class='op'>&gt;</span>().<span class='ident'>unwrap</span>(););
@@ -1718,6 +1763,41 @@
 <span class='doccomment'>/// let result = mruby.run(&quot;Container.hi&quot;).unwrap();</span>
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// assert_eq!(result.to_str().unwrap(), &quot;hi&quot;);</span>
+<span class='doccomment'>/// # }</span>
+<span class='doccomment'>/// ```</span>
+<span class='doccomment'>/// &lt;br/&gt;</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// `mruby_class!` also works on mruby primitive types.</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// ```</span>
+<span class='doccomment'>/// # #[macro_use] extern crate mrusty;</span>
+<span class='doccomment'>/// use mrusty::*;</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// # fn main() {</span>
+<span class='doccomment'>/// let mruby = Mruby::new();</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// mruby_class!(mruby, &quot;Fixnum&quot;, {</span>
+<span class='doccomment'>///     def!(&quot;digits&quot;, |mruby, slf: i32| {</span>
+<span class='doccomment'>///         if slf == 0 {</span>
+<span class='doccomment'>///             mruby.array(vec![mruby.fixnum(0)])</span>
+<span class='doccomment'>///         } else {</span>
+<span class='doccomment'>///             let mut number = slf;</span>
+<span class='doccomment'>///             let mut digits = vec![];</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>///             while number != 0 {</span>
+<span class='doccomment'>///                 digits.push(mruby.fixnum(number % 10));</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>///                 number /= 10;</span>
+<span class='doccomment'>///             }</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>///             mruby.array(digits)</span>
+<span class='doccomment'>///         }</span>
+<span class='doccomment'>///     });</span>
+<span class='doccomment'>/// });</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// let result = mruby.run(&quot;123.digits.inject(:+)&quot;).unwrap();</span>
+<span class='doccomment'>///</span>
+<span class='doccomment'>/// assert_eq!(result.to_i32().unwrap(), 6);</span>
 <span class='doccomment'>/// # }</span>
 <span class='doccomment'>/// ```</span>
 <span class='attribute'>#[<span class='ident'>macro_export</span>]</span>
