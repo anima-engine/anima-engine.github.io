@@ -47,7 +47,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-126' class='srclink' href='../src/mrusty/src/mruby.rs.html#277-980' title='goto source code'>[src]</a></span></h1>
+               </span><a id='src-126' class='srclink' href='../src/mrusty/src/mruby.rs.html#277-983' title='goto source code'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait MrubyImpl {
     fn <a href='#tymethod.filename' class='fnname'>filename</a>(&amp;self, filename: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>);
     fn <a href='#tymethod.run' class='fnname'>run</a>(&amp;self, script: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a>, <a class='enum' href='../mrusty/enum.MrubyError.html' title='mrusty::MrubyError'>MrubyError</a>&gt;;
@@ -281,7 +281,7 @@ or <code>Module</code>.</p>
 
             <span class='ident'>slf</span>.<span class='ident'>init</span>(<span class='ident'>cont</span>)
         }));
-        <span class='ident'>mruby</span>.<span class='ident'>def_method_for</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span>, _<span class='op'>&gt;</span>(<span class='string'>&quot;value&quot;</span>, <span class='macro'>mrfn</span><span class='macro'>!</span>(<span class='op'>|</span><span class='ident'>mruby</span>, <span class='ident'>slf</span>: <span class='ident'>Cont</span><span class='op'>|</span> {
+        <span class='ident'>mruby</span>.<span class='ident'>def_method_for</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span>, _<span class='op'>&gt;</span>(<span class='string'>&quot;value&quot;</span>, <span class='macro'>mrfn</span><span class='macro'>!</span>(<span class='op'>|</span><span class='ident'>mruby</span>, <span class='ident'>slf</span>: (<span class='kw-2'>&amp;</span><span class='ident'>Cont</span>)<span class='op'>|</span> {
             <span class='ident'>mruby</span>.<span class='ident'>fixnum</span>(<span class='ident'>slf</span>.<span class='ident'>value</span>)
         }));
     }
@@ -412,7 +412,7 @@ to be run when the <code>name</code> method is called should be passed through t
 
     <span class='ident'>slf</span>.<span class='ident'>init</span>(<span class='ident'>cont</span>)
 }));
-<span class='ident'>mruby</span>.<span class='ident'>def_method_for</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span>, _<span class='op'>&gt;</span>(<span class='string'>&quot;value&quot;</span>, <span class='macro'>mrfn</span><span class='macro'>!</span>(<span class='op'>|</span><span class='ident'>mruby</span>, <span class='ident'>slf</span>: <span class='ident'>Cont</span><span class='op'>|</span> {
+<span class='ident'>mruby</span>.<span class='ident'>def_method_for</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span>, _<span class='op'>&gt;</span>(<span class='string'>&quot;value&quot;</span>, <span class='macro'>mrfn</span><span class='macro'>!</span>(<span class='op'>|</span><span class='ident'>mruby</span>, <span class='ident'>slf</span>: (<span class='kw-2'>&amp;</span><span class='ident'>Cont</span>)<span class='op'>|</span> {
     <span class='ident'>mruby</span>.<span class='ident'>fixnum</span>(<span class='ident'>slf</span>.<span class='ident'>value</span>)
 }));
 
@@ -542,8 +542,11 @@ macro.</p>
 <span class='kw'>let</span> <span class='ident'>none</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>option</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>(<span class='prelude-val'>None</span>);
 <span class='kw'>let</span> <span class='ident'>some</span> <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>option</span>(<span class='prelude-val'>Some</span>(<span class='ident'>Cont</span> { <span class='ident'>value</span>: <span class='number'>3</span> }));
 
+<span class='kw'>let</span> <span class='ident'>some</span> <span class='op'>=</span> <span class='ident'>some</span>.<span class='ident'>to_obj</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>().<span class='ident'>unwrap</span>();
+<span class='kw'>let</span> <span class='ident'>some</span> <span class='op'>=</span> <span class='ident'>some</span>.<span class='ident'>borrow</span>();
+
 <span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>none</span>.<span class='ident'>call</span>(<span class='string'>&quot;nil?&quot;</span>, <span class='macro'>vec</span><span class='macro'>!</span>[]).<span class='ident'>unwrap</span>().<span class='ident'>to_bool</span>().<span class='ident'>unwrap</span>(), <span class='boolval'>true</span>);
-<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>some</span>.<span class='ident'>to_obj</span>::<span class='op'>&lt;</span><span class='ident'>Cont</span><span class='op'>&gt;</span>().<span class='ident'>unwrap</span>().<span class='ident'>value</span>, <span class='number'>3</span>);</pre>
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>some</span>.<span class='ident'>value</span>, <span class='number'>3</span>);</pre>
 </div><h3 id='tymethod.array' class='method stab '><code>fn <a href='#tymethod.array' class='fnname'>array</a>(&amp;self, value: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a>&gt;) -&gt; <a class='struct' href='../mrusty/struct.Value.html' title='mrusty::Value'>Value</a></code></h3><div class='docblock'><p>Creates mruby <code>Value</code> of <code>Class</code> <code>Array</code>.</p>
 
 <h1 id='examples-32' class='section-header'><a href='#examples-32'>Examples</a></h1>

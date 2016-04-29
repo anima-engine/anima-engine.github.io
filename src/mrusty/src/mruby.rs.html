@@ -2521,6 +2521,14 @@
 <span id="2477">2477</span>
 <span id="2478">2478</span>
 <span id="2479">2479</span>
+<span id="2480">2480</span>
+<span id="2481">2481</span>
+<span id="2482">2482</span>
+<span id="2483">2483</span>
+<span id="2484">2484</span>
+<span id="2485">2485</span>
+<span id="2486">2486</span>
+<span id="2487">2487</span>
 </pre><pre class='rust '>
 <span class='comment'>// mrusty. mruby safe bindings for Rust</span>
 <span class='comment'>// Copyright (C) 2016  Dragoș Tiselice</span>
@@ -3086,7 +3094,7 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>///             slf.init(cont)</span>
     <span class='doccomment'>///         }));</span>
-    <span class='doccomment'>///         mruby.def_method_for::&lt;Cont, _&gt;(&quot;value&quot;, mrfn!(|mruby, slf: Cont| {</span>
+    <span class='doccomment'>///         mruby.def_method_for::&lt;Cont, _&gt;(&quot;value&quot;, mrfn!(|mruby, slf: (&amp;Cont)| {</span>
     <span class='doccomment'>///             mruby.fixnum(slf.value)</span>
     <span class='doccomment'>///         }));</span>
     <span class='doccomment'>///     }</span>
@@ -3277,7 +3285,7 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>///     slf.init(cont)</span>
     <span class='doccomment'>/// }));</span>
-    <span class='doccomment'>/// mruby.def_method_for::&lt;Cont, _&gt;(&quot;value&quot;, mrfn!(|mruby, slf: Cont| {</span>
+    <span class='doccomment'>/// mruby.def_method_for::&lt;Cont, _&gt;(&quot;value&quot;, mrfn!(|mruby, slf: (&amp;Cont)| {</span>
     <span class='doccomment'>///     mruby.fixnum(slf.value)</span>
     <span class='doccomment'>/// }));</span>
     <span class='doccomment'>///</span>
@@ -3473,8 +3481,11 @@
     <span class='doccomment'>/// let none = mruby.option::&lt;Cont&gt;(None);</span>
     <span class='doccomment'>/// let some = mruby.option(Some(Cont { value: 3 }));</span>
     <span class='doccomment'>///</span>
+    <span class='doccomment'>/// let some = some.to_obj::&lt;Cont&gt;().unwrap();</span>
+    <span class='doccomment'>/// let some = some.borrow();</span>
+    <span class='doccomment'>///</span>
     <span class='doccomment'>/// assert_eq!(none.call(&quot;nil?&quot;, vec![]).unwrap().to_bool().unwrap(), true);</span>
-    <span class='doccomment'>/// assert_eq!(some.to_obj::&lt;Cont&gt;().unwrap().value, 3);</span>
+    <span class='doccomment'>/// assert_eq!(some.value, 3);</span>
     <span class='doccomment'>/// ```</span>
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>fn</span> <span class='ident'>option</span><span class='op'>&lt;</span><span class='ident'>T</span>: <span class='ident'>Any</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>obj</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;</span>) <span class='op'>-&gt;</span> <span class='ident'>Value</span>;
@@ -3504,11 +3515,11 @@
 }
 
 <span class='attribute'>#[<span class='ident'>inline</span>]</span>
-<span class='kw'>fn</span> <span class='ident'>get_class</span><span class='op'>&lt;</span><span class='ident'>F</span><span class='op'>&gt;</span>(<span class='ident'>mruby</span>: <span class='kw-2'>&amp;</span><span class='ident'>MrubyType</span>, <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>get</span>: <span class='ident'>F</span>) <span class='op'>-&gt;</span> <span class='ident'>Class</span>
+<span class='kw'>fn</span> <span class='ident'>get_class</span><span class='op'>&lt;</span><span class='ident'>F</span><span class='op'>&gt;</span>(<span class='ident'>mruby</span>: <span class='kw-2'>&amp;</span><span class='ident'>MrubyType</span>, <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>class</span>: <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Class</span>, <span class='ident'>MrubyError</span><span class='op'>&gt;</span>, <span class='ident'>get</span>: <span class='ident'>F</span>) <span class='op'>-&gt;</span> <span class='ident'>Class</span>
     <span class='kw'>where</span> <span class='ident'>F</span>: <span class='ident'>Fn</span>(<span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MrState</span>, <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>, <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MrClass</span>) <span class='op'>-&gt;</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MrClass</span> {
 
     <span class='kw'>unsafe</span> {
-        <span class='kw'>let</span> <span class='ident'>class</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Ok</span>(<span class='ident'>class</span>) <span class='op'>=</span> <span class='ident'>mruby</span>.<span class='ident'>get_class</span>(<span class='ident'>name</span>) {
+        <span class='kw'>let</span> <span class='ident'>class</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='kw'>let</span> <span class='prelude-val'>Ok</span>(<span class='ident'>class</span>) <span class='op'>=</span> <span class='ident'>class</span> {
             <span class='ident'>class</span>
         } <span class='kw'>else</span> {
             <span class='kw'>let</span> <span class='ident'>name</span> <span class='op'>=</span> <span class='ident'>name</span>.<span class='ident'>to_owned</span>();
@@ -3547,7 +3558,7 @@
 
         <span class='kw'>extern</span> <span class='string'>&quot;C&quot;</span> <span class='kw'>fn</span> <span class='ident'>free</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;</span>(<span class='ident'>_mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MrState</span>, <span class='ident'>ptr</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>u8</span>) {
             <span class='kw'>unsafe</span> {
-                <span class='ident'>mem</span>::<span class='ident'>transmute</span>::<span class='op'>&lt;</span><span class='op'>*</span><span class='kw'>const</span> <span class='ident'>u8</span>, <span class='ident'>Rc</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;&gt;</span>(<span class='ident'>ptr</span>);
+                <span class='ident'>mem</span>::<span class='ident'>transmute</span>::<span class='op'>&lt;</span><span class='op'>*</span><span class='kw'>const</span> <span class='ident'>u8</span>, <span class='ident'>Rc</span><span class='op'>&lt;</span><span class='ident'>RefCell</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;&gt;</span><span class='op'>&gt;</span>(<span class='ident'>ptr</span>);
             }
         }
 
@@ -3892,15 +3903,16 @@
     }
 
     <span class='kw'>fn</span> <span class='ident'>def_class</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='ident'>Class</span> {
-        <span class='ident'>get_class</span>(<span class='self'>self</span>, <span class='ident'>name</span>, <span class='op'>|</span><span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MrState</span>, <span class='ident'>name</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>,
-                               <span class='ident'>object</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MrClass</span><span class='op'>|</span> {
+        <span class='ident'>get_class</span>(<span class='self'>self</span>, <span class='ident'>name</span>, <span class='self'>self</span>.<span class='ident'>get_class</span>(<span class='ident'>name</span>), <span class='op'>|</span><span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MrState</span>, <span class='ident'>name</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>,
+                                                     <span class='ident'>object</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MrClass</span><span class='op'>|</span> {
             <span class='kw'>unsafe</span> { <span class='ident'>mrb_define_class</span>(<span class='ident'>mrb</span>, <span class='ident'>name</span>, <span class='ident'>object</span>) }
         })
     }
 
     <span class='kw'>fn</span> <span class='ident'>def_class_under</span><span class='op'>&lt;</span><span class='ident'>U</span>: <span class='ident'>ClassLike</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>name</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>, <span class='ident'>outer</span>: <span class='kw-2'>&amp;</span><span class='ident'>U</span>) <span class='op'>-&gt;</span> <span class='ident'>Class</span> {
-        <span class='ident'>get_class</span>(<span class='self'>self</span>, <span class='ident'>name</span>, <span class='op'>|</span><span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MrState</span>, <span class='ident'>name</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>,
-                               <span class='ident'>object</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MrClass</span><span class='op'>|</span> {
+        <span class='ident'>get_class</span>(<span class='self'>self</span>, <span class='ident'>name</span>, <span class='self'>self</span>.<span class='ident'>get_class_under</span>(<span class='ident'>name</span>, <span class='ident'>outer</span>),
+                  <span class='op'>|</span><span class='ident'>mrb</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MrState</span>, <span class='ident'>name</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>,
+                   <span class='ident'>object</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>MrClass</span><span class='op'>|</span> {
             <span class='kw'>unsafe</span> { <span class='ident'>mrb_define_class_under</span>(<span class='ident'>mrb</span>, <span class='ident'>outer</span>.<span class='ident'>class</span>(), <span class='ident'>name</span>, <span class='ident'>object</span>) }
         })
     }
@@ -4161,14 +4173,16 @@
     <span class='doccomment'>/// }));</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// let result = mruby.run(&quot;Container.new 3&quot;).unwrap();</span>
+    <span class='doccomment'>/// let result = result.to_obj::&lt;Cont&gt;().unwrap();</span>
+    <span class='doccomment'>/// let result = result.borrow();</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// assert_eq!(result.to_obj::&lt;Cont&gt;().unwrap().value, 3);</span>
+    <span class='doccomment'>/// assert_eq!(result.value, 3);</span>
     <span class='doccomment'>/// # }</span>
     <span class='doccomment'>/// ```</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>init</span><span class='op'>&lt;</span><span class='ident'>T</span>: <span class='ident'>Any</span><span class='op'>&gt;</span>(<span class='self'>self</span>, <span class='ident'>obj</span>: <span class='ident'>T</span>) <span class='op'>-&gt;</span> <span class='ident'>Value</span> {
         <span class='kw'>unsafe</span> {
-            <span class='kw'>let</span> <span class='ident'>rc</span> <span class='op'>=</span> <span class='ident'>Rc</span>::<span class='ident'>new</span>(<span class='ident'>obj</span>);
-            <span class='kw'>let</span> <span class='ident'>ptr</span> <span class='op'>=</span> <span class='ident'>mem</span>::<span class='ident'>transmute</span>::<span class='op'>&lt;</span><span class='ident'>Rc</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;</span>, <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>u8</span><span class='op'>&gt;</span>(<span class='ident'>rc</span>);
+            <span class='kw'>let</span> <span class='ident'>rc</span> <span class='op'>=</span> <span class='ident'>Rc</span>::<span class='ident'>new</span>(<span class='ident'>RefCell</span>::<span class='ident'>new</span>(<span class='ident'>obj</span>));
+            <span class='kw'>let</span> <span class='ident'>ptr</span> <span class='op'>=</span> <span class='ident'>mem</span>::<span class='ident'>transmute</span>::<span class='op'>&lt;</span><span class='ident'>Rc</span><span class='op'>&lt;</span><span class='ident'>RefCell</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;&gt;</span>, <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>u8</span><span class='op'>&gt;</span>(<span class='ident'>rc</span>);
 
             <span class='kw'>let</span> <span class='ident'>borrow</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>mruby</span>.<span class='ident'>borrow</span>();
 
@@ -4493,11 +4507,12 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// let value = mruby.obj(Cont { value: 3 });</span>
     <span class='doccomment'>/// let cont = value.to_obj::&lt;Cont&gt;().unwrap();</span>
+    <span class='doccomment'>/// let cont = cont.borrow();</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// assert_eq!(cont.value, 3);</span>
     <span class='doccomment'>/// ```</span>
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>to_obj</span><span class='op'>&lt;</span><span class='ident'>T</span>: <span class='ident'>Any</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Rc</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;</span>, <span class='ident'>MrubyError</span><span class='op'>&gt;</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>to_obj</span><span class='op'>&lt;</span><span class='ident'>T</span>: <span class='ident'>Any</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Rc</span><span class='op'>&lt;</span><span class='ident'>RefCell</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;&gt;</span>, <span class='ident'>MrubyError</span><span class='op'>&gt;</span> {
         <span class='kw'>unsafe</span> {
             <span class='kw'>let</span> <span class='ident'>borrow</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>mruby</span>.<span class='ident'>borrow</span>();
 
@@ -4536,13 +4551,14 @@
     <span class='doccomment'>/// mruby.def_class_for::&lt;Cont&gt;(&quot;Container&quot;);</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// let value = mruby.obj(Cont { value: 3 });</span>
-    <span class='doccomment'>/// let cont = value.to_option::&lt;Cont&gt;().unwrap();</span>
+    <span class='doccomment'>/// let cont = value.to_option::&lt;Cont&gt;().unwrap().unwrap();</span>
+    <span class='doccomment'>/// let cont = cont.borrow();</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// assert_eq!(cont.unwrap().value, 3);</span>
+    <span class='doccomment'>/// assert_eq!(cont.value, 3);</span>
     <span class='doccomment'>/// assert!(mruby.nil().to_option::&lt;Cont&gt;().unwrap().is_none());</span>
     <span class='doccomment'>/// ```</span>
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>to_option</span><span class='op'>&lt;</span><span class='ident'>T</span>: <span class='ident'>Any</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Rc</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;&gt;</span>, <span class='ident'>MrubyError</span><span class='op'>&gt;</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>to_option</span><span class='op'>&lt;</span><span class='ident'>T</span>: <span class='ident'>Any</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>Rc</span><span class='op'>&lt;</span><span class='ident'>RefCell</span><span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;&gt;</span><span class='op'>&gt;</span>, <span class='ident'>MrubyError</span><span class='op'>&gt;</span> {
         <span class='kw'>if</span> <span class='self'>self</span>.<span class='ident'>value</span>.<span class='ident'>typ</span> <span class='op'>==</span> <span class='ident'>MrType</span>::<span class='ident'>MRB_TT_DATA</span> {
             <span class='self'>self</span>.<span class='ident'>to_obj</span>::<span class='op'>&lt;</span><span class='ident'>T</span><span class='op'>&gt;</span>().<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>obj</span><span class='op'>|</span> <span class='prelude-val'>Some</span>(<span class='ident'>obj</span>))
         } <span class='kw'>else</span> {
