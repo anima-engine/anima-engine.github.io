@@ -190,8 +190,8 @@
 
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>fmt</span>::<span class='ident'>Display</span>;
 
-<span class='kw'>use</span> <span class='ident'>super</span>::<span class='ident'>mruby</span>::<span class='op'>*</span>;
-<span class='kw'>use</span> <span class='ident'>super</span>::<span class='ident'>read_line</span>::<span class='ident'>ReadLine</span>;
+<span class='kw'>use</span> <span class='kw'>super</span>::<span class='ident'>mruby</span>::<span class='op'>*</span>;
+<span class='kw'>use</span> <span class='kw'>super</span>::<span class='ident'>read_line</span>::<span class='ident'>ReadLine</span>;
 
 <span class='doccomment'>/// A `struct` that exposes an `Mruby` to a REPL.</span>
 <span class='doccomment'>///</span>
@@ -199,7 +199,7 @@
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// Using `GnuReadLine`, which requires the `gnu-readline` feature:</span>
 <span class='doccomment'>///</span>
-<span class='doccomment'>/// ```no-run</span>
+<span class='doccomment'>/// ```ignore</span>
 <span class='doccomment'>/// let mruby = Mruby::new();</span>
 <span class='doccomment'>/// let repl = Repl::new(mruby);</span>
 <span class='doccomment'>///</span>
@@ -252,7 +252,7 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// Using `GnuReadLine`, which requires the `gnu-readline` feature:</span>
     <span class='doccomment'>///</span>
-    <span class='doccomment'>/// ```no-run</span>
+    <span class='doccomment'>/// ```ignore</span>
     <span class='doccomment'>/// let mruby = Mruby::new();</span>
     <span class='doccomment'>/// let repl = Repl::new(mruby);</span>
     <span class='doccomment'>///</span>
@@ -343,6 +343,8 @@
                     <dd>Move down in search results</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
 

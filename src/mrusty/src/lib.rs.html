@@ -91,10 +91,6 @@
 <span id="47">47</span>
 <span id="48">48</span>
 <span id="49">49</span>
-<span id="50">50</span>
-<span id="51">51</span>
-<span id="52">52</span>
-<span id="53">53</span>
 </pre><pre class='rust '>
 <span class='comment'>// mrusty. mruby safe bindings for Rust</span>
 <span class='comment'>// Copyright (C) 2016  Dragoș Tiselice</span>
@@ -110,12 +106,8 @@
 <span class='doccomment'>//! * run Ruby 1.9 files with a very restricted API (without having to install Ruby)</span>
 <span class='doccomment'>//! * reflect Rust `struct`s and `enum`s in mruby and run them</span>
 <span class='doccomment'>//!</span>
-<span class='doccomment'>//! It does all this in a safely neat way while also bringing spec testing and a</span>
+<span class='doccomment'>//! It does all this in a safely neat way, while also bringing spec testing and a</span>
 <span class='doccomment'>//! REPL to the table.</span>
-<span class='doccomment'>//!</span>
-<span class='doccomment'>//! *Note:* Starting with *v0.4.0*, mrusty will only work with Rust beta (1.9.0).</span>
-<span class='doccomment'>//! This is caused by a need to capture `panic`s in mruby. Once this features</span>
-<span class='doccomment'>//! stabilizes (and it will in Rust 1.9.0), mrusty will return to stable Rust.</span>
 
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>feature</span> <span class='op'>=</span> <span class='string'>&quot;gnu-readline&quot;</span>)]</span>
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>rl_sys</span>;
@@ -173,6 +165,8 @@
                     <dd>Move down in search results</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
 
